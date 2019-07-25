@@ -90,7 +90,7 @@ StUF:sleutelOntvangend gewijzigd naar resp. 'optional' en 'required'.
 [\#39](https://github.com/Geonovum/GeoBAG/issues/39) Opnemen samengestelde
 attributen in H6
 
---- wordt nog opgelost ---
+\--- wordt nog opgelost ---
 
 [\#38](https://github.com/Geonovum/GeoBAG/issues/38) Inconsistentie tussen
 vullen woonplaatsWaarinGelegen in Geo-BAG en BAG
@@ -115,3 +115,9 @@ t.a.v. aantal posities URL (MANTIS: 4664)
 In complexType ParametersLevering en ParametersVerzoek is voor element
 ‘documentVerwijzing’ een nieuw SimpleType GeoBAGUrl met lengte 2000 gedefinieerd
 en opgenomen. (In StUF-BG basisschema’s was BG:Url gedefinieerd met lengte 200).
+
+**WSDL**
+
+Nieuwe WSDL’s geoBAG0101_bg0310_ontvangAsynchroon_bag.wsdl en
+geoBAG0101_bg0310_ontvangAsynchroon_geo.wsdl zijn aangemaakt met nieuwe
+namespace.
