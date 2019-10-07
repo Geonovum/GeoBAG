@@ -281,7 +281,7 @@ identificatie verstuurd.
 
 |                      | Nieuwe geometrielevering door Geo | Intrekken geometrielevering door Geo | Corrigeren geometrielevering door Geo |
 |----------------------|-----------------------------------|--------------------------------------|---------------------------------------|
-| referentienummer     | 000751                            | 000752                               | 000751                                |
+| referentienummer     | 000751                            | 000752                               | 000753                                |
 | crossRefnummer       | n.v.t.                            | n.v.t.                               | n.v.t.                                |
 | identificatie[\^19]  | 123456                            | 123456                               | 12345**7**                            |
 | idGerelateerdVerzoek | 987654                            | 987654                               | 987654                                |
