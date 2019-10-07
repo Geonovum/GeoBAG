@@ -55,7 +55,7 @@ Indien Geo een geometrieVerzoek van BAG niet kan verwerken (bijv. BAG-geometrie 
 [^30] De gevolgen voor de BGT worden beoordeeld door de BGT operator. Geo kan op eigen initiatief en met de kennis van de 
 reden van afkeuring opnieuw een geometrieLevering doen aan BAG. 
 
-![Sequentiediagram Verzoek om geometrie door BAG - Alt 3.   Geo keurt verzoek af](media/fig-sd_verzoek_geometrie-bag-alt2.png)
+![Sequentiediagram Verzoek om geometrie door BAG - Alt 3.   Geo keurt verzoek af](media/fig-sd_verzoek_geometrie-bag-alt3.png)
 
 *Figuur 3.5 Sequentiediagram Verzoek om geometrie door BAG – Alt 3. Geo keurt verzoek af*
 
