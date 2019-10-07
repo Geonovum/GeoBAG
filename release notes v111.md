@@ -26,8 +26,8 @@ geoBAG0100_msg.xsd naar geoBAG0101_msg.xsd
 \<xs:import namespace="http://register.geostandaarden.nl/xmlschema/geobag/1.1"  
 schemaLocation="geoBAG0100_msg.xsd"/\>
 
-\#54 sleutelOntvangend ontbreekt als attribuut bij Standplaats in
-geometrieverzoek/levering
+**\#54 sleutelOntvangend ontbreekt als attribuut bij Standplaats in
+geometrieverzoek/levering**
 
 In geoBAG0101_bg0310_ent.xsd bij complex type STA-geoBag-basis is attribuut
 sleutelOntvangend toegevoegd
