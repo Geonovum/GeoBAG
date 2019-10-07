@@ -4,14 +4,20 @@ Release notes StUF-Geo BAG versie 1.1.1 (Geo-BAG koppelvlak)
 Versie 1.1.1 is een bugfix release van versie 1.1 waarin de volgende issues
 opgelost:
 
-[\#52](https://github.com/Geonovum/GeoBAG/issues/52) Verkeerd sequentiediagram
-voor Alternatief scenario Geo keurt geometrieverzoek af
+[\#51](https://github.com/Geonovum/GeoBAG/issues/51) **Voorbeeldbericht
+B1_gmlDi01_pand_GEO-COG.xml vulling object versie verkeerd**
+
+In B1_gmlDi01_pand_GEO-COG.xml en B2_foutDu01_verblijfsobject.xml is element
+\<versie\> aangepast naar StUF:noValue en leeg.
+
+[\#52](https://github.com/Geonovum/GeoBAG/issues/52) **Verkeerd sequentiediagram
+voor Alternatief scenario Geo keurt geometrieverzoek af**
 
 De afbeeldingslink naar ‘Figuur 3.5 Sequentiediagram Verzoek om geometrie door
 BAG – Alt 3. Geo keurt verzoek af’ is aangepast naar juiste afbeelding.
 
-[\#53](https://github.com/Geonovum/GeoBAG/issues/53) schemaLocation in WSDL 1.1
-moet zijn geoBAG0101.xsd
+[\#53](https://github.com/Geonovum/GeoBAG/issues/53) **schemaLocation in WSDL
+1.1 moet zijn geoBAG0101.xsd**
 
 In geoBAG0101_bg0310_ontvangAsynchroon_bag.wsdl en
 geoBAG0101_bg0310_ontvangAsynchroon_geo.wsdl is schemaLocation gewijzigd van
@@ -28,16 +34,16 @@ sleutelOntvangend toegevoegd
 
 \<attribute ref="StUF:sleutelOntvangend" use="optional"/\>
 
-[\#55](https://github.com/Geonovum/GeoBAG/issues/55) sleutelOntvangend ontbreekt
-bij VBO in responsbericht
+[\#55](https://github.com/Geonovum/GeoBAG/issues/55) **sleutelOntvangend
+ontbreekt bij VBO in responsbericht**
 
 In geoBAG0101_bg0310_ent.xsd bij complex type VBO-geoBAG-identificatie is
 sleutelOntvangend als verplicht attribuut toegevoegd:
 
 \<attribute ref="StUF:sleutelOntvangend" use="required"/\>
 
-[\#56](https://github.com/Geonovum/GeoBAG/issues/56) sleutelVerzendend moet
-verplicht en sleutelOntvangend moet optioneel zijn bij VBO
+[\#56](https://github.com/Geonovum/GeoBAG/issues/56) **sleutelVerzendend moet
+verplicht en sleutelOntvangend moet optioneel zijn bij VBO**
 
 In geoBAG0101_bg0310_ent.xsd bij complex type VBO-geoBAG-basis is attribuut
 sleutelVerzendend gewijzigd naar ‘verplicht’ en sleutelOntvangend naar
@@ -46,8 +52,8 @@ sleutelVerzendend gewijzigd naar ‘verplicht’ en sleutelOntvangend naar
 \<attribute ref="StUF:sleutelVerzendend" use="required"/\>  
 \<attribute ref="StUF:sleutelOntvangend" use="optional" /\>
 
-[\#57](https://github.com/Geonovum/GeoBAG/issues/57) Opnemen apart complex type
-voor relaties en goed/afkeuringsberichten
+[\#57](https://github.com/Geonovum/GeoBAG/issues/57) **Opnemen apart complex
+type voor relaties en goed/afkeuringsberichten**
 
 In geoBAG0101_bg0310_ent.xsd is een nieuw complextype
 ‘PND-geoBAG-gerelateerde-identificatie’ toegevoegd met dezelfde kenmerken als
@@ -79,9 +85,3 @@ nillable="true"/\>
 …
 
 \</complexType\>
-
-[\#58](https://github.com/Geonovum/GeoBAG/issues/58) Inconsistentie in
-voorbeeldbestanden GeoCOG StUF:noValue voor BAG-identificatie en versienummer
-
-In B1_gmlDi01_pand_GEO-COG.xml en B2_foutDu01_verblijfsobject.xml is element
-\<versie\> aangepast naar StUF:noValue en leeg.

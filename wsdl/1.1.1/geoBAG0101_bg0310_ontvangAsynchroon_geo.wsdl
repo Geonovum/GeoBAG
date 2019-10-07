@@ -3,9 +3,8 @@
 	<import namespace="http://www.egem.nl/StUF/StUF0301" location="../0301/stuf0301_types.wsdl"/>
 	<documentation>
 		Dit document definieert de operations en bindings voor het portType OntvangAsynchroon tbv het binnengemeentelijke koppelvlak BAG
-		
-		Versie 0101, wijzigingen vergeleken met 010002:
-		- namespace aangepast naar http://register.geostandaarden.nl/xmlschema/geobag/1.1
+		In versie 1.1.1 zijn er de volgende wijzigingen t.o.v. versie 1.1 doorgevoerd: 
+		- schemaLocation gewijzigd van geoBAG0100_msg.xsd naar geoBAG0101_msg.xsd
 	</documentation>
 	<types>
 		<xs:schema>
