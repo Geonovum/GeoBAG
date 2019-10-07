@@ -3,10 +3,7 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:StUF="http://www.egem.nl/StUF/StUF0301" xmlns:BG="http://www.egem.nl/StUF/sector/bg/0310" xmlns:geoBAG="http://register.geostandaarden.nl/xmlschema/geobag/1.1" targetNamespace="http://register.geostandaarden.nl/xmlschema/geobag/1.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1">
 	<annotation>
 		<documentation xml:lang="nl">
-			Vergeleken met versie 1.0.2 zijn de volgende wijzigingen doorgevoerd:
-			- 
-		
-		
+			
 		</documentation>
 	</annotation>
 	<import namespace="http://www.egem.nl/StUF/sector/bg/0310" schemaLocation="geoBAG0101_bg0310_msg.xsd"/>

@@ -3,9 +3,7 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:StUF="http://www.egem.nl/StUF/StUF0301" xmlns:BG="http://www.egem.nl/StUF/sector/bg/0310" targetNamespace="http://www.egem.nl/StUF/sector/bg/0310" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1">
 	<annotation>
 		<documentation>
-			Vergeleken met versie 1.0.2 zijn de volgende wijzigingen doorgevoerd:
-			- 
-			
+			In versie 1.1.1 zijn er de volgende wijzigingen t.o.v. versie 1.1 doorgevoerd: 
 		</documentation>
 	</annotation>
 	<import namespace="http://www.egem.nl/StUF/StUF0301" schemaLocation="geoBAG0101_stuf0301_msg.xsd"/>

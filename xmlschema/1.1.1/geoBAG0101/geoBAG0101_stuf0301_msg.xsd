@@ -3,8 +3,7 @@
 <schema xmlns:StUF="http://www.egem.nl/StUF/StUF0301" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.egem.nl/StUF/StUF0301" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1">
 	<annotation>
 		<documentation>
-			Vergeleken met versie 1.0.2 zijn de volgende wijzigingen doorgevoerd:
-			 -
+			In versie 1.1.1 zijn er geen wijzigingen t.o.v. versie 1.1 doorgevoerd: 
 		</documentation>
 	</annotation>
 	<include schemaLocation="../bg0310/entiteiten/bg0310_stuf_simpleTypes.xsd"/>

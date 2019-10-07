@@ -5,15 +5,12 @@
 	targetNamespace="http://www.egem.nl/StUF/sector/bg/0310" elementFormDefault="qualified"
 	attributeFormDefault="unqualified" version="1.1">
 	<annotation>
-		<documentation xml:lang="nl"> Vergeleken met versie 1.1 zijn de volgende wijzigingen doorgevoerd: 
-			- namespace wijzigt van geobag0100 naar geobag0101
-			- ***-geoBAG-basis en **-geoBAG-identificatie is niet langer als restriction base op BG0310 gedefinieerd.
-			- element versie toegevoegd aan LIG, OTR, OGO, STA, PND, VBO met type versie-BAG20 			
-			- DocumentNummering-BAG20 met restricion maxLength=40 toegevoegd en opgenomen in nieuw complexType Brondocument-BAG20 en toegevoegd als type aan element brondocument in de ***-geoBAG-basis complexTypes	
-			- BG:StatusPand is uitgebreid met twee BAG2.0 enumeraties en in union in nieuw simpletype StatusPand-geoBAG-BAG20 opgenomen als type van element status in complexType PND-geoBAG-basis 
-			- BG:StatusVerblijfobject is uitgebreid met twee BAG2.0 enumeraties en in union in nieuw simpletype StatusVerblijfsobject-geoBAG-BAG20 opgenomen als type van element aot.status in complexType VBO-geoBAG-basis  
-			- GeometrieVlakOfMultiVlak-geoBAG-BAG20 met choice tussen vlak of multivlak opgenomen als type van element geometrie in complexType WPL-geoBAG-basis
-			- in complexType -geoBAG-identificatie is de 'use' van attributen StUF:sleutelVerzendend en StUF:sleutelOntvangend gewijzigd naar resp. 'optional' en 'required' (#46)
+		<documentation xml:lang="nl"> In versie 1.1.1 zijn er de volgende wijzigingen t.o.v. versie 1.1 doorgevoerd: 
+			- bij complex type STA-geoBag-basis is attribuut sleutelOntvangend toegevoegd (#54)	
+			- bij complex type VBO-geoBAG-identificatie is sleutelOntvangend als verplicht attribuut toegevoegd (#55)
+			- bij complex type VBO-geoBAG-basis is attribuut sleutelVerzendend gewijzigd naar ‘verplicht’ en sleutelOntvangend naar ‘optioneel’ (#56)
+			- een nieuw complextype ‘PND-geoBAG-gerelateerde-identificatie’ toegevoegd met dezelfde kenmerken als ‘PND-geoBAG-identificatie’, echter zonder de attributen sleutelVerzendend en sleutelOntvangend. (#57)
+			- in complex type TGOPND-geoBAG-basis bij element ‘gerelateerde’ het type veranderd van ‘PND-geoBAG-identificatie’ naar ‘PND-geoBAG-gerelateerde-identificatie’. (#57)			
 		</documentation>
 	</annotation>
 	
