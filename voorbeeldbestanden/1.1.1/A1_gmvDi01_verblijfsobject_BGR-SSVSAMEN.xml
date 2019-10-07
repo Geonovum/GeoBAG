@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<geoBAG:gmlDi01 xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
+<geoBAG:gmvDi01 xmlns:StUF="http://www.egem.nl/StUF/StUF0301"
     xmlns:BG="http://www.egem.nl/StUF/sector/bg/0310"
     xmlns:gml="http://www.opengis.net/gml"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,15 +21,14 @@
             <StUF:applicatie>%applicatie%</StUF:applicatie>
             <StUF:administratie>%administratie%</StUF:administratie>
         </StUF:ontvanger>
-        <StUF:referentienummer>00000393</StUF:referentienummer>		
+        <StUF:referentienummer>00000389</StUF:referentienummer>		
         <StUF:tijdstipBericht>20181115123456</StUF:tijdstipBericht>
         <!--StUF:crossRefnummer-->
-        <StUF:functie>levering</StUF:functie>
+        <StUF:functie>verzoek</StUF:functie>
     </BG:stuurgegevens>
     <BG:parameters>
-        <BG:idLevering>956acc6ce5aa453494db3fb11503e31e</BG:idLevering>
-        <BG:idGerelateerdVerzoek>898313020f0042b798c0a761087ab2fb</BG:idGerelateerdVerzoek>
-        <BG:gebeurtenisCode codeSpace="http://www.geostandaarden.nl/geoBAG/def/1.0#Gebeurtenis">BGR-SSVSAMEN</BG:gebeurtenisCode>
+        <BG:idVerzoek>898313020f0042b798c0a761087ab2fb</BG:idVerzoek>
+        <BG:gebeurtenisCode codeSpace="http://www.geostandaarden.nl/geoBAG/def/1.0#Gebeurtenis">BGR-SSVSAMEN</BG:gebeurtenisCode>	
     </BG:parameters>
     <BG:verblijfsobject StUF:functie="entiteit" StUF:entiteittype="TGO" StUF:sleutelVerzendend="0363010012070312">
         <BG:identificatie>0363010012070312</BG:identificatie>
@@ -43,11 +42,11 @@
             <BG:gor.openbareRuimteNaam>Nassaukade</BG:gor.openbareRuimteNaam>
             <BG:aoa.postcode>1054AC</BG:aoa.postcode>
             <BG:aoa.huisnummer>377</BG:aoa.huisnummer>
-            <BG:aoa.huisletter StUF:noValue="geenWaarde" xsi:nil="true" />
-                <BG:aoa.huisnummertoevoeging StUF:noValue="geenWaarde" xsi:nil="true" />
+            <BG:aoa.huisletter StUF:noValue="geenWaarde" xsi:nil="true" ></BG:aoa.huisletter>
+                <BG:aoa.huisnummertoevoeging StUF:noValue="geenWaarde" xsi:nil="true" ></BG:aoa.huisnummertoevoeging>
         </BG:adresAanduidingGrp>
         <BG:gbo.puntGeometrie>
-            <gml:Point srsName="EPSG:28992"><gml:pos srsDimension="2">120347.728 486480.014</gml:pos></gml:Point>
+            <gml:Point srsName="EPSG:28992"><gml:pos srsDimension="2">120346.728 486481.014</gml:pos></gml:Point>
         </BG:gbo.puntGeometrie>
         <BG:aot.status>Verblijfsobject in gebruik (niet ingemeten)</BG:aot.status>
         <BG:aot.geconstateerd>N</BG:aot.geconstateerd>
@@ -60,10 +59,10 @@
             <StUF:eindGeldigheid StUF:noValue="geenWaarde" xsi:nil="true"></StUF:eindGeldigheid>
         </StUF:tijdvakGeldigheid>
         <BG:vbo.maaktDeelUitVan StUF:entiteittype="VBOPND">
-            <BG:gerelateerde StUF:entiteittype="PND">
+            <BG:gerelateerde StUF:entiteittype="PND" StUF:sleutelVerzendend="0363100012165188">
                 <BG:identificatie>0363100012165188</BG:identificatie>
                 <BG:versie>1</BG:versie>
             </BG:gerelateerde>
         </BG:vbo.maaktDeelUitVan>
     </BG:verblijfsobject>
-</geoBAG:gmlDi01>
+</geoBAG:gmvDi01>

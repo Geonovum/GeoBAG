@@ -8,7 +8,7 @@
     xmlns:smil20="http://www.w3.org/2001/SMIL20/"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language"
-    xsi:schemaLocation="http://register.geostandaarden.nl/xmlschema/geobag/1.1 geoBAG0101/geoBAG0101_msg.xsd">
+    xsi:schemaLocation="http://register.geostandaarden.nl/xmlschema/geobag/1.1 geoBAG0101/geoBAG0101_msg.xsd">>
     <BG:stuurgegevens>
         <StUF:berichtcode>Di01</StUF:berichtcode>
         <StUF:zender>

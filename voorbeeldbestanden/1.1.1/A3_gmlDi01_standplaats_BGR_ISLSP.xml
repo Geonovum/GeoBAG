@@ -27,43 +27,37 @@
         <StUF:functie>levering</StUF:functie>
     </BG:stuurgegevens>
     <BG:parameters>
-        <BG:idLevering>956acc6ce5aa453494db3fb11503e31e</BG:idLevering>
-        <BG:idGerelateerdVerzoek>898313020f0042b798c0a761087ab2fb</BG:idGerelateerdVerzoek>
-        <BG:gebeurtenisCode codeSpace="http://www.geostandaarden.nl/geoBAG/def/1.0#Gebeurtenis">BGR-SSVSAMEN</BG:gebeurtenisCode>
+        <BG:idLevering>b2a5cb75aaf34e98a32528b041c7ca1c</BG:idLevering>
+        <BG:idGerelateerdVerzoek>97116affc25e45dfb92956a9b6b4b504</BG:idGerelateerdVerzoek>
+        <BG:gebeurtenisCode codeSpace="http://www.geostandaarden.nl/geoBAG/def/1.0#Gebeurtenis">BGR-BSLSP</BG:gebeurtenisCode>
     </BG:parameters>
-    <BG:verblijfsobject StUF:functie="entiteit" StUF:entiteittype="TGO" StUF:sleutelVerzendend="0363010012070312">
-        <BG:identificatie>0363010012070312</BG:identificatie>
+    <BG:standplaats StUF:functie="entiteit" StUF:entiteittype="TGO" StUF:sleutelVerzendend="0363030011957705">
+        <BG:identificatie>0363030011957705</BG:identificatie>
         <BG:versie>1</BG:versie>
-        <BG:typering>Verblijfsobject</BG:typering>
+        <BG:typering>Standplaats</BG:typering>
         <BG:adresAanduidingGrp>
-            <BG:num.identificatie>0363200012070560</BG:num.identificatie>
+            <BG:num.identificatie>0363200012076686</BG:num.identificatie>
             <BG:wpl.identificatie>3594</BG:wpl.identificatie>
             <BG:wpl.woonplaatsNaam>Amsterdam</BG:wpl.woonplaatsNaam>
             <BG:opr.identificatie>0363300000003839</BG:opr.identificatie>
             <BG:gor.openbareRuimteNaam>Nassaukade</BG:gor.openbareRuimteNaam>
-            <BG:aoa.postcode>1054AC</BG:aoa.postcode>
-            <BG:aoa.huisnummer>377</BG:aoa.huisnummer>
+            <BG:aoa.postcode>1054AE</BG:aoa.postcode>
+            <BG:aoa.huisnummer>950</BG:aoa.huisnummer>
             <BG:aoa.huisletter StUF:noValue="geenWaarde" xsi:nil="true" />
                 <BG:aoa.huisnummertoevoeging StUF:noValue="geenWaarde" xsi:nil="true" />
         </BG:adresAanduidingGrp>
-        <BG:gbo.puntGeometrie>
-            <gml:Point srsName="EPSG:28992"><gml:pos srsDimension="2">120347.728 486480.014</gml:pos></gml:Point>
-        </BG:gbo.puntGeometrie>
-        <BG:aot.status>Verblijfsobject in gebruik (niet ingemeten)</BG:aot.status>
+        <BG:vlakGeometrie>
+            <gml:Polygon srsName="EPSG:28992"><gml:exterior><gml:LinearRing><gml:posList srsDimension="2">120378.576 486399.043 120378.624 486399.054 120383.097 486399.768 120383.486 486399.832 120382.846 486403.853 120382.39 486403.789 120377.937 486403.075 120378.576 486399.043</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>
+        </BG:vlakGeometrie>
+        <BG:aot.status>Plaats aangewezen</BG:aot.status>
         <BG:aot.geconstateerd>N</BG:aot.geconstateerd>
         <BG:brondocument StUF:metagegeven="true">
-            <BG:identificatie>SE00201301_OV00ML_plus_extra_karakters</BG:identificatie>
-            <BG:datum>20140324</BG:datum>
+            <BG:identificatie>SE13003139_plus_extra_karakters</BG:identificatie>
+            <BG:datum>20130308</BG:datum>
         </BG:brondocument>
         <StUF:tijdvakGeldigheid>
-            <StUF:beginGeldigheid>20140324</StUF:beginGeldigheid>
+            <StUF:beginGeldigheid>20130308</StUF:beginGeldigheid>
             <StUF:eindGeldigheid StUF:noValue="geenWaarde" xsi:nil="true"></StUF:eindGeldigheid>
         </StUF:tijdvakGeldigheid>
-        <BG:vbo.maaktDeelUitVan StUF:entiteittype="VBOPND">
-            <BG:gerelateerde StUF:entiteittype="PND">
-                <BG:identificatie>0363100012165188</BG:identificatie>
-                <BG:versie>1</BG:versie>
-            </BG:gerelateerde>
-        </BG:vbo.maaktDeelUitVan>
-    </BG:verblijfsobject>
+    </BG:standplaats>
 </geoBAG:gmlDi01>

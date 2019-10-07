@@ -21,28 +21,28 @@
             <StUF:applicatie>%applicatie%</StUF:applicatie>
             <StUF:administratie>%administratie%</StUF:administratie>
         </StUF:ontvanger>
-        <StUF:referentienummer>00000401</StUF:referentienummer>		
+        <StUF:referentienummer>00000393</StUF:referentienummer>		
         <StUF:tijdstipBericht>20181115123456</StUF:tijdstipBericht>
         <!--StUF:crossRefnummer-->
         <StUF:functie>levering</StUF:functie>
     </BG:stuurgegevens>
     <BG:parameters>
-        <BG:idLevering>85e0a4dab48f4b3ba6d4a53fa3550109</BG:idLevering>
-        <!--BG:idGerelateerdVerzoek-->
-        <BG:gebeurtenisCode codeSpace="http://www.geostandaarden.nl/geoBAG/def/1.0#Gebeurtenis">GEO-COG</BG:gebeurtenisCode>
+        <BG:idLevering>51535a9c8059425884a1e7df03206096</BG:idLevering>
+        <BG:idGerelateerdVerzoek>f4d866a77a994e2387cdb46b3fd09a8f</BG:idGerelateerdVerzoek>
+        <BG:gebeurtenisCode codeSpace="http://www.geostandaarden.nl/geoBAG/def/1.0#Gebeurtenis">BAG-VG</BG:gebeurtenisCode>
     </BG:parameters>
-    <BG:pand StUF:functie="entiteit" StUF:entiteittype="PND" StUF:sleutelVerzendend="e826d67db4f3425585f72e3e6c3fd52f">
-        <BG:identificatie StUF:noValue="geenWaarde" xsi:nil="true"/>
-        <BG:versie StUF:noValue="geenWaarde" xsi:nil="true"/>
-        <BG:geometrie><gml:Polygon srsName="EPSG:28992"><gml:exterior><gml:LinearRing><gml:posList srsDimension="2">120359.874 486434.147 120379.874 486434.147 120379.874 486454.147 120359.874 486454.147 120359.874 486434.147</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon></BG:geometrie>
-        <BG:status StUF:noValue="geenWaarde" xsi:nil="true"></BG:status>
-        <BG:geconstateerd StUF:noValue="geenWaarde" xsi:nil="true"></BG:geconstateerd>
+    <BG:pand StUF:functie="entiteit" StUF:entiteittype="PND" StUF:sleutelVerzendend="0363100012216872">
+        <BG:identificatie>0363100012216872</BG:identificatie>
+        <BG:versie>1</BG:versie>
+        <BG:geometrie><gml:Polygon srsName="EPSG:28992"><gml:exterior><gml:LinearRing><gml:posList srsDimension="2">120379.751 486459.084 120383.289 486459.56 120382.226 486467.233 120378.715 486466.757 120379.751 486459.084</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon></BG:geometrie>
+        <BG:status>Pand in gebruik</BG:status>
+        <BG:geconstateerd>N</BG:geconstateerd>
         <BG:brondocument StUF:metagegeven="true">
-            <BG:identificatie StUF:noValue="geenWaarde" xsi:nil="true"></BG:identificatie>
-            <BG:datum StUF:noValue="geenWaarde" xsi:nil="true"></BG:datum>
+            <BG:identificatie>SE13003160_NB02OR_plus_extra_karakters</BG:identificatie>
+            <BG:datum>20130312</BG:datum>
         </BG:brondocument>
         <StUF:tijdvakGeldigheid>
-            <StUF:beginGeldigheid StUF:noValue="geenWaarde" xsi:nil="true"></StUF:beginGeldigheid>
+            <StUF:beginGeldigheid>20130312</StUF:beginGeldigheid>
             <StUF:eindGeldigheid StUF:noValue="geenWaarde" xsi:nil="true"></StUF:eindGeldigheid>
         </StUF:tijdvakGeldigheid>
     </BG:pand>

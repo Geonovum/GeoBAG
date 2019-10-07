@@ -60,7 +60,7 @@
             <StUF:eindGeldigheid StUF:noValue="geenWaarde" xsi:nil="true"></StUF:eindGeldigheid>
         </StUF:tijdvakGeldigheid>
         <BG:vbo.maaktDeelUitVan StUF:entiteittype="VBOPND">
-            <BG:gerelateerde StUF:entiteittype="PND">
+            <BG:gerelateerde StUF:entiteittype="PND" StUF:sleutelVerzendend="0363100012165188">
                 <BG:identificatie>0363100012165188</BG:identificatie>
                 <BG:versie>1</BG:versie>
             </BG:gerelateerde>

@@ -34,8 +34,8 @@
         <BG:details>Verblijfsobject in levering is afgekeurd</BG:details>	
     </BG:parameters>
     <BG:verblijfsobject StUF:functie="entiteit" StUF:entiteittype="TGO" StUF:sleutelOntvangend="017430bdb02d48ebba2ac8c8d941010a">
-        <BG:identificatie StUF:noValue="geenWaarde" xsi:nil="true" ></BG:identificatie>
-        <BG:versie>1</BG:versie>
+        <BG:identificatie StUF:noValue="geenWaarde" xsi:nil="true" />
+        <BG:versie StUF:noValue="geenWaarde" xsi:nil="true"/>
         <BG:typering>Verblijfsobject</BG:typering>
     </BG:verblijfsobject>
 </geoBAG:foutDu01>

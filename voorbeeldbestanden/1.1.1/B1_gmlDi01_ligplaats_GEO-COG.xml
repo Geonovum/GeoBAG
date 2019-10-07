@@ -27,14 +27,14 @@
         <StUF:functie>levering</StUF:functie>
     </BG:stuurgegevens>
     <BG:parameters>
-        <BG:idLevering>54d2e44020904701bf8a9c02d5adefab</BG:idLevering>
+        <BG:idLevering>5e476d932b1f455aa8898831e117d428</BG:idLevering>
         <!--BG:idGerelateerdVerzoek-->
         <BG:gebeurtenisCode codeSpace="http://www.geostandaarden.nl/geoBAG/def/1.0#Gebeurtenis">GEO-COG</BG:gebeurtenisCode>
     </BG:parameters>
-    <BG:verblijfsobject StUF:functie="entiteit" StUF:entiteittype="TGO" StUF:sleutelVerzendend="017430bdb02d48ebba2ac8c8d941010a">
+    <BG:ligplaats StUF:functie="entiteit" StUF:entiteittype="TGO" StUF:sleutelVerzendend="c86f7c36959d41bcb2fc2bda435521df">
         <BG:identificatie StUF:noValue="geenWaarde" xsi:nil="true"></BG:identificatie>
         <BG:versie StUF:noValue="geenWaarde" xsi:nil="true"></BG:versie>
-        <BG:typering>Verblijfsobject</BG:typering>
+        <BG:typering>Ligplaats</BG:typering>
         <BG:adresAanduidingGrp>
             <BG:num.identificatie StUF:noValue="geenWaarde" xsi:nil="true"></BG:num.identificatie>
             <BG:wpl.identificatie StUF:noValue="geenWaarde" xsi:nil="true"></BG:wpl.identificatie>
@@ -46,9 +46,9 @@
             <BG:aoa.huisletter StUF:noValue="geenWaarde" xsi:nil="true"></BG:aoa.huisletter>
             <BG:aoa.huisnummertoevoeging StUF:noValue="geenWaarde" xsi:nil="true"></BG:aoa.huisnummertoevoeging>
         </BG:adresAanduidingGrp>
-        <BG:gbo.puntGeometrie>
-            <gml:Point srsName="EPSG:28992"><gml:pos srsDimension="2">120368.123 486428.851</gml:pos></gml:Point>
-        </BG:gbo.puntGeometrie>
+        <BG:vlakGeometrie>
+            <gml:Polygon srsName="EPSG:28992"><gml:exterior><gml:LinearRing><gml:posList srsDimension="2">120379.382 486428.361 120399.382 486428.361 120399.382 486448.361 120379.382 486448.361 120379.382 486428.361</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>
+        </BG:vlakGeometrie>
         <BG:aot.status StUF:noValue="geenWaarde" xsi:nil="true"></BG:aot.status>
         <BG:aot.geconstateerd StUF:noValue="geenWaarde" xsi:nil="true"></BG:aot.geconstateerd>
         <BG:brondocument StUF:metagegeven="true">
@@ -59,6 +59,5 @@
             <StUF:beginGeldigheid StUF:noValue="geenWaarde" xsi:nil="true"></StUF:beginGeldigheid>
             <StUF:eindGeldigheid StUF:noValue="geenWaarde" xsi:nil="true"></StUF:eindGeldigheid>
         </StUF:tijdvakGeldigheid>
-        <BG:vbo.maaktDeelUitVan StUF:entiteittype="VBOPND" StUF:noValue="geenWaarde" xsi:nil="true"></BG:vbo.maaktDeelUitVan>
-    </BG:verblijfsobject>
+    </BG:ligplaats>
 </geoBAG:gmlDi01>

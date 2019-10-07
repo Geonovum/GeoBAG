@@ -27,14 +27,14 @@
         <StUF:functie>levering</StUF:functie>
     </BG:stuurgegevens>
     <BG:parameters>
-        <BG:idLevering>54d2e44020904701bf8a9c02d5adefab</BG:idLevering>
+        <BG:idLevering>876452b12fc14cdb93226dc18bf5ca5a</BG:idLevering>
         <!--BG:idGerelateerdVerzoek-->
         <BG:gebeurtenisCode codeSpace="http://www.geostandaarden.nl/geoBAG/def/1.0#Gebeurtenis">GEO-COG</BG:gebeurtenisCode>
     </BG:parameters>
-    <BG:verblijfsobject StUF:functie="entiteit" StUF:entiteittype="TGO" StUF:sleutelVerzendend="017430bdb02d48ebba2ac8c8d941010a">
-        <BG:identificatie StUF:noValue="geenWaarde" xsi:nil="true"></BG:identificatie>
-        <BG:versie StUF:noValue="geenWaarde" xsi:nil="true"></BG:versie>
-        <BG:typering>Verblijfsobject</BG:typering>
+    <BG:standplaats StUF:functie="entiteit" StUF:entiteittype="TGO" StUF:sleutelVerzendend="d187c98772614d43a8c0c7f4ad46a55a">
+        <BG:identificatie StUF:noValue="geenWaarde" xsi:nil="true"/>
+        <BG:versie StUF:noValue="geenWaarde" xsi:nil="true"/>      
+        <BG:typering>Standplaats</BG:typering>
         <BG:adresAanduidingGrp>
             <BG:num.identificatie StUF:noValue="geenWaarde" xsi:nil="true"></BG:num.identificatie>
             <BG:wpl.identificatie StUF:noValue="geenWaarde" xsi:nil="true"></BG:wpl.identificatie>
@@ -46,9 +46,9 @@
             <BG:aoa.huisletter StUF:noValue="geenWaarde" xsi:nil="true"></BG:aoa.huisletter>
             <BG:aoa.huisnummertoevoeging StUF:noValue="geenWaarde" xsi:nil="true"></BG:aoa.huisnummertoevoeging>
         </BG:adresAanduidingGrp>
-        <BG:gbo.puntGeometrie>
-            <gml:Point srsName="EPSG:28992"><gml:pos srsDimension="2">120368.123 486428.851</gml:pos></gml:Point>
-        </BG:gbo.puntGeometrie>
+        <BG:vlakGeometrie>
+            <gml:Polygon srsName="EPSG:28992"><gml:exterior><gml:LinearRing><gml:posList srsDimension="2">120369.331 486401.824 120389.331 486401.824 120389.331 486421.824 120369.331 486421.824 120369.331 486401.824</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>
+        </BG:vlakGeometrie>
         <BG:aot.status StUF:noValue="geenWaarde" xsi:nil="true"></BG:aot.status>
         <BG:aot.geconstateerd StUF:noValue="geenWaarde" xsi:nil="true"></BG:aot.geconstateerd>
         <BG:brondocument StUF:metagegeven="true">
@@ -59,6 +59,5 @@
             <StUF:beginGeldigheid StUF:noValue="geenWaarde" xsi:nil="true"></StUF:beginGeldigheid>
             <StUF:eindGeldigheid StUF:noValue="geenWaarde" xsi:nil="true"></StUF:eindGeldigheid>
         </StUF:tijdvakGeldigheid>
-        <BG:vbo.maaktDeelUitVan StUF:entiteittype="VBOPND" StUF:noValue="geenWaarde" xsi:nil="true"></BG:vbo.maaktDeelUitVan>
-    </BG:verblijfsobject>
+    </BG:standplaats>
 </geoBAG:gmlDi01>
