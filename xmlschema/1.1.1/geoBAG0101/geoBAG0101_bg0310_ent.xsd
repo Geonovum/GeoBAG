@@ -369,6 +369,19 @@
 		<attribute ref="StUF:scope" use="prohibited"/>
 		<attribute ref="StUF:verwerkingssoort" use="prohibited"/>
 	</complexType>
+	<complexType name="PND-geoBAG-gerelateerde-identificatie">
+		<sequence>
+			<element name="identificatie" type="BG:ObjectNummering-e" nillable="true"/>
+			<element name="versie" type="BG:versie-BAG20-e" nillable="true"
+			/>
+		</sequence>
+		<attribute ref="StUF:entiteittype" use="required" fixed="PND"/>
+		<attribute ref="StUF:sleutelSynchronisatie" use="prohibited"/>
+		<attribute ref="StUF:noValue" use="prohibited"/>
+		<attribute ref="StUF:scope" use="prohibited"/>
+		<attribute ref="StUF:verwerkingssoort" use="prohibited"/>
+	</complexType>
+	
 	<complexType name="VBO-geoBAG-identificatie">
 		<sequence>
 			<element name="identificatie" type="BG:ObjectNummering-e" nillable="true"/>
@@ -386,7 +399,7 @@
 
 	<complexType name="TGOPND-geoBAG-basis">
 		<sequence>
-			<element name="gerelateerde" type="BG:PND-geoBAG-identificatie" nillable="true"/>
+			<element name="gerelateerde" type="BG:PND-geoBAG-gerelateerde-identificatie" nillable="true"/>
 		</sequence>
 		<attribute ref="StUF:noValue" use="optional"/>
 		<attribute ref="StUF:entiteittype" use="required" fixed="VBOPND"/>
@@ -396,6 +409,7 @@
 		<attribute ref="StUF:aantalVoorkomens" use="prohibited"/>
 		<attribute ref="StUF:aardAantal" use="prohibited"/>
 	</complexType>
+	
 
 	<complexType name="WPL-geoBAG-basis">
 		<sequence>

@@ -39,3 +39,13 @@ sleutelVerzendend gewijzigd naar ‘verplicht’ en sleutelOntvangend naar
 
 \<attribute ref="StUF:sleutelVerzendend" use="required"/\>  
 \<attribute ref="StUF:sleutelOntvangend" use="optional" /\>
+
+[\#57](https://github.com/Geonovum/GeoBAG/issues/57) Opnemen apart complex type
+voor relaties en goed/afkeuringsberichten
+
+In geoBAG0101
+
+Aan TGOPND-geoBAG-basis is type veranderd van PND-geoBAG-identificatie naar
+PND-geoBAG-gerelateerde-identificatie, waarbij nieuw complextype
+PND-geoBAG-gerelateerde-identificatie zonder de attributen sleutelVerzendend en
+sleutelOntvangend.
