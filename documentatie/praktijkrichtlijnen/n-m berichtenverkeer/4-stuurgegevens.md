@@ -4,7 +4,9 @@ Stuurgegevens
 Voor de unieke adressering van berichten wordt afgesproken dat elke Geo- en
 BAG-applicatie in de adressering van de berichten tenminste de combinatie van
 \<organisatie\>, \<applicatie\>, en \<administratie\> in de StUF:stuurgegevens
-van ontvanger en zender opneemt, en wel als volgt.
+van ontvanger en zender opneemt.
+
+De volgende uitgangspunten gelden voor de stuurgegevens van BAG-applicatie:
 
 -   \<organisatie\> code of naam van de organisatie die de Geo of BAG-applicatie
     beheert.
@@ -15,7 +17,7 @@ van ontvanger en zender opneemt, en wel als volgt.
     waarbinnen het (geconstateerde) object ligt conform de gemeentegrens van de
     BAG
 
->   De \<organisatie\> mag/kan gelijk zijn aan \<administratie\>.
+-   De \<organisatie\> mag/kan gelijk zijn aan \<administratie\>.
 
 De volgende uitgangspunten gelden voor de stuurgegevens van de Geo-applicatie:
 
