@@ -18,8 +18,8 @@ Bij 1 Geo en meerdere BAG-applicaties:
     zodanig dat de levering naar de juiste ontvangende organisatie wordt
     gestuurd.
 
-Geo vult de *stuurgegevens* als volgt in: \<organisatie\> is gemeentecode,
-\<applicatie\> is naam BAG-applicatie, en \<administratie\> de uitfiltering
+Geo vult de *stuurgegevens* als volgt in: &lt;organisatie&gt; is gemeentecode,
+&lt;applicatie&gt; is naam BAG-applicatie, en &lt;administratie&gt; de uitfiltering
 verkregen gemeentecode bij meerdere BAG-administraties[^1].
 
 [^1]: immers de exacte BAG-administratie kan Geo niet bepalen
@@ -27,7 +27,7 @@ verkregen gemeentecode bij meerdere BAG-administraties[^1].
 Bij 1 BAG-applicatie en meerdere Geo-applicaties:
 
 -   Als er 1 Geo-applicatie voor een gemeente is, dan filtert BAG op
-    gemeentecode om de naam van de BGT-administratie te bepalen.
+    gemeentecode om de juiste set stuurgegevens van Geo te bepalen.
 
 De stuurgegevens voor de ontvangende Geo-applicatie worden door de Geo
 applicatie bepaald want dit zijn dezelfde stuurgegevens als worden toegepast in

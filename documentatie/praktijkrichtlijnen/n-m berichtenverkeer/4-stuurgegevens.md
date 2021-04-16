@@ -3,21 +3,21 @@ Stuurgegevens
 
 Voor de unieke adressering van berichten wordt afgesproken dat elke Geo- en
 BAG-applicatie in de adressering van de berichten tenminste de combinatie van
-\<organisatie\>, \<applicatie\>, en \<administratie\> in de StUF:stuurgegevens
+&lt;organisatie&gt;, &lt;applicatie&gt;, en &lt;administratie&gt; in de StUF:stuurgegevens
 van ontvanger en zender opneemt.
 
 De volgende uitgangspunten gelden voor de stuurgegevens van BAG-applicatie:
 
--   \<organisatie\> code of naam van de organisatie die de Geo of BAG-applicatie
+-   &lt;organisatie&gt; code of naam van de organisatie die de BAG-applicatie
     beheert.
 
--   \<applicatie\> Unieke aanduiding van de applicatie
+-   &lt;applicatie&gt; Unieke aanduiding van de applicatie
 
--   \<administratie\> de code of naam van de administratie van de gemeente
+-   &lt;administratie&gt; de code of naam van de administratie van de gemeente
     waarbinnen het (geconstateerde) object ligt conform de gemeentegrens van de
     BAG
 
--   De \<organisatie\> mag/kan gelijk zijn aan \<administratie\>.
+-   De &lt;organisatie&gt; mag/kan gelijk zijn aan &lt;administratie&gt;.
 
 De volgende uitgangspunten gelden voor de stuurgegevens van de Geo-applicatie:
 
@@ -27,7 +27,7 @@ De volgende uitgangspunten gelden voor de stuurgegevens van de Geo-applicatie:
 -   In het BGT berichtenverkeer geldt dat één organisatie één BGT administratie
     heeft; voor het Geo-BAG berichtenverkeer geldt dit ook.
 
--   Het stuurgegeven \<organisatie\> is gelijk aan de bronhoudercode.
+-   Het stuurgegeven &lt;organisatie&gt; is gelijk aan de bronhoudercode.
 
 -   Onder een samenwerkingsverband kunnen meerdere organisaties (=bronhouders)
     vallen, echter de naam of code van het samenwerkingsverband wordt niet
