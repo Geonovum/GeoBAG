@@ -11,7 +11,7 @@ vervangen door
 
 
 - in Hoofdstuk 5 Scenario's is de tekst 
-*'De stuurgegevens voor de ontvangende Geo-applicatie worden door de Geo applicatie bepaald want dit zijn dezelfde stuurgegevens als worden toegepast in het berichtenverkeer met SVB-BGT. De BAG applicatie zorgt er voor dat per gemeentecode in de BAG, de juiste unieke set Geo-stuurgegevens worden ingevuld.'*
+*'De stuurgegevens voor de ontvangende Geo-applicatie worden als volgt door BAG bepaald/ingevuld: in <organisatie> de organisatie waar de applicatie staat, in <applicatie> de naam van de Geo-applicatie, in <administratie> de code van de gemeente van de BGT-administratie.'*
 vervangen door
 *'De stuurgegevens voor de ontvangende Geo-applicatie worden door de Geo applicatie bepaald want dit zijn dezelfde stuurgegevens als worden toegepast in het berichtenverkeer met SVB-BGT. De BAG applicatie zorgt er voor dat per gemeentecode in de BAG, de juiste unieke set Geo-stuurgegevens worden ingevuld.'*.
 
