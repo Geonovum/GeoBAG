@@ -1,9 +1,9 @@
 var respecConfig = {
+  title: "Geo-BAG berichtenverkeer",
+
   specStatus: "DEF",
   specType: "ST",
-  title: "Geo-BAG berichtenverkeer",
   publishVersion: "1.1.1",
-  //canonicalURI: "WV",
   editors: [
     {
       name: "Arnoud de Boer",
@@ -14,18 +14,12 @@ var respecConfig = {
     }  
   ],
   shortName: "berichtenverkeer",
-  pubDomain: "geobag", 
-  previousURI: "https://docs.geostandaarden.nl/geobag/def-st-berichtenverkeer-20171110/",
-  github: "https://github.com/Geonovum/geobag",
-  previousPublishDate: "2017-08-01",
-  previousStatus: "DEF",
-  //localBiblio: {
-  //  "ISO19136": {
-  //    "href": "https://www.iso.org/standard/32554.html",
-  //    "title": "ISO 19136:2007 Geographic information -- Geography Markup Language (GML)",
-  //    "authors": [""],
-  //    "date": "September 2007",
-  //    "publisher": "International Organization for Standardization",
-  //  },
-  //},
+  pubDomain: "geobag",
+  publishDate: "2026-02-09",
+   
+  //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beide aan/uit! 
+  previousPublishDate: "2019-07-25",
+  previousMaturity: "DEF",
+
+  github: "https://github.com/Geonovum/geobag"
 };
