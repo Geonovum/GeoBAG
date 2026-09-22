@@ -1,0 +1,4212 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 37.2.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel .marker.cddl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+    
+    
+<title>Geo-BAG berichtenverkeer 1.1.1</title>
+    
+<link rel="shortcut icon" type="image/x-icon" href="https://docs.geostandaarden.nl/media/Geonovum.ico">
+    
+<link rel="stylesheet" type="text/css" href="media/style.css">    
+    
+    
+    
+    
+    
+
+    
+    
+    
+  
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+@media (prefers-color-scheme:dark){
+#references :target{background:color-mix(in srgb, #eaf3ff 15%, transparent)}
+}
+body:has(input[name=color-scheme][value=dark]:checked) #references :target{background:color-mix(in srgb, #eaf3ff 15%, transparent)}
+cite .bibref{font-style:italic}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2):has(+a.self-link){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+body:has(input[name=color-scheme][value=light]:checked),head:not(:has(meta[name=color-scheme][content~=dark]))+body{color-scheme:light}
+body:has(input[name=color-scheme][value=dark]:checked){color-scheme:dark}
+</style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px;background:0 0}
+</style>
+<meta name="color-scheme" content="light">
+<meta name="description" content="Deze standaard beschrijft de uitwisseling van BGT|IMGeo gegevens tussen een Geo en BAG-afdeling in een organisatie (gemeente). Dit document beschrijft het Geo-BAG berichtenverkeer en de StUF-Geo BAG berichten in dit berichtenverkeer Op deze twee documenten is de technische implementatie in de vorm van berichtenschema’s (XSD’s) en servicebeschrijvingen (WSDL’s) gebaseerd. De inhoud van de berichten wordt bepaald door de BAG berichtencatalogus en RSGB.">
+<style>
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #045D9F;
+  }
+</style>
+<script type="text/javascript">
+   /* Any custom mermaid.js scripts will go here. */
+  </script>
+<style>
+
+  /* Any custom mermaid.js scripts will go here. */
+  
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "nl_organisationName": "Geonovum",
+  "nl_organisationStylesURL": "https://tools.geostandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://docs.geostandaarden.nl/",
+  "logos": [
+    {
+      "src": "https://docs.geostandaarden.nl/media/Geonovum.svg",
+      "alt": "Geonovum",
+      "id": "Geonovum",
+      "height": 67,
+      "width": 132,
+      "url": "https://www.geonovum.nl/geo-standaarden"
+    }
+  ],
+  "postProcess": [
+    null,
+    null
+  ],
+  "latestVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/"
+  ],
+  "thisVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "specStatus",
+    "-",
+    "specType",
+    "-",
+    "shortName",
+    "-",
+    "publishDate"
+  ],
+  "prevVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "previousMaturity",
+    "-",
+    "specType",
+    "-",
+    "shortName",
+    "-",
+    "previousPublishDate"
+  ],
+  "useLogo": true,
+  "useLabel": true,
+  "license": "cc-by",
+  "addSectionLinks": true,
+  "localizationStrings": {
+    "en": {
+      "wv": "Editor's draft",
+      "cv": "Candidate recommendation",
+      "vv": "Proposed recommendation",
+      "def": "Recommendation",
+      "ld": "Living document",
+      "basis": "Document",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Practical guideline",
+      "hr": "Guide",
+      "wa": "Work process agreement",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "ld": "Levend document",
+      "basis": "Document",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.",
+      "cv": "Dit is een consultatieversie.",
+      "vv": "Dit is de definitieve conceptversie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiële status.",
+      "ld": "Dit is een levend document dat regelmatig gewijzigd wordt."
+    },
+    "en": {
+      "sotd": "Status of this document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a working draft that can be changed, removed or replaced by other documents at any time. It is not a stable document.",
+      "cv": "This is a stable draft, published for public comment.",
+      "vv": "This is the final draft of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing.",
+      "ld": "This is a living document, which is updated regularly."
+    }
+  },
+  "labelColor": {
+    "def": "#045D9F",
+    "wv": "#FF0000",
+    "cv": "#045D9F",
+    "vv": "#045D9F",
+    "basis": "#80CC28",
+    "ld": "#80CC28"
+  },
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "https://docs.geostandaarden.nl/media/CC-Licentie.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "https://docs.geostandaarden.nl/media/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "https://docs.geostandaarden.nl/media/cc-by-nd.svg"
+    }
+  },
+  "localBiblio": {
+    "SemVer": {
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0",
+      "authors": [
+        "T. Preston-Werner"
+      ],
+      "date": "June 2013"
+    },
+    "MIM12": {
+      "id": "MIM12",
+      "title": "MIM - Metamodel Informatie Modellering (Versie 1.2)",
+      "href": "https://docs.geostandaarden.nl/mim/def-st-mim-20240613/",
+      "status": "Definitief",
+      "publisher": "Geonovum",
+      "date": "2024-06-13"
+    },
+    "3DTILES": {
+      "title": "3D Tiles Specification 1.0",
+      "href": "http://docs.opengeospatial.org/cs/18-053r2/18-053r2.html",
+      "status": "Approved for public release",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Patrick Cozzi",
+        "Sean Lilley",
+        "Gabby Getz"
+      ],
+      "date": "2019-01-31",
+      "id": "3DTILES"
+    },
+    "adr-mod-geo": {
+      "title": "API Design rules Module: Geospatial",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/",
+      "status": "Consultatieversie",
+      "publisher": "Geonovum",
+      "editors": [
+        "Linda van den Brink"
+      ],
+      "authors": [
+        "Pieter Bresters",
+        "Linda van den Brink",
+        "Paul van Genuchten",
+        "George Mathijssen",
+        "Mark Strijker"
+      ],
+      "date": "2022-09-30",
+      "id": "adr-mod-geo"
+    },
+    "CIS10": {
+      "title": "ISO 19123-2:2018 Geographic information — Schema for coverage geometry and functions — Part 2: Coverage implementation schema",
+      "href": "https://www.iso.org/standard/70948.html",
+      "status": "Published",
+      "publisher": "ISD",
+      "date": "2018-10-01",
+      "id": "CIS10"
+    },
+    "CityGML2": {
+      "title": "OGC City Geography Markup Language (CityGML) Encoding Standard",
+      "href": "https://portal.ogc.org/files/?artifact_id=47842",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Gerhard Gröger",
+        "Thomas H. Kolbe",
+        "Claus Nagel",
+        "Karl-Heinz Häfele"
+      ],
+      "date": "2012-04-04",
+      "id": "CityGML2"
+    },
+    "CityGML3": {
+      "title": "OGC City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard v3.0",
+      "href": "https://docs.ogc.org/is/20-010/20-010.html",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Thomas H. Kolbe",
+        "Tatjana Kutzner",
+        "Carl Stephen Smyth",
+        "Claus Nagel",
+        "Carsten Roensdorf",
+        "Charles Heazel"
+      ],
+      "date": "2021-09-13",
+      "id": "CityGML3"
+    },
+    "CityJSON": {
+      "title": "CityJSON Community Standard 1.0",
+      "href": "https://docs.ogc.org/cs/20-072r2/20-072r2.html",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Hugo Ledoux"
+      ],
+      "date": "2021-08-13",
+      "id": "CityJSON"
+    },
+    "COVJSON": {
+      "title": "OGC CoverageJSON Community Standard 1.0-draft_0.2.2",
+      "href": "https://portal.ogc.org/files/102051",
+      "status": "Draft",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Chris Little",
+        "Jon Blower",
+        "Maik Riechert"
+      ],
+      "id": "COVJSON"
+    },
+    "CSW2APISO": {
+      "title": "OpenGIS Catalogue Services Specification 2.0.2 - ISO Metadata Application Profile",
+      "href": "http://portal.opengeospatial.org/files/?artifact_id=21460",
+      "status": [
+        "Adopted specification"
+      ],
+      "publisher": "Open Geospatial Consortium",
+      "id": "CSW2APISO"
+    },
+    "CSWISOAP": {
+      "title": "OGC 07-045r2: OGC Catalogue Services Specification 2.0.2 - ISO Metadata Application Profile: Corrigendum, version 1.0.2",
+      "href": "https://portal.ogc.org/files/80534",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Uwe Voges",
+        "Kristian Senkler"
+      ],
+      "date": "2020-11-19",
+      "id": "CSWISOAP"
+    },
+    "DCAT-AP-2.1.1": {
+      "title": "DCAT Application Profile for data portals in Europe 2.1.1",
+      "href": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/releases",
+      "publisher": "European Commission",
+      "date": "2022-06-24",
+      "id": "DCAT-AP-2.1.1"
+    },
+    "epsg": {
+      "title": "EPSG Geodetic Parameter Dataset",
+      "href": "https://epsg.org/home.html",
+      "status": "Published",
+      "publisher": "Geodesy Subcommittee of the IOGP Geomatics Committee",
+      "id": "epsg"
+    },
+    "FE20": {
+      "title": "OGC 09-026r2: OGC Filter Encoding 2.0 Encoding Standard - With Corrigendum, Version 2.0.3",
+      "href": "http://docs.opengeospatial.org/is/09-026r2/09-026r2.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": "Panagiotis (Peter) A. Vretanos",
+      "date": "2014-08-18",
+      "id": "FE20"
+    },
+    "GeoPackage": {
+      "title": "OGC GeoPackage Encoding Standard - with Corrigendum, v1.3.1",
+      "href": "https://www.geopackage.org/spec131/",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Jeff Yutzler"
+      ],
+      "date": "2021-11-16",
+      "id": "GeoPackage"
+    },
+    "GEOSPARQL11": {
+      "title": "OGC GeoSPARQL - A Geographic Query Language for RDF Data",
+      "href": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html",
+      "status": "Draft",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Nicholas J. Car",
+        "Timo Homburg",
+        "Matthew Perry",
+        "John Herring",
+        "Frans Knibbe",
+        "Simon J.D. Cox",
+        "Joseph Abhayaratna",
+        "Mathias Bonduel"
+      ],
+      "date": "2022",
+      "id": "GEOSPARQL11"
+    },
+    "GeoTIFF": {
+      "title": "OGC GeoTIFF standard v1.1",
+      "href": "http://docs.opengeospatial.org/is/19-008r4/19-008r4.html",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Emmanuel Devys",
+        "Ted Habermann",
+        "Chuck Heazel",
+        "Roger Lott",
+        "Even Rouault"
+      ],
+      "date": "2019-09-14",
+      "id": "GeoTIFF"
+    },
+    "GIMEG": {
+      "href": "https://docs.geostandaarden.nl/nen3610/gimeg",
+      "publisher": "Geonovum",
+      "status": "Vastgesteld",
+      "authors": [
+        "Linda van den Brink",
+        "Paul Janssen",
+        "Wilko Quak"
+      ],
+      "title": "Geometrie in model en GML",
+      "date": "2021-03-26",
+      "id": "GIMEG"
+    },
+    "GML31": {
+      "title": "OpenGIS® Geography Markup Language (GML) Implementation Specification, v3.1.1",
+      "href": "https://portal.ogc.org/files/?artifact_id=4700",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Simon Cox",
+        "Paul Daisey",
+        "Ron Lake",
+        "Clemens Portele",
+        "Arliss Whiteside"
+      ],
+      "date": "2004-02-07",
+      "id": "GML31"
+    },
+    "GML33": {
+      "title": "OGC® Geography Markup Language (GML) — Extended schemas and encoding rules, v3.3",
+      "href": "https://portal.ogc.org/files/?artifact_id=46568",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Clemens Portele"
+      ],
+      "date": "2012-02-07",
+      "id": "GML33"
+    },
+    "GMLJPEG2000": {
+      "title": "OGC® GML in JPEG 2000 (GMLJP2) Encoding Standard Part 1: Core v.2.1",
+      "href": "http://docs.opengeospatial.org/is/08-085r8/08-085r8.html",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Lucio Colaiacomo",
+        "Joan Masó",
+        "Emmanuel Devys",
+        "Eric Hirschorn"
+      ],
+      "date": "2018-08-27",
+      "id": "GMLJPEG2000"
+    },
+    "GMLSF": {
+      "title": "Geography Markup Language (GML) simple features profile (with Corrigendum) (2.0)",
+      "href": "https://portal.ogc.org/files/?artifact_id=42729",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Linda van den Brink",
+        "Clemens Portele",
+        "Panagiotis (Peter) A. Vretanos"
+      ],
+      "date": "2012-04-05",
+      "id": "GMLSF"
+    },
+    "HDF5": {
+      "title": "OGC Hierarchical Data Format Version 5 (HDF5®) Core Standard",
+      "href": "http://docs.opengeospatial.org/is/18-043r3/18-043r3.html",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Aleksandar Jelenak",
+        "Ted Habermann",
+        "Gerd Heber"
+      ],
+      "date": "2019-03-27",
+      "id": "HDF5"
+    },
+    "HDFEOS": {
+      "title": "HDF-EOS5 Data Model, File Format and Library (v1.1)",
+      "href": "https://www.earthdata.nasa.gov/sites/default/files/imported/ESDS-RFC-008-v1.1.pdf",
+      "status": "Recommended",
+      "publisher": "NASA",
+      "editors": [
+        "Larry Klein",
+        "Abe Taaheri"
+      ],
+      "date": "2016-05-01",
+      "id": "HDFEOS"
+    },
+    "HRCRS": {
+      "title": "Handreiking Gebruik coördinaatreferentiesystemen bij uitwisseling en visualisatie van geo-informatie",
+      "href": "https://docs.geostandaarden.nl/crs/crs/",
+      "status": "Definitief",
+      "publisher": "Geonovum",
+      "editors": [
+        "Friso Penninga",
+        "Lennard Huisman"
+      ],
+      "date": "2022-03-14",
+      "id": "HRCRS"
+    },
+    "HRLFG": {
+      "title": "Geometrie in uitwisselingsformaten",
+      "href": "https://docs.geostandaarden.nl/g4w/geox/#inleiding",
+      "status": "Definitief",
+      "publisher": "Geonovum",
+      "editors": [
+        "Linda van den Brink",
+        "Gabriella Wiersma"
+      ],
+      "date": "2022-02-04",
+      "id": "HRLFG"
+    },
+    "HRTOEG": {
+      "title": "Handreiking digitaal toegankelijk locatiedata",
+      "href": "https://docs.geostandaarden.nl/visu/toeg/",
+      "status": "Vastgesteld",
+      "publisher": "Geonovum",
+      "editors": [
+        "Edward Mac Gillavry",
+        "Sjors Slaats",
+        "Theo OVerduin",
+        "Thijs Brentjens",
+        "Victor Zuydweg"
+      ],
+      "date": "2021-08-02",
+      "id": "HRTOEG"
+    },
+    "HRWC": {
+      "title": "Handreiking webcartografie",
+      "href": "https://www.geonovum.nl/uploads/standards/downloads/handreiking%20webcartografie%201.0.1_0.pdf",
+      "status": "Definitief",
+      "publisher": "Geonovum",
+      "date": "2010-11-18",
+      "id": "HRWC"
+    },
+    "I3S": {
+      "title": "OGC Indexed 3d Scene Layer (I3S) and Scene Layer Package (*.slpk) Format Community Standard Version 1.2",
+      "href": "http://docs.opengeospatial.org/cs/17-014r8/17-014r8.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Carl Reed",
+        "Tamrat Belayneh"
+      ],
+      "date": "2021-05-11",
+      "id": "I3S"
+    },
+    "IMMetingen": {
+      "title": "Informatiemodel Metingen",
+      "href": "https://www.sikb.nl/datastandaarden/richtlijnen/sikb0101",
+      "status": "Vastgesteld",
+      "publisher": "SIKB en IHW",
+      "id": "IMMetingen"
+    },
+    "INSGPGeopackage": {
+      "title": "GeoPackage encoding of INSPIRE datasets. INSPIRE good practise",
+      "href": "https://inspire.ec.europa.eu/good-practice/geopackage-encoding-inspire-datasets",
+      "status": "Candidate",
+      "publisher": "INSPIRE",
+      "id": "INSGPGeopackage"
+    },
+    "INSGPOAPIF": {
+      "title": "OGC API - Features as an INSPIRE download service",
+      "href": "https://inspire.ec.europa.eu/good-practice/ogc-api-%E2%80%93-features-inspire-download-service",
+      "status": "Endorsed Good Practice",
+      "publisher": "IOC TF",
+      "id": "INSGPOAPIF"
+    },
+    "INSGPSTA": {
+      "title": "OGC SensorThings API as an INSPIRE download service",
+      "href": "https://inspire.ec.europa.eu/good-practice/ogc-sensorthings-api-inspire-download-service",
+      "status": "Endorsed good practice",
+      "publisher": "INSPIRE Maintenance and Implementation Group (MIG)",
+      "id": "INSGPSTA"
+    },
+    "inspire-19115-19119": {
+      "title": "INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119",
+      "href": "http://inspire.ec.europa.eu/documents/Metadata/INSPIRE_MD_IR_and_ISO_v1_2_20100616.pdf",
+      "authors": [
+        "Drafting Team Metadata and European Commission Joint Research Centre"
+      ],
+      "publisher": "European Commission Joint Research Centre",
+      "date": "2007-10-26",
+      "id": "inspire-19115-19119"
+    },
+    "inspire-cirmd": {
+      "title": "Corrigendum to INSPIRE Metadata Regulation",
+      "href": "https://eur-lex.europa.eu/legal-content/NL/TXT/PDF/?uri=CELEX:32008R1205R(02)&from=EN",
+      "authors": [
+        "Drafting Team Metadata and European Commission Joint Research Centre"
+      ],
+      "publisher": "European Commission Joint Research Centre",
+      "date": "2010-01-15",
+      "id": "inspire-cirmd"
+    },
+    "inspire-crs": {
+      "title": "INSPIRE Data Specification on Coordinate Reference Systems - Technical Guidelines",
+      "href": "https://inspire.ec.europa.eu/id/document/tg/rs",
+      "status": "Published",
+      "publisher": "INSPIRE Thematic Working Group Coordinate Reference Systems & Geographical Grid Systems",
+      "date": "2014-04-16",
+      "id": "inspire-crs"
+    },
+    "inspire-gcm": {
+      "title": "Generic Conceptual Model of the INSPIRE data specifications",
+      "href": "https://inspire.ec.europa.eu/documents/inspire-generic-conceptual-model",
+      "status": "Published",
+      "publisher": "INSPIRE Drafting Team Data Specifications",
+      "date": "2014-04-07",
+      "id": "inspire-gcm"
+    },
+    "inspire-gen": {
+      "title": "Guidelines for the encoding of spatial data",
+      "href": "https://inspire.ec.europa.eu/documents/guidelines-encoding-spatial-data",
+      "status": "Published",
+      "publisher": "INSPIRE Drafting Team Data Specifications",
+      "date": "2014-04-08",
+      "id": "inspire-gen"
+    },
+    "inspire-ggs": {
+      "title": "Guidelines INSPIRE Data Specification on Geographical Grid Systems - Technical Guidelines",
+      "href": "https://inspire.ec.europa.eu/id/document/tg/gg",
+      "status": "Published",
+      "publisher": "INSPIRE Thematic Working Group Coordinate Reference Systems & Geographical Grid Systems",
+      "date": "2014-04-16",
+      "id": "inspire-ggs"
+    },
+    "inspire-irmd": {
+      "title": "Implementing Rules for Metadata",
+      "href": "http://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32008R1205",
+      "authors": [
+        "Drafting Team Metadata and European Commission Joint Research Centre"
+      ],
+      "publisher": "European Commission Joint Research Centre",
+      "date": "2008-12-03",
+      "id": "inspire-irmd"
+    },
+    "inspire-mds": {
+      "title": "Methodology for the development of data specifications: baseline version (D 2.6, Version 3.0)",
+      "href": "https://inspire.ec.europa.eu/documents/methodology-development-data-specifications-baseline-version-d-26-version-30",
+      "status": "Published",
+      "publisher": "INSPIRE Drafting Team Data Specifications",
+      "date": "2008-04-06",
+      "id": "inspire-mds"
+    },
+    "inspire-TG-metadata": {
+      "title": "Technical Guidance for the implementation of INSPIRE dataset and service metadata based on ISO/TS 19139:2007",
+      "href": "https://github.com/INSPIRE-MIF/technical-guidelines/blob/2022.2/metadata/metadata-iso19139/metadata-iso19139.adoc",
+      "status": [
+        "Tehnical Guidance"
+      ],
+      "authors": [
+        "Temporary MIWP 2021-2024 sub-group 2.3.1"
+      ],
+      "publisher": "INSPIRE Maintenance and Implementation Group (MIG)",
+      "date": "2022-08-01",
+      "id": "inspire-TG-metadata"
+    },
+    "INSTGDiS": {
+      "title": "Technical Guidance for the implementation of Inspire Discovery Service, version 3.1",
+      "href": "https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-discovery-services-0",
+      "status": "Approved",
+      "publisher": "IOC TF",
+      "date": "2011-11-07",
+      "id": "INSTGDiS"
+    },
+    "INSTGDS": {
+      "title": "Technical Guidance for the implementation of Inspire Download Services",
+      "href": "https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-download-services",
+      "status": "Approved",
+      "publisher": "IOC TF",
+      "date": "2013-08-09",
+      "id": "INSTGDS"
+    },
+    "INSTGDSSOS": {
+      "title": "Technical Guidance for implementing download services using the OGC Sensor Observation Service and ISO 19143 Filter Encoding, version 1.0",
+      "href": "https://inspire.ec.europa.eu/id/document/tg/download-sos",
+      "status": "Approved",
+      "publisher": "INSPIRE Maintenance and Implementation Group (MIG)",
+      "date": "2016-12-16",
+      "id": "INSTGDSSOS"
+    },
+    "INSTGDSWCS": {
+      "title": "Technical Guidance for the implementation of Inspire Download Services using Web Coverage Services (WCS), version 1.0",
+      "href": "https://inspire.ec.europa.eu/id/document/tg/download-wcs",
+      "status": "Approved",
+      "publisher": "INSPIRE Maintenance and Implementation Group (MIG)",
+      "date": "2016-12-16",
+      "id": "INSTGDSWCS"
+    },
+    "INSTGVS": {
+      "title": "Technical Guidance for the implementation of Inspire View Service",
+      "href": "https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-view-services-1",
+      "status": "Definitief",
+      "publisher": "IOC TF",
+      "date": "2022-08-01",
+      "id": "INSTGVS"
+    },
+    "ISO15836": {
+      "title": "ISO 15836: 2004, Information and documentation - The Dublin Core metadata element set",
+      "href": "https://www.iso.org/standard/37629.htm",
+      "publisher": "International Organization for Standardization",
+      "date": "2004",
+      "id": "ISO15836"
+    },
+    "ISO19101": {
+      "title": "ISO 19101-1:2014 Geographic information — Reference model — Part 1: Fundamentals",
+      "href": "https://www.iso.org/standard/59164.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2014-11-01",
+      "id": "ISO19101"
+    },
+    "ISO19103": {
+      "title": "ISO 19103:2015 Geographic information — Conceptual schema language",
+      "href": "https://www.iso.org/standard/56734.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2015-12-01",
+      "id": "ISO19103"
+    },
+    "ISO19107": {
+      "title": "ISO 19107:2019 Geographic information — Spatial schema",
+      "href": "https://www.iso.org/standard/66175.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2019-12-01",
+      "id": "ISO19107"
+    },
+    "ISO19108": {
+      "title": "ISO 19108:2002 Geographic information — Temporal schema",
+      "href": "https://www.iso.org/standard/26013.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2012-12-08",
+      "id": "ISO19108"
+    },
+    "ISO19109": {
+      "title": "ISO 19109:2015 Geographic information — Rules for application schema",
+      "href": "https://www.iso.org/standard/59193.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2015-12-01",
+      "id": "ISO19109"
+    },
+    "ISO19110": {
+      "title": "ISO 19110:2016 Geographic information — Methodology for feature cataloguing",
+      "href": "https://www.iso.org/standard/57303.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2016-12-01",
+      "id": "ISO19110"
+    },
+    "ISO19111": {
+      "title": "ISO 19111:2019 Geographic information — Referencing by coordinates",
+      "href": "https://www.iso.org/standard/74039.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2019-01-01",
+      "id": "ISO19111"
+    },
+    "ISO19115-2003": {
+      "title": "ISO 19115:2003  Geographic information -- Metadata",
+      "href": "https://www.iso.org/standard/26020.html",
+      "status": [
+        "Adopted specification"
+      ],
+      "publisher": "International Organization for Standardization",
+      "date": "2003-05-01",
+      "id": "ISO19115-2003"
+    },
+    "ISO19115-2006": {
+      "title": "ISO 19115:2003/Cor 1:2006 Geographic information — Metadata — Technical Corrigendum 1",
+      "href": "https://www.iso.org/standard/26020.html",
+      "status": [
+        "Adopted specification"
+      ],
+      "publisher": "International Organization for Standardization",
+      "date": "2006-06-01",
+      "id": "ISO19115-2006"
+    },
+    "ISO19115-2009": {
+      "title": "ISO 19115-2:2009 Geographic information — Metadata — Part 2: Extensions for imagery and gridded data",
+      "href": "https://www.iso.org/standard/39229.html",
+      "publisher": "International Organization for Standardization",
+      "date": "2009-02-01",
+      "id": "ISO19115-2009"
+    },
+    "ISO19115-2014": {
+      "title": "ISO 19115-1:2014 Geographic information — Metadata — Part 1: Fundamentals",
+      "href": "https://www.iso.org/standard/53798.html",
+      "publisher": "International Organization for Standardization",
+      "date": "2014-04-01",
+      "id": "ISO19115-2014"
+    },
+    "ISO19117": {
+      "title": "ISO 19117:2012 Geographic Information - Portrayal",
+      "href": "https://www.iso.org/standard/46226.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2012-12-01",
+      "id": "ISO19117"
+    },
+    "ISO19118": {
+      "title": "ISO 19118:2011 Geographic information — Encoding",
+      "href": "https://www.iso.org/standard/44212.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2011-10-01",
+      "id": "ISO19118"
+    },
+    "ISO19119": {
+      "title": "Geographic information - Services",
+      "href": "https://www.iso.org/standard/39890.html",
+      "publisher": "International Organization for Standardization",
+      "date": "2005-02-01",
+      "id": "ISO19119"
+    },
+    "ISO19119-2005": {
+      "title": "ISO 19119:2005 Geographic information — Services",
+      "href": "https://www.iso.org/standard/39890.html",
+      "publisher": "International Organization for Standardization",
+      "date": "2005-02-01",
+      "id": "ISO19119-2005"
+    },
+    "ISO19119-2008": {
+      "title": "ISO 19119:2005/Amd 1:2008 Geographic information — Services — Amendment 1: Extensions of the service metadata model",
+      "href": "https://www.iso.org/standard/44268.html",
+      "publisher": "International Organization for Standardization",
+      "date": "2008-05-01",
+      "id": "ISO19119-2008"
+    },
+    "ISO19126-2009": {
+      "title": "ISO 19126:2009 Geographic information - Feature concept dictionaries and registers",
+      "href": "https://www.iso.org/standard/44875.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2009-11-01",
+      "id": "ISO19126-2009"
+    },
+    "ISO19131": {
+      "title": "ISO 19131:2022 Geographic information — Data product specifications",
+      "href": "https://www.iso.org/standard/85092.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2022-11-01",
+      "id": "ISO19131"
+    },
+    "ISO19136": {
+      "title": "ISO 19136-1:2020 Geographic information — Geography Markup Language (GML) — Part 1: Fundamentals",
+      "href": "https://www.iso.org/standard/75676.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2020-01-01",
+      "id": "ISO19136"
+    },
+    "ISO19139": {
+      "title": "ISO/TS 19139:2007 Geographic information - Metadata - XML schema implementation",
+      "href": "https://www.iso.org/standard/32557.html",
+      "status": [
+        "Adopted specification"
+      ],
+      "publisher": "International Organization for Standardization",
+      "date": "2007-04-01",
+      "id": "ISO19139"
+    },
+    "ISO6709": {
+      "title": "ISO 6709:2022 Standard representation of geographic point location by coordinates",
+      "href": "https://www.iso.org/standard/75147.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2022-09-01",
+      "id": "ISO6709"
+    },
+    "ISOJPEG2000": {
+      "title": "ISO/IEC 15444-1:2019 Information technology — JPEG 2000 image coding system — Part 1: Core coding system",
+      "href": "https://www.iso.org/standard/78321.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2019-10-01",
+      "id": "ISOJPEG2000"
+    },
+    "ISOts19127": {
+      "title": "ISO/TS 19127 Geographic Information - Geodetic codes and parameters",
+      "href": "https://www.iso.org/standard/41784.html",
+      "status": "Published",
+      "publisher": "ISO",
+      "date": "2005-06-01",
+      "id": "ISOts19127"
+    },
+    "JSON-FG": {
+      "title": "OGC Features and Geometries JSON - Part 1: Core",
+      "href": "https://docs.ogc.org/DRAFTS/21-045.html",
+      "status": "Draft",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Clemens Portele",
+        "Panagiotis (Peter) A. Vretanos"
+      ],
+      "id": "JSON-FG"
+    },
+    "MBS": {
+      "title": "Mapbox GL JS Style Specification",
+      "href": "https://docs.mapbox.com/mapbox-gl-js/style-spec/",
+      "status": "Unofficial",
+      "publisher": "Mapbox",
+      "id": "MBS"
+    },
+    "MIM": {
+      "title": "MIM - Metamodel Informatie Modellering",
+      "href": "https://docs.geostandaarden.nl/mim/mim/",
+      "status": "Vastgesteld",
+      "publisher": "Geonovum",
+      "editors": [
+        "Dick Krijtenburg",
+        "Paul Janssen",
+        "Lennart van Bergen"
+      ],
+      "authors": [
+        "Lennart van Bergen",
+        "Thies Mesdag",
+        "Marco Brattinga",
+        "Paul Janssen",
+        "Pano Maria",
+        "Johan Boer"
+      ],
+      "date": "2022-02-17",
+      "id": "MIM"
+    },
+    "NEN3610": {
+      "title": "NEN 3610:2022 nl - BBasismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      "href": "https://www.nen.nl/nen-3610-2022-nl-296137",
+      "status": "Definitief",
+      "publisher": "NEN",
+      "date": "2022-05-31",
+      "id": "NEN3610"
+    },
+    "NETCDF": {
+      "title": "OGC Network Common Data Form (NetCDF) Core Encoding Standard version 1.0",
+      "href": "https://portal.ogc.org/files/?artifact_id=43732",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Ben Domenico"
+      ],
+      "date": "2011-04-05",
+      "id": "NETCDF"
+    },
+    "NLAPIS": {
+      "title": "API Strategie Algemeen (Nederlandse API Strategie I)",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie/",
+      "status": "Vastgesteld",
+      "publisher": "Geonovum",
+      "date": "2022-03-09",
+      "id": "NLAPIS"
+    },
+    "NLDP": {
+      "title": "NEN 3610 - Linked Data",
+      "href": "https://docs.geostandaarden.nl/nen3610/nldp/",
+      "status": "Vastgesteld",
+      "publisher": "Geonovum",
+      "editors": [
+        "Paul Janssen"
+      ],
+      "authors": [
+        "Linda van den Brink",
+        "Marco Brattinga",
+        "Marinus Vonhof",
+        "Niels Hoffmann",
+        "Pano Maria",
+        "Hans Schevers",
+        "Ronald van Lanen",
+        "Joep van Genuchten"
+      ],
+      "date": "2020-03-23",
+      "id": "NLDP"
+    },
+    "NLISO19115": {
+      "title": "Nederlands metadata profiel op ISO 19115 voor geografie versie 2.1.0",
+      "href": "https://docs.geostandaarden.nl/md/mdprofiel-iso19115/",
+      "status": "Vastgestelde versie",
+      "publisher": "Geonovum",
+      "date": "2020-06-30",
+      "id": "NLISO19115"
+    },
+    "NLISO19119": {
+      "title": "Nederlands metadata profiel op ISO 19119 voor services versie 2.1.0",
+      "href": "https://docs.geostandaarden.nl/md/mdprofiel-iso19119/",
+      "status": "Vastgestelde versie",
+      "publisher": "Geonovum",
+      "date": "2020-06-30",
+      "id": "NLISO19119"
+    },
+    "NL-SBB-20241010": {
+      "title": "NNL-SBB - Standaard voor het beschrijven van begrippen",
+      "href": "https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20241010/",
+      "status": "Vastgestelde versie",
+      "publisher": "Geonovum",
+      "date": "2024-10-10",
+      "id": "NL-SBB-20241010"
+    },
+    "NLWFS": {
+      "title": "Nederlands profiel op ISO 19142 Geographic information — Web Feature Service, Versie 1.1",
+      "href": "https://www.geonovum.nl/geo-standaarden/services/nederlands-wfs-profiel-11-op-iso-19142-voor-web-feature-services-20",
+      "status": "Definitief",
+      "publisher": "Geonovum",
+      "date": "2015-04-24",
+      "id": "NLWFS"
+    },
+    "NLWMS": {
+      "title": "Nederlands profiel op ISO 19128 Geographic information — Web Map Server Interface",
+      "href": "https://www.geonovum.nl/uploads/documents/nederlands_profiel_op_iso_19128_wms_1.3_-_versie_1.0.pdf",
+      "status": "Vastgesteld",
+      "publisher": "Geonovum",
+      "date": "2015-04-24",
+      "id": "NLWMS"
+    },
+    "OaMt1": {
+      "title": "OGC Timeseries Profile of Observations and Measurements v1.0",
+      "href": "http://docs.opengeospatial.org/is/15-043r3/15-043r3.html",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "James Tomkins",
+        "Dominic Lowe"
+      ],
+      "id": "OaMt1"
+    },
+    "OaMx2": {
+      "title": "Observations and Measurements - XML Implementation v2.0",
+      "href": "https://portal.ogc.org/files/?artifact_id=41510",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Simon Cox"
+      ],
+      "id": "OaMx2"
+    },
+    "OAPIC": {
+      "title": "OGC 19-087: OGC API - Coverages - Part 1: Core, version 0.0.6",
+      "href": "http://docs.ogc.org/DRAFTS/19-087.html",
+      "status": "Draft",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Charles Heazel",
+        "Jerome St-Louis"
+      ],
+      "id": "OAPIC"
+    },
+    "OAPIEDR": {
+      "title": "OGC 19-086r5: OGC API - Environmental Data Retrieval Standard, Version 1.0.1",
+      "href": "https://docs.ogc.org/is/19-086r5/19-086r5.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Mark Burgoyne",
+        "David Blodgett",
+        "Charles Heazel",
+        "Chris Little"
+      ],
+      "date": "2022-08-05",
+      "id": "OAPIEDR"
+    },
+    "OAPIF1": {
+      "title": "OGC 17-069r4: OGC API - Features - Part 1: Core corrigendum, Version 1.0.1",
+      "href": "https://docs.opengeospatial.org/is/17-069r4/17-069r4.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Panagiotis (Peter) A. Vretanos",
+        "Clemens Portele",
+        "Charles Heazel"
+      ],
+      "date": "2022-05-11",
+      "id": "OAPIF1"
+    },
+    "OAPIF2": {
+      "title": "OGC 18-058: OGC API - Features - Part 2: Coordinate Reference Systems by Reference, Version 1.0",
+      "href": "https://docs.opengeospatial.org/is/18-058r1/18-058r1.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Panagiotis (Peter) A. Vretanos",
+        "Clemens Portele"
+      ],
+      "date": "2020-11-02",
+      "id": "OAPIF2"
+    },
+    "OAPIF3": {
+      "title": "OGC 19-079r1: OGC API - Features - Part 3: Filtering, Version 1.0.0-rc1",
+      "href": "http://docs.ogc.org/DRAFTS/19-079r1.html",
+      "status": "Draft",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Panagiotis (Peter) A. Vretanos",
+        "Clemens Portele"
+      ],
+      "id": "OAPIF3"
+    },
+    "OAPIF4": {
+      "title": "OGC 20-002: OGC API - Features - Part 4: Create, Replace, Update and Delete, Version 1.0.0 snapshot (editor's draft",
+      "href": "http://docs.ogc.org/DRAFTS/20-002.html",
+      "status": "Draft",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Panagiotis (Peter) A. Vretanos",
+        "Clemens Portele"
+      ],
+      "id": "OAPIF4"
+    },
+    "OAPIMAPS": {
+      "title": "OGC 20-058: OGC API - Maps - Part 1: Core, Version 0.1.0",
+      "href": "http://docs.ogc.org/DRAFTS/20-058.html",
+      "status": "Draft",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": "Joan Masó",
+      "date": "2022-06-06",
+      "id": "OAPIMAPS"
+    },
+    "OAPIRECORDS1": {
+      "title": "OGC 20-224: OGC API - Records - Part 1: Core",
+      "href": "http://docs.ogc.org/DRAFTS/20-004.html",
+      "status": "Draft",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Panagiotis (Peter) A. Vretanos",
+        "Tom Kralidis",
+        "Charles Heazel"
+      ],
+      "date": "2020-01-13",
+      "id": "OAPIRECORDS1"
+    },
+    "OAPISTYLES": {
+      "title": "OGC 20-009: OGC API Styles",
+      "href": "http://docs.opengeospatial.org/DRAFTS/20-009.html",
+      "status": "Draft",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": "C. Portele",
+      "id": "OAPISTYLES"
+    },
+    "OAPITILES1": {
+      "title": "OGC 20-057: OGC API - Tiles - Part 1: Core",
+      "href": "https://docs.ogc.org/is/20-057/20-057.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Joan Masó",
+        "Jérôme St-Louis"
+      ],
+      "date": "26-08-2022",
+      "id": "OAPITILES1"
+    },
+    "OMS3": {
+      "title": "OGC Abstract Specification Topic 20: Observations, measurements and samples v3.0.0",
+      "href": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Katharina Schleidt",
+        "Ilkka Rinne"
+      ],
+      "date": "2023-05-26",
+      "id": "OMS3"
+    },
+    "OREFCO": {
+      "title": "OGC Abstract Specification Topic 2: Referencing by coordinates",
+      "href": "http://docs.opengeospatial.org/as/18-005r4/18-005r4.html",
+      "status": "OGC® Publicly Available Standard",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Roger Lott"
+      ],
+      "date": "2019-02-08",
+      "id": "OREFCO"
+    },
+    "SE11": {
+      "title": "OGC 05-077r4: OpenGIS Symbology Encoding Implementation Specification, version 1.1",
+      "href": "https://portal.ogc.org/files/?artifact_id=16700",
+      "status": "Final version",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "date": "2006-07-21",
+      "id": "SE11"
+    },
+    "SensorML": {
+      "title": "OGC SensorML: Model and XML Encoding Standard v2.1",
+      "href": "http://docs.ogc.org/is/12-000r2/12-000r2.html",
+      "status": "Published",
+      "publisher": "Open Geospatial Consortium",
+      "editors": [
+        "Mike Botts",
+        "Alexandre Robin",
+        "Eric Hirschorn"
+      ],
+      "date": "2020-08-10",
+      "id": "SensorML"
+    },
+    "SLD11": {
+      "title": "OGC 05-078r4: Styled Layer Descriptor profile of the Web Map Service Implementation Specification, Version 1.1",
+      "href": "http://portal.opengeospatial.org/files/?artifact_id=22364",
+      "status": "Final version",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "date": "2007-06-29",
+      "id": "SLD11"
+    },
+    "STAS": {
+      "title": "OGC 18-088: OGC SensorThings API Part 1 - Sensing, Version 1.1",
+      "href": "https://docs.ogc.org/is/18-088/18-088.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Steve Liang",
+        "Tania Khalafbeigi",
+        "Hylke van der Schaaf"
+      ],
+      "date": "2021-08-04",
+      "id": "STAS"
+    },
+    "STAT": {
+      "title": "OGC 17-079r1: OGC SensorThings API Part 1 - Tasking Core, Version 1.0",
+      "href": "http://docs.opengeospatial.org/is/17-079r1/17-079r1.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": [
+        "Steve Liang",
+        "Tania Khalafbeigi"
+      ],
+      "date": "2019-01-08",
+      "id": "STAT"
+    },
+    "WCS21": {
+      "title": "OGC 17-089r1: OGC Web Coverage Service (WCS) 2.1 Interface Standard - Core",
+      "href": "http://docs.opengeospatial.org/is/17-089r1/17-089r1.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "date": "2018-08-16",
+      "id": "WCS21"
+    },
+    "WFS11": {
+      "title": "Web Feature Service Implementation Specification with Corrigendum, Version 1.1.3",
+      "href": "http://docs.opengeospatial.org/is/04-094r1/04-094r1.html",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": "Panagiotis A. Vretanos",
+      "date": "2016-10-26",
+      "id": "WFS11"
+    },
+    "WMC11": {
+      "title": "OpenGIS 05-005: Web Map Context Documents Implementation Specification, version 1.1",
+      "href": "https://portal.ogc.org/files/?artifact_id=8618",
+      "status": "Adopted specification",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": "J. Sonnet",
+      "date": "2005-01-19",
+      "id": "WMC11"
+    },
+    "WMCC11": {
+      "title": "OpenGIS 08-050: Corrigendum for OpenGIS Implementation Standard Web Map Context Documents - Corrigendum 1",
+      "href": "https://portal.ogc.org/files/?artifact_id=27286",
+      "status": "Approved",
+      "publisher": "Open Geospatial Consortium (OGC)",
+      "editors": "T. Kralidis",
+      "date": "2008-03-14",
+      "id": "WMCC11"
+    }
+  },
+  "title": "Geo-BAG berichtenverkeer",
+  "specStatus": "DEF",
+  "specType": "ST",
+  "publishVersion": "1.1.1",
+  "editors": [
+    {
+      "name": "Arnoud de Boer",
+      "company": "Geonovum",
+      "companyURL": "http://www.geonovum.nl/",
+      "mailto": "a.deboer@geonovum.nl",
+      "note": "",
+      "url": "mailto:a.deboer@geonovum.nl"
+    }
+  ],
+  "shortName": "berichtenverkeer",
+  "pubDomain": "geobag",
+  "publishDate": "2026-02-09",
+  "previousPublishDate": "2019-07-25",
+  "previousMaturity": "DEF",
+  "github": "https://github.com/Geonovum/geobag"
+}</script>
+<link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
+  <body class="h-entry informative"><div class="head">
+    <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
+  </a> <h1 id="title" class="title">Geo-BAG berichtenverkeer 1.1.1</h1>
+    
+    <h2>
+      Geonovum Standaard<br>
+      Vastgestelde versie
+      <time class="dt-published" datetime="2026-02-09">09 februari 2026</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://docs.geostandaarden.nl/geobag/def-st-berichtenverkeer-20260209">https://docs.geostandaarden.nl/geobag/def-st-berichtenverkeer-20260209</a>
+            </dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://docs.geostandaarden.nl/geobag/berichtenverkeer/">https://docs.geostandaarden.nl/geobag/berichtenverkeer/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://geonovum.github.io/geobag/">https://geonovum.github.io/geobag/</a></dd>
+      
+      
+      
+      <dt>Vorige versie:</dt><dd><a href="https://docs.geostandaarden.nl/geobag/def-st-berichtenverkeer-20190725">https://docs.geostandaarden.nl/geobag/def-st-berichtenverkeer-20190725</a></dd>
+      
+      <dt>Redacteur:</dt>
+      <dd class="editor p-author h-card vcard">
+    <a class="ed_mailto u-email email p-name" href="mailto:a.deboer@geonovum.nl">Arnoud de Boer</a> (<a class="p-org org h-org" href="http://www.geonovum.nl/">Geonovum</a>)
+  </dd>
+      
+      
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Geonovum/geobag/">GitHub Geonovum/geobag</a>
+  </dd><dd>
+    <a href="https://github.com/Geonovum/geobag/issues/">Alle issues</a>
+  </dd><dd>
+    <a href="https://github.com/Geonovum/geobag/issues/new/choose">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Geonovum/geobag/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Geonovum/geobag/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    
+    <p class="copyright">
+            Dit document valt onder de volgende licentie: 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://docs.geostandaarden.nl/media/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
+    <hr title="Separator for header">
+  </div>
+    <section id="abstract" class="introductory"><h2>Samenvatting</h2>
+      <p>              
+        Deze standaard beschrijft de uitwisseling van BGT|IMGeo gegevens tussen een Geo en BAG-afdeling in een organisatie (gemeente). Dit document beschrijft het Geo-BAG berichtenverkeer en de StUF-Geo BAG berichten in dit berichtenverkeer Op deze twee documenten is de technische implementatie in de vorm van berichtenschema’s (XSD’s) en servicebeschrijvingen (WSDL’s) gebaseerd. De inhoud van de berichten wordt bepaald door de BAG berichtencatalogus en RSGB.
+      </p>
+    </section>
+    <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#waarom-dit-koppelvlak"><bdi class="secno">1.1 </bdi>Waarom dit koppelvlak?</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.2 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#verbinding-met-de-gemma-informatiearchitectuur"><bdi class="secno">1.3 </bdi>Verbinding met de GEMMA Informatiearchitectuur</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">1.4 </bdi>Referenties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#uitgangspunten"><bdi class="secno">2. </bdi>Uitgangspunten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#actoren-en-verantwoordelijkheden-geo-en-bag"><bdi class="secno">2.1 </bdi>Actoren en verantwoordelijkheden: Geo en BAG</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#berichten"><bdi class="secno">2.1.1 </bdi>Berichten</a></li><li class="tocline"><a class="tocxref" href="#uitwisselen-van-gegevens-van-bag-objecten"><bdi class="secno">2.1.2 </bdi>Uitwisselen van gegevens van BAG-objecten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen"><bdi class="secno">2.1.2.1 </bdi>Objecttypen</a></li><li class="tocline"><a class="tocxref" href="#geometrie"><bdi class="secno">2.1.2.2 </bdi>Geometrie</a></li><li class="tocline"><a class="tocxref" href="#samengesteld-uitwisselen-en-alleen-actuele-stand"><bdi class="secno">2.1.2.3 </bdi>Samengesteld uitwisselen en alleen actuele stand</a></li></ol></li><li class="tocline"><a class="tocxref" href="#gebeurtenissen-als-aanleiding-voor-berichtenverkeer"><bdi class="secno">2.1.3 </bdi>Gebeurtenissen als aanleiding voor berichtenverkeer</a></li><li class="tocline"><a class="tocxref" href="#identificaties-van-en-relaties-tussen-berichten"><bdi class="secno">2.1.4 </bdi>Identificaties van en relaties tussen berichten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#logistieke-en-functionele-identificatie"><bdi class="secno">2.1.4.1 </bdi>Logistieke en functionele identificatie</a></li><li class="tocline"><a class="tocxref" href="#invullen-van-logistieke-en-functionele-identificaties"><bdi class="secno">2.1.4.2 </bdi>Invullen van logistieke en functionele identificaties</a></li><li class="tocline"><a class="tocxref" href="#intrekken-en-corrigeren-van-berichten"><bdi class="secno">2.1.4.3 </bdi>Intrekken en corrigeren van berichten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#identificaties-van-en-relaties-tussen-objecten"><bdi class="secno">2.1.5 </bdi>Identificaties van en relaties tussen objecten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bag-objectnummer-en-versie"><bdi class="secno">2.1.5.1 </bdi>BAG-objectnummer en versie</a></li><li class="tocline"><a class="tocxref" href="#technische-sleutels"><bdi class="secno">2.1.5.2 </bdi>Technische sleutels</a></li><li class="tocline"><a class="tocxref" href="#invullen-van-bag-objectnummer-en-technische-sleutels"><bdi class="secno">2.1.5.3 </bdi>Invullen van BAG-objectnummer en technische sleutels</a></li></ol></li><li class="tocline"><a class="tocxref" href="#verzenden-en-verwerken-van-berichten"><bdi class="secno">2.1.6 </bdi>Verzenden en verwerken van berichten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#transacties-en-bundeling-van-berichten"><bdi class="secno">2.1.6.1 </bdi>Transacties en bundeling van berichten</a></li><li class="tocline"><a class="tocxref" href="#verplichte-of-niet-verplichte-overname"><bdi class="secno">2.1.6.2 </bdi>Verplichte of niet-verplichte overname</a></li><li class="tocline"><a class="tocxref" href="#volgorde-van-verzenden-en-verwerken"><bdi class="secno">2.1.6.3 </bdi>Volgorde van verzenden en verwerken</a></li><li class="tocline"><a class="tocxref" href="#synchroniteit"><bdi class="secno">2.1.6.4 </bdi>Synchroniteit</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#scenario-s"><bdi class="secno">3. </bdi>Scenario’s</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzoek-om-geometrie-door-bag"><bdi class="secno">3.1 </bdi>Verzoek om geometrie door BAG</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#basisscenario"><bdi class="secno">3.1.1 </bdi>Basisscenario</a></li><li class="tocline"><a class="tocxref" href="#alternatief-scenario-bag-keurt-levering-af"><bdi class="secno">3.1.2 </bdi>Alternatief scenario: BAG keurt levering af</a></li><li class="tocline"><a class="tocxref" href="#alternatief-scenario-bag-wil-eerder-verzonden-geometrieverzoek-intrekken"><bdi class="secno">3.1.3 </bdi>Alternatief scenario: BAG wil eerder verzonden geometrieVerzoek intrekken</a></li><li class="tocline"><a class="tocxref" href="#alternatief-scenario-geo-keurt-geometrieverzoek-af"><bdi class="secno">3.1.4 </bdi>Alternatief scenario: Geo keurt geometrieVerzoek af</a></li></ol></li><li class="tocline"><a class="tocxref" href="#constatering-en-of-signalering-door-geo"><bdi class="secno">3.2 </bdi>Constatering en/of signalering door Geo</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#basisscenario-0"><bdi class="secno">3.2.1 </bdi>Basisscenario</a></li><li class="tocline"><a class="tocxref" href="#alternatief-scenario-bag-keurt-geometrie-af"><bdi class="secno">3.2.2 </bdi>Alternatief scenario: BAG keurt geometrie af</a></li><li class="tocline"><a class="tocxref" href="#alternatief-scenario-geo-wil-eerder-verzonden-geometrielevering-intrekken"><bdi class="secno">3.2.3 </bdi>Alternatief scenario: Geo wil eerder verzonden geometrieLevering intrekken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#kennisgeving-op-object-door-bag"><bdi class="secno">3.3 </bdi>Kennisgeving op object door BAG</a></li></ol></li><li class="tocline"><a class="tocxref" href="#berichten-0"><bdi class="secno">4. </bdi>Berichten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#stuf-geo-bag-berichten"><bdi class="secno">4.1 </bdi>StUF-Geo BAG berichten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geometrieverzoek"><bdi class="secno">4.1.1 </bdi>GeometrieVerzoek</a></li><li class="tocline"><a class="tocxref" href="#geometrielevering"><bdi class="secno">4.1.2 </bdi>GeometrieLevering</a></li><li class="tocline"><a class="tocxref" href="#goedkeuringsbericht"><bdi class="secno">4.1.3 </bdi>Goedkeuringsbericht</a></li><li class="tocline"><a class="tocxref" href="#afkeuringsbericht"><bdi class="secno">4.1.4 </bdi>Afkeuringsbericht</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bag-kennisgevingen"><bdi class="secno">4.2 </bdi>BAG-kennisgevingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#entiteiten"><bdi class="secno">5. </bdi>Entiteiten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#entiteiten-met-objectgegevens"><bdi class="secno">5.1 </bdi>Entiteiten met objectgegevens</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ligplaats"><bdi class="secno">5.1.1 </bdi>ligplaats</a></li><li class="tocline"><a class="tocxref" href="#overiggebouwdobject"><bdi class="secno">5.1.2 </bdi>overigGebouwdObject</a></li><li class="tocline"><a class="tocxref" href="#overigterrein"><bdi class="secno">5.1.3 </bdi>overigTerrein</a></li><li class="tocline"><a class="tocxref" href="#pand"><bdi class="secno">5.1.4 </bdi>pand</a></li><li class="tocline"><a class="tocxref" href="#standplaats"><bdi class="secno">5.1.5 </bdi>standplaats</a></li><li class="tocline"><a class="tocxref" href="#verblijfsobject"><bdi class="secno">5.1.6 </bdi>verblijfsobject</a></li><li class="tocline"><a class="tocxref" href="#woonplaats"><bdi class="secno">5.1.7 </bdi>woonplaats</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#attributen"><bdi class="secno">6. </bdi>Attributen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#parameters"><bdi class="secno">6.1 </bdi>Parameters</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#idverzoek"><bdi class="secno">6.1.1 </bdi>idVerzoek</a></li><li class="tocline"><a class="tocxref" href="#idlevering"><bdi class="secno">6.1.2 </bdi>idLevering</a></li><li class="tocline"><a class="tocxref" href="#gerelateerdverzoek"><bdi class="secno">6.1.3 </bdi>gerelateerdVerzoek</a></li><li class="tocline"><a class="tocxref" href="#gebeurteniscode"><bdi class="secno">6.1.4 </bdi>gebeurtenisCode</a></li><li class="tocline"><a class="tocxref" href="#documentverwijzing"><bdi class="secno">6.1.5 </bdi>documentverwijzing</a></li><li class="tocline"><a class="tocxref" href="#toelichting"><bdi class="secno">6.1.6 </bdi>toelichting</a></li><li class="tocline"><a class="tocxref" href="#foutcode"><bdi class="secno">6.1.7 </bdi>foutcode</a></li><li class="tocline"><a class="tocxref" href="#foutomschrijving"><bdi class="secno">6.1.8 </bdi>foutomschrijving</a></li><li class="tocline"><a class="tocxref" href="#plek"><bdi class="secno">6.1.9 </bdi>plek</a></li><li class="tocline"><a class="tocxref" href="#details"><bdi class="secno">6.1.10 </bdi>details</a></li></ol></li><li class="tocline"><a class="tocxref" href="#elementen-in-entiteiten"><bdi class="secno">6.2 </bdi>Elementen in entiteiten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identificatie"><bdi class="secno">6.2.1 </bdi>identificatie</a></li><li class="tocline"><a class="tocxref" href="#typering"><bdi class="secno">6.2.2 </bdi>typering</a></li><li class="tocline"><a class="tocxref" href="#adresaanduiding"><bdi class="secno">6.2.3 </bdi>adresAanduiding</a></li><li class="tocline"><a class="tocxref" href="#geometrie-0"><bdi class="secno">6.2.4 </bdi>geometrie</a></li><li class="tocline"><a class="tocxref" href="#puntgeometrie"><bdi class="secno">6.2.5 </bdi>puntGeometrie</a></li><li class="tocline"><a class="tocxref" href="#vlakgeometrie"><bdi class="secno">6.2.6 </bdi>vlakGeometrie</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">6.2.7 </bdi>status</a></li><li class="tocline"><a class="tocxref" href="#geconstateerd"><bdi class="secno">6.2.8 </bdi>geconstateerd</a></li><li class="tocline"><a class="tocxref" href="#brondocument"><bdi class="secno">6.2.9 </bdi>brondocument</a></li><li class="tocline"><a class="tocxref" href="#tijdvakgeldigheid"><bdi class="secno">6.2.10 </bdi>tijdvakGeldigheid</a></li><li class="tocline"><a class="tocxref" href="#maaktdeeluitvan"><bdi class="secno">6.2.11 </bdi>maaktDeelUitVan</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-1-gebeurtenissen"><bdi class="secno">7. </bdi>Bijlage 1: Gebeurtenissen</a></li><li class="tocline"><a class="tocxref" href="#bijlage-2-activiteitenstroom-koppelvlak-geo-bag"><bdi class="secno">8. </bdi>Bijlage 2: Activiteitenstroom koppelvlak Geo-BAG</a></li><li class="tocline"><a class="tocxref" href="#bijlage-3-gegevensmodel-koppelvlak-geo-bag"><bdi class="secno">9. </bdi>Bijlage 3: Gegevensmodel koppelvlak Geo-BAG</a></li><li class="tocline"><a class="tocxref" href="#bijlage-4-ontwerpbeslissingen-en-keuzes-verstuffing"><bdi class="secno">10. </bdi>Bijlage 4: Ontwerpbeslissingen en keuzes verStUFfing</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afhankelijkheden-schema-s-en-wsdl-s"><bdi class="secno">10.1 </bdi>Afhankelijkheden schema's en wsdl's</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-mapping-bag-2-0-stuf-bg-extraelementen-vs-stuf-geo-bag"><bdi class="secno">11. </bdi>Bijlage Mapping BAG 2.0: StUF BG ExtraElementen vs. StUF-Geo BAG</a></li></ol></nav>  
+   <section id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
+<p>Dit hoofdstuk geeft een inleiding op het StUF-Geo BAG berichtenverkeer. </p>
+<section id="waarom-dit-koppelvlak"><div class="header-wrapper"><h3 id="x1-1-waarom-dit-koppelvlak"><bdi class="secno">1.1 </bdi>Waarom dit koppelvlak?</h3><a class="self-link" href="#waarom-dit-koppelvlak" aria-label="Permalink for Section 1.1"></a></div>
+<p>Voor het automatisch uitwisselen van gegevens tussen twee afdelingen binnen de organisatie zijn afspraken nodig welke worden vastgelegd in een koppelvlak-specificatie. Een koppelvlak is een interface die volgens een bepaalde standaard de uitwisseling van gegevens tussen informatiesystemen verzorgt. Een koppelvlak werkt met standaarden. Het aanleverende systeem is verantwoordelijk voor de vertaling van gegevens naar die standaard en het afnemende systeem zorgt voor omzetting naar haar eigen ‘taal’. </p>
+<p>Dit koppelvlak beschrijft de gegevensuitwisseling tussen het registratiesysteem BAG en het registratiesysteem Geo binnen een gemeente. In het registratiesysteem BAG worden gebouw- en adresgegevens bijgehouden in het kader van de wet Basisregistraties Adressen en Gebouwen (BAG). In het registratiesysteem Geo worden de geometrie en attribuutgegevens van topografische objecten bijgehouden in het kader van de Basisregistratie Grootschalige Topografie (BGT) en ten behoeve van intern gebruik (o.a. beheer openbare ruimte). Voor het registratiesysteem Geo wordt ook geometrie van objecten in het registratiesysteem BAG ingewonnen en bijgehouden. </p>
+<p>Om er voor te zorgen dat de registratiesystemen BAG en Geo, en de basisregistraties BAG en BGT onderling consistent zijn, is een koppeling op basis van een standaard van groot belang. Het werkingsgebied van dit koppelvlak is dan ook primair bedoeld voor optimalisatie van gegevensuitwisseling en het beheer van twee wettelijke backoffice processen voor BAG en BGT. Als aanvulling hierop zijn voor aansluiting bij de bredere gemeentelijke behoefte optionele objecttypen uit RSGB toegevoegd, zodat de inwinning van de geometrie van deze objecttypen meegenomen kunnen worden in de bijhouding van de BAG en BGT objecttypen. </p>
+<p>De voordelen van deze koppelvlakstandaard zijn o.a. dat </p>
+<ul>
+<li>in een specifiek applicatielandschap verschillende BAG-applicaties met verschillende BGT-applicaties kunnen koppelen (via een gegevensdistributiecomponent). </li>
+<li>een geautomatiseerde koppeling voorkomt, ook op de plaats waar het maar door één persoon wordt uitgevoerd, overtikwerk en fouten in de administratie. </li>
+<li>het de onderlinge consistentie en de kwaliteit van de gegevens in de twee administraties vergroot wat tot betere informatievoorziening bij besluiten en fraudedetectie leidt. </li>
+<li>het zorgt voor een helder inzicht in de werkvoorraad aan beide zijden en de stroomlijning van de processen: zaken kunnen niet meer onzichtbaar lang blijven liggen; geometrie wordt niet vaker dan noodzakelijk ingemeten.</li>
+</ul>
+</section><section id="leeswijzer"><div class="header-wrapper"><h3 id="x1-2-leeswijzer"><bdi class="secno">1.2 </bdi>Leeswijzer</h3><a class="self-link" href="#leeswijzer" aria-label="Permalink for Section 1.2"></a></div>
+<p>Dit document beschrijft het berichtenverkeer tussen het registratiesysteem BAG en het registratiesysteem Geo (hierna respectievelijk BAG en Geo). Deze koppelvlakspecificatie beschrijft de uitwisseling van geometrie voor BAG-objecten, waarbij BAG de partij is die een verzoek doet om geometrie en Geo de partij is die geometrie levert. BAG houdt Geo verder op de hoogte van wijzigingen (o.a. status en attribuutgegevens) op de BAG-objecten via notificaties (BAG-kennisgevingen) (zie Figuur 1). </p>
+<p><img src="media/fig-schema-geo-bag-berichtenverkeer.png" alt="Schema Geo-BAG berichtenverkeer"></p>
+<p><em>Figuur 1.1 Schematische weergave componenten StUF-Geo BAG berichtenverkeer.</em> </p>
+<p>De standaard van berichten waarmee de gegevens tussen BAG en Geo worden uitgewisseld is gebaseerd op het Standaard Uitwiselings Formaat (StUF). Naast bestaande berichten uit StUF 03.10 en de BAG-berichtencatalogus (als onderdeel van StUF-BG) worden voor dit koppelvlak specifieke berichten toepast, aangeduid met StUF-Geo BAG berichten. Dit koppelvlak is als apart sectormodel (geoBAG) gepositioneerd naast de BAG berichtencatalogus. </p>
+<p>De structuur van dit document is als volgt: o.b.v. een aantal uitgangspunten o.a. verantwoordelijkheden en taken in Hoofdstuk 2 worden een drietal algemene scenario’s van de werkprocessen tussen BAG en Geo geschetst in Hoofdstuk 3. In deze scenario’s worden bepaalde berichten zoals verzoeken en leveringen verstuurd. De inhoud van de berichten zijn nader gedefinieerd in Hoofdstuk 4 en Hoofdstuk 5. </p>
+</section><section id="verbinding-met-de-gemma-informatiearchitectuur"><div class="header-wrapper"><h3 id="x1-3-verbinding-met-de-gemma-informatiearchitectuur"><bdi class="secno">1.3 </bdi>Verbinding met de GEMMA Informatiearchitectuur</h3><a class="self-link" href="#verbinding-met-de-gemma-informatiearchitectuur" aria-label="Permalink for Section 1.3"></a></div>
+<p>De GEMMA Informatiearchitectuur[1] geeft inrichting aan de informatiehuishouding van gemeenten. De informatiehuishouding betreft de referentiecomponenten en applicatiefunctionaliteit waarmee de gegevens kunnen worden opgeslagen, geraadpleegd en processen kunnen worden ondersteund etc. Ook de informatiemodellen (RSGB, RGBZ, ImZTC, etc.) en berichtenstandaarden (StUF, StUF-BG, StUF-ZKN, etc.) die zorgen voor een efficiënte en gestandaardiseerde manier van informatie-uitwisseling, zijn onderdeel van de informatiearchitectuur. </p>
+<p>Figuur 2 geeft een overzicht van de GEMMA Referentiecomponenten[2] in gedeeld op beleidsthema’s zoals Milieu &amp; Mobiliteit en Ruimtelijke Ordening &amp; Wonen. De referentiecomponenten die relevant zijn voor het geoBAG-koppelvlak zijn omcirkeld in rood. In onderstaande tabel wordt een vertaling gegeven tussen de naamgeving van de referentiecomponenten in dit koppelvlak en GEMMA. </p>
+<p><img src="media/fig-overzicht-gemma-referentiecomponenten.png" alt="GEMMA Referentiecomponenten"></p>
+<p> <em>Figuur 1.2: Gemma Referentiecomponenten</em></p>
+<table>
+<thead>
+<tr>
+<th>Geonovum</th>
+<th>GEMMA</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Registratie BAG</td>
+<td>BAG-administratie</td>
+</tr>
+<tr>
+<td>Registratie GEO</td>
+<td>BGT-administratie</td>
+</tr>
+<tr>
+<td>Registratie GEO</td>
+<td>GIS (Geografisch Informatie Systeem)</td>
+</tr>
+<tr>
+<td>Registratie GEO</td>
+<td>CAD (Computer-Aided Design)</td>
+</tr>
+</tbody></table>
+<p>De GEMMA Softwarecatalogus[3] is een online informatiesysteem dat het (verwachte) softwareaanbod voor gemeenten en het gebruik door gemeenten in kaart brengt. Deze catalogus is gebaseerd op de naamgeving en structuur van de GEMMA Referentiecomponenten. Met de bovenstaande mapping zijn software leveranciers instaat om de geoBAG-koppeling op de juiste manier in te voeren in de software catalogus. </p>
+<p>[1] <a href="http://www.gemmaonline.nl/index.php/GEMMA_Informatiearchitectuur">http://www.gemmaonline.nl/index.php/GEMMA_Informatiearchitectuur</a> 
+[2] <a href="http://www.gemmaonline.nl/index.php/GEMMA_Applicatielandschap">http://www.gemmaonline.nl/index.php/GEMMA_Applicatielandschap</a> 
+[3] <a href="https://www.softwarecatalogus.nl">https://www.softwarecatalogus.nl</a> </p>
+</section><section id="referenties"><div class="header-wrapper"><h3 id="x1-4-referenties"><bdi class="secno">1.4 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 1.4"></a></div>
+<p>Deze koppelvlakspecificatie voor het Geo-BAG berichtenverkeer is gebaseerd op de volgende standaarden: </p>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Document</th>
+<th>Versie</th>
+<th>Datum</th>
+<th>Auteur c.q. beheerder</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[BGT]</td>
+<td>Gegevenscatalogus BGT</td>
+<td>1.1.1</td>
+<td>Juli 2013</td>
+<td>Geonovum</td>
+</tr>
+<tr>
+<td>[IMGeo]</td>
+<td>Gegevenscatalogus IMGeo</td>
+<td>2.1.1</td>
+<td>Juli 2013</td>
+<td>Geonovum</td>
+</tr>
+<tr>
+<td>[BAG-P]</td>
+<td>BAG processenhandboek</td>
+<td>2013</td>
+<td>11 februari 2014</td>
+<td>Kadaster</td>
+</tr>
+<tr>
+<td>[StUF]</td>
+<td>StUF 03.01: In Gebruik</td>
+<td>22</td>
+<td>1 juli 2015</td>
+<td>KING</td>
+</tr>
+</tbody></table>
+<p>Deze koppelvlakspecificatie voor het Geo-BAG berichtenverkeer hanteert verder de volgende documenten en bestanden die toegepast dienen te worden bij de implementatie: </p>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Document / bestand</th>
+<th>Versie</th>
+<th>Datum</th>
+<th>Auteur c.q. beheerder</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[XSD]</td>
+<td>Berichtenschema StUF-Geo BAG</td>
+<td>‡‡‡</td>
+<td>‡‡‡</td>
+<td>Geonovum</td>
+</tr>
+<tr>
+<td>[WSDL]</td>
+<td>Servicebeschrijving StUF-Geo BAG</td>
+<td>‡‡‡</td>
+<td>‡‡‡</td>
+<td>Geonovum</td>
+</tr>
+</tbody></table>
+<p>‡‡‡ Voor de vigerende versie van de StUF-Geo BAG implementatietoolkit, zie de website van Geonovum: <a href="http://www.geonovum.nl/onderwerpen/bgt-imgeo-standaarden">http://www.geonovum.nl/onderwerpen/bgt-imgeo-standaarden</a>. </p>
+<p>Bij deze documenten en bestanden zijn, ter ondersteuning van de implementatie, werkafspraken gepubliceerd op de website van Geonovum: <a href="http://www.geonovum.nl/onderwerpen/bgt-imgeo-standaarden/werkafspraken-geobag">http://www.geonovum.nl/onderwerpen/bgt-imgeo-standaarden/werkafspraken-geobag</a></p>
+</section></section>
+   <section id="uitgangspunten"><div class="header-wrapper"><h2 id="x2-uitgangspunten"><bdi class="secno">2. </bdi>Uitgangspunten</h2><a class="self-link" href="#uitgangspunten" aria-label="Permalink for Section 2."></a></div>
+<p>Dit hoofdstuk beschrijft de uitgangspunten voor uitwisseling van gegevens tussen
+BAG en Geo via StUF-Geo BAG berichtenverkeer.</p>
+<section id="actoren-en-verantwoordelijkheden-geo-en-bag"><div class="header-wrapper"><h3 id="x2-1-actoren-en-verantwoordelijkheden-geo-en-bag"><bdi class="secno">2.1 </bdi>Actoren en verantwoordelijkheden: Geo en BAG</h3><a class="self-link" href="#actoren-en-verantwoordelijkheden-geo-en-bag" aria-label="Permalink for Section 2.1"></a></div>
+<p>Het StUF-Geo BAG berichtenverkeer kent twee actoren[^4}: (het
+registratiesysteem[^5] van) BAG en (het registratiesysteem van) Geo, hierna
+respectievelijk BAG en Geo.</p>
+<p>BAG is eindverantwoordelijk voor de volledigheid van de BAG-objecten, het op een
+correcte manier afbakenen van BAG-objecten en de vastlegging en distributie van
+de juiste BAG-gegevens volgens de hiervoor geldende wettelijke eisen.</p>
+<p>Geo is veelal faciliterend voor de geometrische inwinning en vastlegging van de
+geometrie van BAG-objecten conform de eisen van de BAG. Voorts is Geo
+verantwoordelijk voor de afstemming van de BGT met de BAG.</p>
+<p>De beheerder van Geo[^6] kan vanuit BAG gemandateerd zijn voor de vaststelling
+van de definitieve geometrie van BAG-panden en BAG-verblijfsobjecten. Het
+brondocument voor de geometrische mutaties voor BAG-objecten kan en mag
+opgemaakt en ondertekend worden door de beheerder van Geo.</p>
+<p>[^4] In het geval dat BAG zelf de inwinning en vastlegging van de geometrie
+verzorgt, is een deel van het in dit koppelvlak beschreven berichtenverkeer niet
+van toepassing. Geo heeft dan voldoende aan de kennisgevingsberichten vanuit BAG
+voor de bijhouding van de gegevens van BGT objecten. [^5] Registratiesysteem
+wordt hierna “applicatie” genoemd. [^6] In praktijk zijn dit de medewerkers van
+Geo, danwel de ambtenaar die belast is me de uitbesteding van inwinning van de
+geometrie voor Geo.</p>
+<section id="berichten"><div class="header-wrapper"><h4 id="x2-1-1-berichten"><bdi class="secno">2.1.1 </bdi>Berichten</h4><a class="self-link" href="#berichten" aria-label="Permalink for Section 2.1.1"></a></div>
+<p>Het berichtenverkeer tussen Geo en BAG maakt gebruik van de volgende typen
+berichten:</p>
+<ul>
+<li><p>StUF-Geo BAG berichten: specifiek voor dit koppelvlak gedefinieerde
+dienstberichten t.w.</p>
+</li>
+<li><p>geometrieVerzoek (gmvDi01): een asynchroon inkomend vrij bericht als verzoek
+tot levering van geometrie[^7] voor een bepaald object.</p>
+</li>
+<li><p>geometrieLevering (gmlDi01): een asynchroon inkomend vrij bericht met de te
+leveren geometrie[^7] voor een bepaald object.</p>
+</li>
+<li><p>goedkeuringsbericht (bevestigingDu01): een asynchroon responsbericht met de
+goedkeuring van (een deel van de inhoud van) een geometrieVerzoek of
+geometrieLevering.</p>
+</li>
+<li><p>afkeuringsbericht (foutDu01): een asynchroon responsbericht met een
+afkeuring van (een deel van de inhoud van) een geometrieVerzoek of
+geometrieLevering.</p>
+</li>
+<li><p>StUF-BG / BAG-kennisgevingsberichten</p>
+</li>
+<li><p>Logistieke StUF bevestigings- en foutberichten, o.a.</p>
+</li>
+<li><p>Bv03[^8]: een bevestigingsbericht als technische synchrone respons op een
+asynchroon bericht waarbij het bericht op basis van berichtstuurgegevens
+verwerkbaar wordt geacht[^9]</p>
+</li>
+<li><p>Fo03: een foutbericht als technische synchrone respons op een asynchroon
+bericht waarbij het bericht niet verwerkbaar wordt geacht.</p>
+</li>
+</ul>
+<p>[^7] Naast geometrie worden ook enkele administratieve gegevens uitgewisseld;
+zie H4 Berichten.</p>
+<p>[^8] Of Bv04: een servicebus stuurt een Bv04 als technisch synchrone respons op
+een asynchroon bericht</p>
+<p>[^9] Een technische synchrone respons wordt op elk samengesteld of
+kennisgevingsbericht teruggeven cf. StUF conventies, en is dan ook verder niet
+opgenomen in de uitwerking van het berichtenverkeer.</p>
+<p>De StUF-Geo BAG berichten zijn gespecifieerd in §4.1.</p>
+</section><section id="uitwisselen-van-gegevens-van-bag-objecten"><div class="header-wrapper"><h4 id="x2-1-2-uitwisselen-van-gegevens-van-bag-objecten"><bdi class="secno">2.1.2 </bdi>Uitwisselen van gegevens van BAG-objecten</h4><a class="self-link" href="#uitwisselen-van-gegevens-van-bag-objecten" aria-label="Permalink for Section 2.1.2"></a></div>
+<p>In het StUF-Geo BAG berichtenverkeer worden gegevens uitgewisseld van
+BAG-objecten.</p>
+<section id="objecttypen"><div class="header-wrapper"><h5 id="x2-1-2-1-objecttypen"><bdi class="secno">2.1.2.1 </bdi>Objecttypen</h5><a class="self-link" href="#objecttypen" aria-label="Permalink for Section 2.1.2.1"></a></div>
+<p>De volgende BAG-objecttypen worden ondersteund in het Geo-BAG berichtenverkeer:
+* Pand * Verblijfsobject * Stand-/ligplaats * Woonplaats *
+Nummeraanduiding[^10] * OpenbareRuimte[^11]</p>
+<p>Dit berichtschema’s van van het Geo-BAG koppelvlak zijn daarnaast uitgebreid met
+de optionele objecttypen OverigGebouwdObject en OverigTerrein voor aansluiting
+met RSGB. Overig optionele BAG+-objecttypen worden in het Geo-BAG
+berichtenverkeer niet ondersteund. In de StUF-Geo BAG berichten worden alleen de
+gegevens opgenomen die noodzakelijk zijn voor een goede verwerking van dit
+bericht door de ontvanger (zie gegevensmodel in Bijlage 3.).</p>
+<p>[^10] Alleen in BAG-kennisgeving, niet in geometrieVerzoek of
+geometrieLevering.</p>
+<p>[^11] Alleen in BAG-kennisgeving, niet in geometrieVerzoek of
+geometrieLevering.</p>
+</section><section id="geometrie"><div class="header-wrapper"><h5 id="x2-1-2-2-geometrie"><bdi class="secno">2.1.2.2 </bdi>Geometrie</h5><a class="self-link" href="#geometrie" aria-label="Permalink for Section 2.1.2.2"></a></div>
+<p>Voor dit koppelvlak geldt dat de geometrie conform de inwinningsregels ten
+aanzien van nauwkeurigheid en inwinningswijze van de BAG wordt opgenomen. Een
+BAG-object kan een vlak- of puntgeometrie hebben.</p>
+<p>De verplichte geometrie voor een Pand in de BAG is een vlakgeometrie in
+bovenaanzicht. In het kader van de BGT is Geo ook verantwoordelijk voor de
+geometrische inwinning van grootschalige topografie. Voor de BGT is de keuze
+gemaakt om van een pand de geometrie op maaiveldniveau op te nemen. Door
+modernere bouwvormen komt het daarbij steeds vaker voor dat de geometrie van een
+pand op maaiveldniveau aanzienlijk kan afwijken van de geometrie van een pand op
+een ander niveau. De geometrie op maaiveld van een Pand kan in de StUF-BG
+kennisgevingsberichten als optionele geometrie bij dit object worden opgenomen
+naast de verplichte geometrie van bovenaanzicht.</p>
+<ul>
+<li><p>In dit koppelvlak wordt in de StUF-Geo BAG dienstberichten[^12] de
+geometrie van objecten als volgt opgenomen: objecttype Verblijfsobject wordt
+uitgewisseld met puntgeometrie, en optioneel met vlakgeometrie.</p>
+</li>
+<li><p>objecttype Pand wordt uitgewisseld met geometrie van het bovenaanzicht, en
+optioneel met geometrie op het maaiveld.</p>
+</li>
+<li><p>alle overige objecttypen[^13] in §2.3.1. met vlakgeometrie.</p>
+</li>
+</ul>
+<p>[^12] Dus niet van toepassing voor de StUF-BG kennisgevingsberichten.</p>
+<p>[^13] M.u.v. Nummeraanduiding en OpenbareRuimte, deze objecttypen hebben geen
+geometrie.</p>
+</section><section id="samengesteld-uitwisselen-en-alleen-actuele-stand"><div class="header-wrapper"><h5 id="x2-1-2-3-samengesteld-uitwisselen-en-alleen-actuele-stand"><bdi class="secno">2.1.2.3 </bdi>Samengesteld uitwisselen en alleen actuele stand</h5><a class="self-link" href="#samengesteld-uitwisselen-en-alleen-actuele-stand" aria-label="Permalink for Section 2.1.2.3"></a></div>
+<p>In de StUF-Geo BAG berichten worden de gegevens van objecten samengesteld
+uitgewisseld, d.w.z. een geometrieVerzoek of geometrieLevering bevat de gegevens
+van één of meerdere BAG-objecten welke tot één bepaalde transactie of
+gebeurtenis behoren. Bijvoorbeeld, indien een door Geo uitgevoerde
+mutatiesignalering uit luchtfoto’s mutaties oplevert op meerdere objecten,
+worden een of meer mutaties van deze objecten in een bericht (geometrieLevering)
+door Geo aan BAG verstuurd.</p>
+<p>In dit Geo-BAG berichtenverkeer wordt in een StUF-Geo BAG dienstbericht[^14]
+alleen de actuele stand (WORDT) van een BAG-object uitgewisseld, en niet in
+combinatie met de vorige stand (WAS) van het BAG-object[^15]. Zowel BAG als Geo
+hebben de gegevens van een vorige stand van een object niet nodig voor het
+overnemen van de gegevens uit een bericht. In het bijzonder geval dat op enig
+moment de gegevens van een bepaald object bij Geo en BAG verschillen
+(asynchroniteit), zijn de gegevens van de actuele stand in de applicatie van BAG
+leidend voor dit object.</p>
+<p>[^14] Dus niet van toepassing voor de StUF-BG kennisgevingsberichten.</p>
+<p>[^15] Dit in afwijking van het StUF-BG en StUF-Geo IMGeo berichtenverkeer waar
+in een bericht WAS én WORDT van een object wordt uitgewisseld.</p>
+</section></section><section id="gebeurtenissen-als-aanleiding-voor-berichtenverkeer"><div class="header-wrapper"><h4 id="x2-1-3-gebeurtenissen-als-aanleiding-voor-berichtenverkeer"><bdi class="secno">2.1.3 </bdi>Gebeurtenissen als aanleiding voor berichtenverkeer</h4><a class="self-link" href="#gebeurtenissen-als-aanleiding-voor-berichtenverkeer" aria-label="Permalink for Section 2.1.3"></a></div>
+<p>Het berichtenverkeer tussen BAG en Geo ontstaat naar aanleiding van een bepaalde
+gebeurtenis aan de kant van BAG of Geo. In Bijlage 1 is een overzicht met alle
+gebeurtenissen[^16] van Geo en BAG opgenomen en tot welke berichten zij leiden.</p>
+<p>Naar aanleiding van een BAG-gebeurtenis (bijv. verlenen vergunning) stuurt BAG
+aan Geo een verzoek om geometrie aan te leveren, ofwel een geometrieVerzoek.</p>
+<p>Naar aanleiding van een Geo-gebeurtenis (bijv. constatering[^17] nieuw pand
+door mutatiesignalering uit luchtfoto’s) of de geometrische inwinning voor BAG
+na een geometrieVerzoek, stuurt Geo aan BAG een levering van nieuwe of
+gewijzigde geometrie, ofwel een geometrieLevering[^18]</p>
+<p>Naar aanleiding van een levering van nieuwe of gewijzigde geometrie door Geo,
+stuurt BAG altijd een functionele respons om de acceptatie en verwerking, of
+afkeuring van de levering aan Geo te melden, ofwel een responsbericht.</p>
+<p>Naar aanleiding van een doorgevoerde mutatie op een BAG-object , stuurt BAG een
+kennisgeving van deze wijziging aan Geo, ofwel een BAG-kennisgevingsbericht (=
+StUF-BG). Geo filtert hieruit de voor de Geo/BGT relevante mutaties (bijv.
+wijziging van een nummeraanduiding door BAG) en verwerkt deze in de eigen
+applicatie.</p>
+<p>[^16] Dit overzicht is gebaseerd op de lijst met gebeurtenissen van het formele
+BAG-processenhandboek en aangevuld met de Geo-gebeurtenissen.</p>
+<p>[^17] Dit is een vorm van terugmelding op de registratie van BAG.</p>
+<p>[^18] Geo krijgt de BAG-identificatie van een geconstateerd nieuw pand retour
+na overname van BAG via een BAG-kennisgevingsbericht.</p>
+</section><section id="identificaties-van-en-relaties-tussen-berichten"><div class="header-wrapper"><h4 id="x2-1-4-identificaties-van-en-relaties-tussen-berichten"><bdi class="secno">2.1.4 </bdi>Identificaties van en relaties tussen berichten</h4><a class="self-link" href="#identificaties-van-en-relaties-tussen-berichten" aria-label="Permalink for Section 2.1.4"></a></div>
+<section id="logistieke-en-functionele-identificatie"><div class="header-wrapper"><h5 id="x2-1-4-1-logistieke-en-functionele-identificatie"><bdi class="secno">2.1.4.1 </bdi>Logistieke en functionele identificatie</h5><a class="self-link" href="#logistieke-en-functionele-identificatie" aria-label="Permalink for Section 2.1.4.1"></a></div>
+<p>In het Geo-BAG berichtenverkeer wordt onderscheid gemaakt tussen logistieke
+identificaties en functionele (of logische) identificaties in berichten.</p>
+<p><strong>Logistieke identificatie</strong> is de unieke identificatie van een bericht. De
+logistieke identificatie wordt opgenomen in het element ‘referentienummer’ in de
+‘stuurgegevens’ van vrije berichten, en in het element ‘crossRefNummer’ van
+responsberichten.</p>
+<p>Een <strong>functionele identificatie</strong> is een identificerend kenmerk dat hoort bij
+meerdere berichten behorende bij één mutatie/transactie bundelt. De functionele
+identificatie wordt opgenomen het element ‘idLevering’, ‘idVerzoek’ of
+‘identificatie’ van de ‘parameters’.</p>
+<p>De functionele identificatie wordt gebruikt om berichten die bij een zelfde
+gebeurtenis (vergunning of signalering) horen te bundelen. Bijvoorbeeld, bij het
+verlenen van een bouwvergunning door BAG zijn er meerdere berichten voor het
+opvoeren van een pand en verblijfsobject. Of na mutatiesignalering door Geo
+worden meerdere berichten met constateringen van panden verstuurd. Deze
+berichten hebben een eigen unieke logistieke identificatie, maar worden
+gebundeld door eenzelfde functionele identificatie.</p>
+</section><section id="invullen-van-logistieke-en-functionele-identificaties"><div class="header-wrapper"><h5 id="x2-1-4-2-invullen-van-logistieke-en-functionele-identificaties"><bdi class="secno">2.1.4.2 </bdi>Invullen van logistieke en functionele identificaties</h5><a class="self-link" href="#invullen-van-logistieke-en-functionele-identificaties" aria-label="Permalink for Section 2.1.4.2"></a></div>
+<p>Voor het invullen van identificaties in de Geo-BAG berichten gelden de volgende
+uitgangspunten.</p>
+<p><strong>Logistieke identificatie:</strong></p>
+<ul>
+<li>Een afkeuringsbericht of goedkeuringsbericht (=responsbericht Du01) heeft in
+het crossRefNummer de logistieke identificatie van het geometrieverzoek of
+de geometrielevering.</li>
+</ul>
+<p><strong>Functioneel:</strong></p>
+<ul>
+<li><p>De identificatie van een geometrieverzoek wordt in de geometrielevering
+opgenomen in het element ‘idGerelateerdVerzoek’, als de levering is
+aangemaakt naar aanleiding van een verzoek door BAG.</p>
+</li>
+<li><p>Het element ‘idGerelateerdVerzoek’ blijft leeg als de geometrielevering
+wordt geïnitieerd door Geo, bijvoorbeeld naar aanleiding van een
+constatering/signalering uit een luchtfoto.</p>
+</li>
+</ul>
+<p>Onderstaande figuur geeft weer hoe de identificaties in Geo-BAG berichten worden
+doorgegeven.</p>
+<p><img src="media/a0a7d4d3f2d708e16d818d43616726ea.png" alt=""></p>
+<p><em>Voorbeeld logistieke en functionele identificatie in Geo-BAG berichten.</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>geometrieVerzoek</th>
+<th>Goed-/afkeuring GEO</th>
+<th></th>
+<th>geometrieLevering</th>
+<th>Goed-/afkeuring BAG</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>referentienummer</td>
+<td>000501</td>
+<td>000750</td>
+<td></td>
+<td>000751</td>
+<td>000502</td>
+</tr>
+<tr>
+<td>crossRefnummer</td>
+<td>n.v.t.</td>
+<td>000501</td>
+<td></td>
+<td>n.v.t.</td>
+<td>000751</td>
+</tr>
+<tr>
+<td>identificatie[^19]</td>
+<td>987654</td>
+<td>987654</td>
+<td></td>
+<td>123456</td>
+<td>123456</td>
+</tr>
+<tr>
+<td>idGerelateerdVerzoek</td>
+<td>n.v.t.</td>
+<td>n.v.t.</td>
+<td></td>
+<td>987654</td>
+<td>n.v.t.</td>
+</tr>
+</tbody></table>
+<p>[^19] identificatie is bij geometrieverzoek het element ‘idVerzoek’, bij een
+geometrielevering het element ‘idLevering’ en bij goed/afkeuringsberichten het
+element ‘identificatie’ in de parameters.</p>
+</section><section id="intrekken-en-corrigeren-van-berichten"><div class="header-wrapper"><h5 id="x2-1-4-3-intrekken-en-corrigeren-van-berichten"><bdi class="secno">2.1.4.3 </bdi>Intrekken en corrigeren van berichten</h5><a class="self-link" href="#intrekken-en-corrigeren-van-berichten" aria-label="Permalink for Section 2.1.4.3"></a></div>
+<p>In het StUF-Geo BAG berichtenverkeer kan het voorkomen dat BAG of Geo een eerder
+verstuurd StUF-Geo BAG bericht wil corrigeren of intrekken. Een bericht kan door
+zender worden gecorrigeerd of ingetrokken indien deze nog niet door ontvanger is
+afgehandeld, d.w.z.</p>
+<ul>
+<li><p>Als BAG nog geen goed- of afkeuringsbericht op het geometrieverzoek van Geo
+heeft ontvangen.</p>
+</li>
+<li><p>Als Geo nog geen goed- of afkeuringsbericht op de geometrielevering van BAG
+heeft ontvangen.</p>
+</li>
+</ul>
+<p>Voor het <strong>intrekken</strong> van een StUF-Geo BAG bericht wordt een nieuw bericht
+gestuurd met daarin opgenomen een eigen unieke logistieke identificatie en een
+functionele identificatie gelijk aan de functionele identificatie van het
+in-te-trekken bericht.</p>
+<p>Voor het <strong>corrigeren</strong> van een StUF-Geo BAG bericht wordt eerst het vorige
+bericht ingetrokken en vervolgens een nieuw bericht met een nieuwe functionele
+identificatie verstuurd.</p>
+<p><em>Voorbeeld intrekken en corrigeren geometrielevering[^20]</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Nieuwe geometrielevering door Geo</th>
+<th>Intrekken geometrielevering door Geo</th>
+<th>Corrigeren geometrielevering door Geo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>referentienummer</td>
+<td>000751</td>
+<td>000752</td>
+<td>000753</td>
+</tr>
+<tr>
+<td>crossRefnummer</td>
+<td>n.v.t.</td>
+<td>n.v.t.</td>
+<td>n.v.t.</td>
+</tr>
+<tr>
+<td>identificatie[^19]</td>
+<td>123456</td>
+<td>123456</td>
+<td>12345<strong>7</strong></td>
+</tr>
+<tr>
+<td>idGerelateerdVerzoek</td>
+<td>987654</td>
+<td>987654</td>
+<td>987654</td>
+</tr>
+</tbody></table>
+<p>In onderstaand voorbeeld wordt de eerste geometrielevering door BAG goedgekeurd
+en wordt de intrekking van de geometrielevering door BAG afgekeurd. BAG heeft
+daarmee de gegevens uit de geometrielevering geaccepteerd en zal deze gegevens
+verder gaan verwerken.</p>
+<p><em>Voorbeeld goedkeuring op geometrielevering, afkeuring op intrekken
+geometrielevering door BAG[^20]</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Nieuwe geometrielevering door Geo</th>
+<th>Intrekken geometrielevering door Geo</th>
+<th>Goedkeuring geometrielevering door BAG</th>
+<th>Afkeuring intrekken geometrielefvering door BAG</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>referentienummer</td>
+<td>000<strong>751</strong></td>
+<td>000<strong>752</strong></td>
+<td>000502</td>
+<td>000502</td>
+</tr>
+<tr>
+<td>crossRefnummer</td>
+<td>n.v.t.</td>
+<td>n.v.t.</td>
+<td>000<strong>751</strong></td>
+<td>000<strong>752</strong></td>
+</tr>
+<tr>
+<td>identificatie[^19]</td>
+<td>123456</td>
+<td>123456</td>
+<td>123456</td>
+<td>123456</td>
+</tr>
+<tr>
+<td>idGerelateerdVerzoek</td>
+<td>987654</td>
+<td>987654</td>
+<td>n.v.t.</td>
+<td>n.v.t.</td>
+</tr>
+</tbody></table>
+<p>In onderstaand voorbeeld wordt de eerste geometrielevering door BAG afgekeurd en
+wordt de intrekking van de geometrielevering door BAG goedgekeurd. BAG heeft
+daarmee de gegevens uit de geometrielevering niet geaccepteerd en zal dus geen
+gegevens van Geo gaan verwerken.</p>
+<p><em>Voorbeeld afkeuring op geometrielevering, goedkeuring op intrekken
+geometrielevering door BAG[^20]</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Nieuwe geometrielevering door Geo</th>
+<th>Intrekken geometrielevering door Geo</th>
+<th>Afkeuring geometrielevering door BAG</th>
+<th>Goedkeuring intrekken geometrielefvering door BAG</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>referentienummer</td>
+<td>000<strong>751</strong></td>
+<td>000<strong>752</strong></td>
+<td>000502</td>
+<td>000502</td>
+</tr>
+<tr>
+<td>crossRefnummer</td>
+<td>n.v.t.</td>
+<td>n.v.t.</td>
+<td>000<strong>751</strong></td>
+<td>000<strong>752</strong></td>
+</tr>
+<tr>
+<td>identificatie[^19]</td>
+<td>123456</td>
+<td>123456</td>
+<td>123456</td>
+<td>123456</td>
+</tr>
+<tr>
+<td>idGerelateerdVerzoek</td>
+<td>987654</td>
+<td>987654</td>
+<td>n.v.t.</td>
+<td>n.v.t.</td>
+</tr>
+</tbody></table>
+<p>[^20] Op vergelijkbare wijze worden de identificaties ingevuld voor intrekken
+en corrigeren van geometrieverzoeken door BAG, en het goedkeuren/afkeuren
+hiervan door Geo.</p>
+</section></section><section id="identificaties-van-en-relaties-tussen-objecten"><div class="header-wrapper"><h4 id="x2-1-5-identificaties-van-en-relaties-tussen-objecten"><bdi class="secno">2.1.5 </bdi>Identificaties van en relaties tussen objecten</h4><a class="self-link" href="#identificaties-van-en-relaties-tussen-objecten" aria-label="Permalink for Section 2.1.5"></a></div>
+<section id="bag-objectnummer-en-versie"><div class="header-wrapper"><h5 id="x2-1-5-1-bag-objectnummer-en-versie"><bdi class="secno">2.1.5.1 </bdi>BAG-objectnummer en versie</h5><a class="self-link" href="#bag-objectnummer-en-versie" aria-label="Permalink for Section 2.1.5.1"></a></div>
+<p>Elk object in de BAG heeft een unieke aanduiding bestaande uit een
+<strong>identificatie</strong> (ookwel: objectnummer) en <strong>versie</strong>. Met deze unieke
+aanduiding is (deze versie van) het object ook bekend in de Landelijke
+Voorziening BAG zodra het authentiek is verklaard.</p>
+</section><section id="technische-sleutels"><div class="header-wrapper"><h5 id="x2-1-5-2-technische-sleutels"><bdi class="secno">2.1.5.2 </bdi>Technische sleutels</h5><a class="self-link" href="#technische-sleutels" aria-label="Permalink for Section 2.1.5.2"></a></div>
+<p>In het Geo-BAG berichtenverkeer worden ook in bepaalde gevallen de technische
+(system of database)sleutels van Geo en BAG uitgewisseld. De technische sleutels
+van de zender en ontvanger worden uitgewisseld in de attributen
+<strong>sleutelVerzendend</strong> en <strong>sleutelOntvangend</strong>.</p>
+</section><section id="invullen-van-bag-objectnummer-en-technische-sleutels"><div class="header-wrapper"><h5 id="x2-1-5-3-invullen-van-bag-objectnummer-en-technische-sleutels"><bdi class="secno">2.1.5.3 </bdi>Invullen van BAG-objectnummer en technische sleutels</h5><a class="self-link" href="#invullen-van-bag-objectnummer-en-technische-sleutels" aria-label="Permalink for Section 2.1.5.3"></a></div>
+<p>Het opnemen van het BAG-objectnummer (en versie) bij een object is verplicht,
+tenzij voor het object nog geen BAG-objectnummer is uitgedeeld. Dit treedt op in
+de volgende twee situaties:</p>
+<ul>
+<li><p>Bij het versturen van een geometrieVerzoek na gebeurtenis ‘BGR-OBA Ontvangst
+bouwaanvraag’, waarbij het object nog niet is opgenomen in de applicatie van
+BAG.</p>
+</li>
+<li><p>Bij het versturen van een geometrieLevering na gebeurtenis ‘GEO-COG
+Constatering nieuw object’ (bijvoorbeeld bij vergunningsvrije bouw) waarbij
+het object ontstaat in de applicatie van Geo. Geo deelt namelijk geen
+BAG-identificaties uit.</p>
+</li>
+</ul>
+<p>Voor het invullen van BAG-objectnummer en technische sleutels in Geo-BAG
+berichten gelden de volgende uitgangspunten:</p>
+<ul>
+<li><p>Als het <strong>BAG-objectnummer bij BAG bekend</strong> is, stuurt BAG deze mee én de
+technische systeemsleutel van BAG.</p>
+</li>
+<li><p>Als <strong>het BAG-objectnummer bij Geo bekend</strong> is, dan stuurt Geo de BAG
+identificatie én de technische systeemsleutel van Geo mee.</p>
+</li>
+</ul>
+<p><em>Voorbeeld BAG-objectnummer bij BAG of Geo bekend.</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Geometrieverzoek door BAG</th>
+<th>Geometrielevering door Geo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>identificatie</td>
+<td>0363200000509364</td>
+<td>0363200000509364</td>
+</tr>
+<tr>
+<td>versie</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>sleutelVerzendend</td>
+<td>29418fff6eea4e798134c142875e85d0</td>
+<td>898313020f0042b798c0a761087ab2fb</td>
+</tr>
+<tr>
+<td>sleutelOntvangend</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>Als het <strong>BAG-objectnummer bij BAG niet bekend</strong> is, stuurt BAG alleen de
+technische systeemsleutel van BAG.</p>
+</li>
+<li><p>Als het <strong>BAG-objectnummer bij Geo niet bekend en het object is opgenomen in
+een geometrielevering op een geometrieverzoek van BAG</strong>, stuurt Geo de
+technische sleutel van BAG en Geo mee.</p>
+</li>
+</ul>
+<p><em>Voorbeeld geometrieverzoek zonder BAG-objectnummer en geometrielevering door
+Geo met technische sleutels.</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Geometrieverzoek door BAG</th>
+<th>Geometrielevering door Geo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>identificatie</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>versie</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sleutelVerzendend</td>
+<td>29418fff6eea4e798134c142875e85d0</td>
+<td>898313020f0042b798c0a761087ab2fb</td>
+</tr>
+<tr>
+<td>sleutelOntvangend</td>
+<td>-</td>
+<td>29418fff6eea4e798134c142875e85d0</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Als het <strong>BAG-objectnummer bij Geo niet bekend en het object is opgenomen in
+een goedkeuring of afkeuring op een geometrieverzoek van BAG</strong>, stuurt Geo
+alleen de technische sleutel van BAG mee.</li>
+</ul>
+<p><em>Voorbeeld BAG-objectnummer bij BAG niet bekend, en goed-/afkeuring door Geo</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Geometrieverzoek door BAG</th>
+<th>Goed-/afkeuring door Geo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>identificatie</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>versie</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sleutelVerzendend</td>
+<td>29418fff6eea4e798134c142875e85d0</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sleutelOntvangend</td>
+<td>-</td>
+<td>29418fff6eea4e798134c142875e85d0</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Als het <strong>BAG-objectnummer bij BAG niet bekend en het object is opgenomen in
+een afkeuring op een geometrielevering van Geo</strong>, stuurt BAG alleen de
+technische sleutel van Geo mee.</li>
+</ul>
+<p><em>Voorbeeld BAG-objectnummer niet bekend, en afkeuring van geometrielevering door
+BAG</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Geometrielevering door Geo</th>
+<th>Afkeuring door BAG</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>identificatie</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>versie</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sleutelVerzendend</td>
+<td>898313020f0042b798c0a761087ab2fb</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sleutelOntvangend</td>
+<td>-</td>
+<td>898313020f0042b798c0a761087ab2fb</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Als het <strong>BAG-objectnummer bij BAG niet bekend en het object is opgenomen in
+een goedkeuring op een geometrielevering van Geo</strong>, stuurt BAG het nieuwe
+BAG-objectnummer en de technische sleutel van Geo mee.</li>
+</ul>
+<p><em>Voorbeeld BAG-objectnummer niet bekend, en goedkeuring van geometrielevering
+door BAG</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Geometrielevering door Geo</th>
+<th>Goedkeuring door BAG</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>identificatie</td>
+<td>-</td>
+<td>0363200000509364</td>
+</tr>
+<tr>
+<td>versie</td>
+<td>-</td>
+<td>1</td>
+</tr>
+<tr>
+<td>sleutelVerzendend</td>
+<td>898313020f0042b798c0a761087ab2fb</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sleutelOntvangend</td>
+<td>-</td>
+<td>898313020f0042b798c0a761087ab2fb</td>
+</tr>
+</tbody></table>
+</section></section><section id="verzenden-en-verwerken-van-berichten"><div class="header-wrapper"><h4 id="x2-1-6-verzenden-en-verwerken-van-berichten"><bdi class="secno">2.1.6 </bdi>Verzenden en verwerken van berichten</h4><a class="self-link" href="#verzenden-en-verwerken-van-berichten" aria-label="Permalink for Section 2.1.6"></a></div>
+<p>In StUF-Geo BAG berichtenverkeer kunnen berichten in willekeurige volgorde
+worden verzonden en verwerkt.</p>
+<section id="transacties-en-bundeling-van-berichten"><div class="header-wrapper"><h5 id="x2-1-6-1-transacties-en-bundeling-van-berichten"><bdi class="secno">2.1.6.1 </bdi>Transacties en bundeling van berichten</h5><a class="self-link" href="#transacties-en-bundeling-van-berichten" aria-label="Permalink for Section 2.1.6.1"></a></div>
+<p>Bij bepaalde gebeurtenissen (bijv. bij het verlenen van een bouwvergunning voor
+een pand met meerdere verblijfsobjecten en nummeraanduidingen) komt het voor dat
+gegevens van meerdere objecten uitgewisseld gaan worden. Per transactie[^23]
+wordt een StUF-Geo BAG bericht met een eigen logistieke identificatie en een
+gemeenschappelijke functionele identificatie (betreffende de gebeurtenis
+‘bouwvergunning verleend’) voor deze transactie samengesteld en in willekeurige
+volgorde verstuurd. Het is niet de bedoeling om bijvoorbeeld in één
+geometrieverzoek voor alle objecten die op die dag zijn opgevoerd in het hele
+gebied van een gemeente de geometrie te vragen. De eenheid van werk dient zo
+klein mogelijk gehouden te worden aan de ontvangende kant, om snelle afhandeling
+van een verzoek of levering mogelijk te maken.</p>
+<p>[^23] Een transactie is een samenstelling / bundeling van (gewijzigde) gegevens
+van één of meer objecten wat tot een bepaalde gebeurtenis of eenheid van werk
+toebehoord.</p>
+</section><section id="verplichte-of-niet-verplichte-overname"><div class="header-wrapper"><h5 id="x2-1-6-2-verplichte-of-niet-verplichte-overname"><bdi class="secno">2.1.6.2 </bdi>Verplichte of niet-verplichte overname</h5><a class="self-link" href="#verplichte-of-niet-verplichte-overname" aria-label="Permalink for Section 2.1.6.2"></a></div>
+<p>De gegevens van een object in het StUF-Geo BAG berichtenverkeer welke worden
+uitgewisseld met asynchrone kennisgevingsberichten kunnen verplicht zijn om te
+verwerken in de ontvangende applicatie of informatief bedoeld zijn. Of een
+BAG-kennisgeving in een bericht verplicht of informatief is, wordt opgenomen in
+de parameter met resp. “V” (Verplicht) of “I” (Informatief).</p>
+<p>Voor het Geo-BAG berichtenverkeer heeft een BAG-kennisgeving een
+indicatorOvername “V” (Verplicht), omdat BAG eindverantwoordelijk is voor de
+(kwaliteit van) gegevens van de BAG-objecten. Geo neemt de gegevens van BAG
+verplicht over in de eigen registratie.</p>
+<p>In een StUF-Geo BAG bericht komt het element indicatorOvername niet voor, omdat
+geen gebruik wordt gemaakt van kennisgevingen24 maar van elementen met een
+StUF:functie:”entiteit” (hierna: entiteit. De objectgegevens in een
+geometrieLevering of geometrieVerzoek zijn niet verplicht om over te nemen, en
+dienen enkel ter identificatie van het object waarvoor geometrie wordt gevraagd
+of geleverd.</p>
+<p>[^24] Dit omdat alleen de actuele stand van een object wordt uitgewisseld en
+geen WAS/WORDT structuur.</p>
+</section><section id="volgorde-van-verzenden-en-verwerken"><div class="header-wrapper"><h5 id="x2-1-6-3-volgorde-van-verzenden-en-verwerken"><bdi class="secno">2.1.6.3 </bdi>Volgorde van verzenden en verwerken</h5><a class="self-link" href="#volgorde-van-verzenden-en-verwerken" aria-label="Permalink for Section 2.1.6.3"></a></div>
+<p>Het verzenden van een bericht wordt geïnitieerd door zender en is
+eenrichtingsverkeer (push-mechanisme). De zendende applicatie kan meerdere
+berichten achter elkaar versturen, waarbij een volgend bericht niet per sé
+verzonden wordt na bevestiging van ontvangst van het vorige bericht.</p>
+<p>De ontvanger bevestigt te allen tijde de ontvangst van een bericht met een
+technisch synchrone respons t.b.v. de logistiek (Bv03/Bv04 of Fo03). Als op een
+bericht binnen een bepaalde termijn geen bevestiging van ontvangst is
+teruggekomen, mag de zender veronderstellen dat het bericht niet is aangekomen.
+Omdat het de verantwoordelijkheid van zender is dat berichten ‘aankomen’, dient
+de zender opnieuw het bericht te versturen aan ontvanger.</p>
+<p>De afhandeling van het bericht door ontvanger is asynchroon, d.w.z. dat het
+ontvangen bericht op later moment (dus niet gelijk = synchroon) verwerkt wordt.
+De berichten in de wachtrij van de ontvangende applicatie worden conform StUF
+verwerkt, ofwel: op volgorde van tijdstipBericht.</p>
+</section><section id="synchroniteit"><div class="header-wrapper"><h5 id="x2-1-6-4-synchroniteit"><bdi class="secno">2.1.6.4 </bdi>Synchroniteit</h5><a class="self-link" href="#synchroniteit" aria-label="Permalink for Section 2.1.6.4"></a></div>
+<p>Op bepaalde momenten kunnen de gegevens van BAG-objecten in de applicaties van
+BAG en Geo tijdelijk uit elkaar lopen (bijv. na afwijzing van een nieuw
+geconstateerd Pand in een levering van Geo welke na beoordeling door BAG een
+niet-relevant BAG-object blijkt te zijn, dus geen BAG-Pand). Geo is
+verantwoordelijk voor de synchronisatie van de eigen applicatie met BAG voor
+o.a. overname van gegevens bij het BGT-object Pand.</p>
+</section></section></section></section>
+   <section id="scenario-s"><div class="header-wrapper"><h2 id="x3-scenario-s"><bdi class="secno">3. </bdi>Scenario’s</h2><a class="self-link" href="#scenario-s" aria-label="Permalink for Section 3."></a></div>
+<p>Dit hoofdstuk beschrijft drie algemene scenario’s waarvoor StUF-Geo BAG berichtenverkeer toegepast wordt, t.w. verzoek om geometrie door BAG (3.1), constatering en signalering door Geo (3.2), en kennisgeving op object door BAG (3.3). </p>
+<p>Onderstaand figuur toont een overzicht van de samenhang tussen de verschillende scenario’s (use cases) en de initiërende actor (Geo of BAG) in het StUF-Geo BAG berichtenverkeer. Een volledig overzicht van de samenhang van activiteiten in de scenario’s van het StUF-Geo BAG berichtenverkeer is opgenomen in Bijlage 2. </p>
+<p><img src="media/fig-use-case-diagram-stuf-geo-bag-berichtenverkeer.png" alt="Use case diagram StUF-Geo BAG berichtenverkeer"></p>
+<p><em>Figuur 3.1 Use case diagram van het StUF-Geo BAG berichtenverkeer</em></p>
+<section id="verzoek-om-geometrie-door-bag"><div class="header-wrapper"><h3 id="x3-1-verzoek-om-geometrie-door-bag"><bdi class="secno">3.1 </bdi>Verzoek om geometrie door BAG</h3><a class="self-link" href="#verzoek-om-geometrie-door-bag" aria-label="Permalink for Section 3.1"></a></div>
+<section id="basisscenario"><div class="header-wrapper"><h4 id="x3-1-1-basisscenario"><bdi class="secno">3.1.1 </bdi>Basisscenario</h4><a class="self-link" href="#basisscenario" aria-label="Permalink for Section 3.1.1"></a></div>
+<p>Op enig moment doet BAG naar aanleiding van een BAG-gebeurtenis (BAG-###) een verzoek aan Geo voor het leveren van geometrie in een geometrieVerzoek. Dit verzoek betreft een wens tot aanlevering van geometrie voor een bepaald object n.a.v. een bepaalde gebeurtenis. </p>
+<p>Op het moment dat Geo het verzoek in behandeling neemt, stuurt Geo een goedkeuringsbericht aan BAG. Geo gaat op enig moment over tot verwerking van het verzoek, te weten de inwinning en kartering van de geometrie. Op het moment dat Geo de inwinning en kartering van de geometrie voltooid heeft, zal Geo de geometrie uitleveren aan BAG in een geometrieLevering. </p>
+<p>BAG gaat over tot de beoordeling van de geometrieLevering. Indien BAG de geometrie in de geometrieLevering goedkeurt, stuurt BAG een bevestiging van acceptatie/overname van de geometrie aan Geo middels een goedkeuringsbericht. </p>
+<p>Na succesvolle verwerking in de eigen applicatie stuurt BAG de actuele stand van het BAG-object middels een BAG-kennisgeving aan Geo[^25]. Geo verwerkt de gegevens in de BAG-kennisgeving in de eigen applicatie. </p>
+<p><img src="media/fig-sd_verzoek_geometrie-bag.png" alt="Sequentiediagram Verzoek om geometrie door BAG"></p>
+<p><em>Figuur 3.2 Sequentiediagram Verzoek om geometrie door BAG – Basisscenario[^26][^27]</em></p>
+<p>[^25] En ook naar andere afnemers in de organisatie. </p>
+<p>[^26] ### is jokerteken voor gebeurteniscode. BAG-### betekent elke gebeurtenis die ontstaat bij BAG. </p>
+<p>[^27] xxxLk03 betekent voor elke BAG-kennisgeving zijnde een Lk03-bericht. </p>
+</section><section id="alternatief-scenario-bag-keurt-levering-af"><div class="header-wrapper"><h4 id="x3-1-2-alternatief-scenario-bag-keurt-levering-af"><bdi class="secno">3.1.2 </bdi>Alternatief scenario: BAG keurt levering af</h4><a class="self-link" href="#alternatief-scenario-bag-keurt-levering-af" aria-label="Permalink for Section 3.1.2"></a></div>
+<p>Indien BAG de gegegevens in een geometrieLevering afkeurt, stuurt BAG de reden van afkeuring aan Geo in één of meer afkeuringsberichten. Indien BAG een gecorrigeerde (geometrie)levering voor dit object wenst te ontvangen, stuurt BAG een nieuw geometrieVerzoek aan Geo[^28]. </p>
+<p><img src="media/fig-sd_verzoek_geometrie-bag-alt1.png" alt="Sequentiediagram Verzoek om geometrie door BAG - Alt 1. BAG keurt levering af"></p>
+<p><em>Figuur 3.3 Sequentiediagram Verzoek om geometrie door BAG – Alt 1. BAG keurt levering af.</em></p>
+<p>[^28] De gevolgen voor de BGT worden beoordeeld door de BGT operator. Hiermee is de afhandeling van het geometrieVerzoek 
+voor Geo afgerond. </p>
+</section><section id="alternatief-scenario-bag-wil-eerder-verzonden-geometrieverzoek-intrekken"><div class="header-wrapper"><h4 id="x3-1-3-alternatief-scenario-bag-wil-eerder-verzonden-geometrieverzoek-intrekken"><bdi class="secno">3.1.3 </bdi>Alternatief scenario: BAG wil eerder verzonden geometrieVerzoek intrekken</h4><a class="self-link" href="#alternatief-scenario-bag-wil-eerder-verzonden-geometrieverzoek-intrekken" aria-label="Permalink for Section 3.1.3"></a></div>
+<p>Indien BAG een eerder verzonden geometrieVerzoek wil intrekken (bijv. indien een vergunning niet wordt verleend, terwijl de aanvraag voor geometrie al was uitgezet door BAG), stuurt BAG een nieuw geometrieVerzoek met gebeurtenis ‘Negeren eerder verzonden geometrieVerzoek’ (BAG-NEG) naar Geo. </p>
+<p>Indien Geo het eerder verzonden geometrieVerzoek nog niet heeft afgehandeld[^29], kan het dit geometrieVerzoek negeren. Geo stuurt een bevestiging dat het geometrieVerzoek wordt genegeerd in een goedkeuringsbericht aan BAG. </p>
+<p><img src="media/fig-sd_verzoek_geometrie-bag-alt2.png" alt="Sequentiediagram Verzoek om geometrie door BAG - Alt 2.  BAG wil eerder verzoek intrekken"></p>
+<p><em>Figuur 3.4 Sequentiediagram Verzoek om geometrie door BAG – Alt 2. BAG wil eerder verzoek intrekken</em></p>
+<p>[^29] D.w.z. dat een geometrieLevering is teruggestuurd</p>
+</section><section id="alternatief-scenario-geo-keurt-geometrieverzoek-af"><div class="header-wrapper"><h4 id="x3-1-4-alternatief-scenario-geo-keurt-geometrieverzoek-af"><bdi class="secno">3.1.4 </bdi>Alternatief scenario: Geo keurt geometrieVerzoek af</h4><a class="self-link" href="#alternatief-scenario-geo-keurt-geometrieverzoek-af" aria-label="Permalink for Section 3.1.4"></a></div>
+<p>Indien Geo een geometrieVerzoek van BAG niet kan verwerken (bijv. BAG-geometrie van object is recent al uitgeleverd), keurt Geo het geometrieVerzoek af. Geo stuurt de reden van afkeuring aan BAG in één of meer afkeuringsberichten[^30]. </p>
+<p>[^30] De gevolgen voor de BGT worden beoordeeld door de BGT operator. Geo kan op eigen initiatief en met de kennis van de 
+reden van afkeuring opnieuw een geometrieLevering doen aan BAG. </p>
+<p><img src="media/fig-sd_verzoek_geometrie-bag-alt3.png" alt="Sequentiediagram Verzoek om geometrie door BAG - Alt 3.   Geo keurt verzoek af"></p>
+<p><em>Figuur 3.5 Sequentiediagram Verzoek om geometrie door BAG – Alt 3. Geo keurt verzoek af</em></p>
+</section></section><section id="constatering-en-of-signalering-door-geo"><div class="header-wrapper"><h3 id="x3-2-constatering-en-of-signalering-door-geo"><bdi class="secno">3.2 </bdi>Constatering en/of signalering door Geo</h3><a class="self-link" href="#constatering-en-of-signalering-door-geo" aria-label="Permalink for Section 3.2"></a></div>
+<section id="basisscenario-0"><div class="header-wrapper"><h4 id="x3-2-1-basisscenario"><bdi class="secno">3.2.1 </bdi>Basisscenario</h4><a class="self-link" href="#basisscenario-0" aria-label="Permalink for Section 3.2.1"></a></div>
+<p>Op enig moment heeft Geo naar aanleiding van een Geo-gebeurtenis (Geo-###) nieuwe objecten geconstateerd en/of wijzigingen op bestaande BAG-objecten gesignaleerd (bijv. na het signaleren van mutaties van BAG-objecten in luchtfoto’s). Geo stelt voor ieder gewijzigd of nieuw object een bericht geometrieLevering op en stuurt deze aan BAG. Aan de gebeurteniscode kan BAG afleiden dat het een levering betreft naar aanleiding van een constatering of (mutatie)signalering. </p>
+<p>BAG gaat over tot de beoordeling van de geometrieLevering. Indien BAG een geconstateerd object in de geometrieLevering goedkeurt, voert BAG een nieuw object op in de eigen registratie. Na succesvolle verwerking in de eigen applicatie stuurt BAG de actuele stand van het BAG-object middels een BAG-kennisgeving aan Geo[^32]. Geo verwerkt de gegevens in de BAG-kennisgeving in de eigen applicatie. </p>
+<p>Gelijktijdig of na het versturen van de BAG-kennisgeving stuurt BAG, stuurt BAG een bevestiging van acceptatie/overname van de geometrie aan Geo middels een goedkeuringsbericht. In dit goedkeuringsbericht wordt voor elk goedgekeurd geconstateerd object de BAG-identificatie en de technische sleutel van Geo opgenomen.</p>
+<p><img src="media/fig-sd_constatering_signalering_geo.png" alt="Sequentiediagram Verzoek om geometrie door BAG"></p>
+<p><em>Figuur 3.6 Sequentiediagram Constatering en/of signalering door Geo – Basisscenario</em></p>
+<p>[^32] En ook naar andere afnemers in de organisatie.</p>
+</section><section id="alternatief-scenario-bag-keurt-geometrie-af"><div class="header-wrapper"><h4 id="x3-2-2-alternatief-scenario-bag-keurt-geometrie-af"><bdi class="secno">3.2.2 </bdi>Alternatief scenario: BAG keurt geometrie af</h4><a class="self-link" href="#alternatief-scenario-bag-keurt-geometrie-af" aria-label="Permalink for Section 3.2.2"></a></div>
+<p>Indien BAG de gegevens in een geometrieLevering afkeurt, stuurt BAG de reden van afkeuring aan Geo in 
+een afkeuringsbericht[^33]. Eventueel met de reden of toelichting in het vrije tekstveld van “Details”. </p>
+<p>Indien nodig, stuurt Geo een nieuwe Geometrielevering. </p>
+<p><img src="media/fig-sd_constatering_signalering_geo_alt1.png" alt="Sequentiediagram Verzoek om geometrie door BAG – Alt 1. BAG keurt levering af"></p>
+<p><em>Figuur 3.7 Sequentiediagram Constatering en/of signalering door Geo – Alt 1. BAG keurt levering af</em></p>
+<p>[^33] De gevolgen voor de BGT worden beoordeeld door de BGT operator. Geo kan op eigen initiatief en met de kennis van de 
+reden van afkeuring opnieuw een geometrieLevering doen aan BAG. </p>
+</section><section id="alternatief-scenario-geo-wil-eerder-verzonden-geometrielevering-intrekken"><div class="header-wrapper"><h4 id="x3-2-3-alternatief-scenario-geo-wil-eerder-verzonden-geometrielevering-intrekken"><bdi class="secno">3.2.3 </bdi>Alternatief scenario: Geo wil eerder verzonden geometrieLevering intrekken</h4><a class="self-link" href="#alternatief-scenario-geo-wil-eerder-verzonden-geometrielevering-intrekken" aria-label="Permalink for Section 3.2.3"></a></div>
+<p>Indien Geo een eerder verzonden geometrieLevering wil intrekken (bijv. na kwaliteitscontrole door Geo blijkt een object niet juist geclassificeerd en relevant voor BAG), stuurt Geo een nieuwe geometrieLevering met gebeurtenis ‘Negeren eerder verzonden geometrieLevering’ (GEO-NEG) naar BAG. </p>
+<p>Indien BAG de eerder verzonden geometrieLevering nog niet heeft verwerkt, kan het deze geometrieLevering negeren. Indien BAG de eerder verzonden geometrieLevering wel heeft verwerkt, volgt een afkeuringsbericht met reden van afkeuring aan Geo conform §3.2.2. </p>
+<p><img src="media/fig-sd_constatering_signalering_geo_alt2.png" alt="Sequentiediagram Verzoek om geometrie door BAG – Alt. 2 Geo wil eerder verzoek intrekken"></p>
+<p><em>Figuur 3.8 Sequentiediagram Verzoek om geometrie door BAG – Alt. 2 Geo wil eerder verzoek intrekken</em></p>
+</section></section><section id="kennisgeving-op-object-door-bag"><div class="header-wrapper"><h3 id="x3-3-kennisgeving-op-object-door-bag"><bdi class="secno">3.3 </bdi>Kennisgeving op object door BAG</h3><a class="self-link" href="#kennisgeving-op-object-door-bag" aria-label="Permalink for Section 3.3"></a></div>
+<p>Op enig moment heeft BAG naar aanleiding van een BAG-gebeurtenis (BAG-###) mutaties zijnde toevoeging, wijziging of beëindiging op één of meer BAG-objecten in de eigen applicatie, waarvan Geo op de hoogte gesteld moet worden. BAG stelt hiertoe voor iedere mutatie een apart BAG-kennisgevingsbericht samen en stuurt deze aan Geo[^34]. Geo verwerkt wat ze nodig hebben aan gegevens in de eigen applicatie. Geo verstuurd geen functionele respons na succesvolle verwerking van de BAG-kennisgeving in de eigen applicatie. </p>
+<p><img src="media/fig-sd_kennisgeving_object_BAG.png" alt="Sequentiediagram Kennisgeving op object door BAG "></p>
+<p><em>Figuur 3.9 Sequentiediagram Kennisgeving op object door BAG</em></p>
+<p>[^34] En ook naar andere afnemers in de organisatie.</p>
+</section></section>
+   <section id="berichten-0"><div class="header-wrapper"><h2 id="x4-berichten"><bdi class="secno">4. </bdi>Berichten</h2><a class="self-link" href="#berichten-0" aria-label="Permalink for Section 4."></a></div>
+<p>Dit hoofdstuk beschrijft de berichten in het berichtenverkeer tussen BAG en Geo. Enerzijds wordt hergebruik gemaakt van bestaande StUF-BAG kennisgevingsberichten en StUF bevestigings- en foutberichten, anderzijds zijn eigen voor dit koppelvlak specifieke StUF-Geo BAG gedefinieerd. </p>
+<section id="stuf-geo-bag-berichten"><div class="header-wrapper"><h3 id="x4-1-stuf-geo-bag-berichten"><bdi class="secno">4.1 </bdi>StUF-Geo BAG berichten</h3><a class="self-link" href="#stuf-geo-bag-berichten" aria-label="Permalink for Section 4.1"></a></div>
+<p>De StUF-Geo BAG berichten geometrieVerzoek en geometrieLevering zijn eigen voor dit koppelvlak specifieke berichten. De berichten bevatten de volgende elementen: </p>
+<ul>
+<li>Logistieke gegevens: standaard StUF-stuurgegevens bevatten o.a. de logistieke identificatie en gegevens van zender/ontvanger. </li>
+<li>Procesgegevens: bevatten o.a. de functionele identificatie, een toelichting en verwijzing naar een gerelateerde (bron)document. </li>
+<li>Inhoud: een objectkennisgeving met de gegevens van een BAG-object. Een objectkennisgeving bevat alleen de verplichte gegevens van een van de BAG-objecten.</li>
+</ul>
+<section id="geometrieverzoek"><div class="header-wrapper"><h4 id="x4-1-1-geometrieverzoek"><bdi class="secno">4.1.1 </bdi>GeometrieVerzoek</h4><a class="self-link" href="#geometrieverzoek" aria-label="Permalink for Section 4.1.1"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam bericht</th>
+<th>geometrieVerzoek</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Afkorting bericht</td>
+<td>gmvDi01</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-Geo BAG</td>
+</tr>
+<tr>
+<td>Berichtcode</td>
+<td>Di01</td>
+</tr>
+<tr>
+<td>Omschrijving</td>
+<td>Een geometrieVerzoek is een verzoek van BAG aan Geo tot het inwinnen en/of karteren en/of intekenen van geometrie voor bepaalde BAG-objecten. Dit verzoek ontstaat n.a.v. een BAG-gebeurtenis; de gebeurteniscode is verplicht in het bericht. De BAG-identificatie en de bij BAG-aanwezige (schets)geometrie van een object wordt meegestuurd in het verzoek. <br> De BAG-identificatie van een betreffend object mag alleen leeg zijn als het bericht wordt verstuurd na gebeurtenis ‘BGR-OBA Ontvangst bouwaanvraag’.</td>
+</tr>
+<tr>
+<td>Zender</td>
+<td>BAG</td>
+</tr>
+<tr>
+<td>Ontvanger</td>
+<td>Geo</td>
+</tr>
+<tr>
+<td>Stuurgegevens</td>
+<td>standaard StUF-stuurgegevens</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td><ul><li>idVerzoek [1-1]</li><li>gebeurtenisCode [1-1]</li><li>documentVerwijzing [0-1]</li><li>toelichting [0-1]</li></ul></td>
+</tr>
+<tr>
+<td>Inhoud</td>
+<td>Keuze uit één of meer entiteiten (choice [1..n]):<ul><li>ligplaats [1-1]</li><li>overigGebouwdObject [1-1]</li><li>overigTerrein [1-1]</li><li>pand [1-1]</li><li>standplaats [1-1]</li><li>verblijfsobject [1-1]</li><li>woonplaats [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+</section><section id="geometrielevering"><div class="header-wrapper"><h4 id="x4-1-2-geometrielevering"><bdi class="secno">4.1.2 </bdi>GeometrieLevering</h4><a class="self-link" href="#geometrielevering" aria-label="Permalink for Section 4.1.2"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam bericht</th>
+<th>geometrieLevering</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Afkorting bericht</td>
+<td>gmlDi01</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-Geo BAG</td>
+</tr>
+<tr>
+<td>Berichtcode</td>
+<td>Di01</td>
+</tr>
+<tr>
+<td>Omschrijving</td>
+<td>Een geometrieLevering bevat levering van de geometrie van één of meer BAG-objecten[^35]. De levering is op verzoek van BAG of op initiatief van Geo na constatering of signalering van mutaties en ontstaat dus n.a.v. een BAG- of Geo-gebeurtenis (zie bijlage 1); de gebeurteniscode is verplicht in het bericht. De BAG-identificatie (indien beschikbaar) en de door Geo ingewonnen en gekarteerde of ingetekende geometrie van het object wordt meegestuurd in de levering. De BAG-identificatie mag alleen leeg zijn na gebeurtenis ‘GEO-COG Constatering nieuw object’ of als een levering wordt gedaan op verzoek na gebeurtenis ‘BGR-OBA Ontvangst bouwaanvraag’. De geometrie van het betreffende object mag alleen leeg zijn na gebeurtenis ‘GEO-AOC Constatering gesloopt object’.</td>
+</tr>
+<tr>
+<td>Zender</td>
+<td>Geo</td>
+</tr>
+<tr>
+<td>Ontvanger</td>
+<td>BAG</td>
+</tr>
+<tr>
+<td>Stuurgegevens</td>
+<td>standaard StUF-stuurgegevens</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td><ul><li>idLevering [1-1]</li><li>gerelateerdVerzoek [0-1]</li><li>gebeurtenisCode [1-1]</li><li>documentVerwijzing [0-1]</li><li>toelichting [0-1]</li></ul></td>
+</tr>
+<tr>
+<td>Inhoud</td>
+<td>Keuze uit één of meer entiteiten (choice [1..n]):<ul><li>ligplaats [1-1]</li><li>overigGebouwdObject [1-1]</li><li>overigTerrein [1-1]</li><li>pand [1-1]</li><li>standplaats [1-1]</li><li>verblijfsobject [1-1]</li><li>woonplaats [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+<p>[^35] Bij levering op initiatief van Geo, wordt vooralsnog verondersteld dat geconstateerd object een relevant BAG-object is. </p>
+</section><section id="goedkeuringsbericht"><div class="header-wrapper"><h4 id="x4-1-3-goedkeuringsbericht"><bdi class="secno">4.1.3 </bdi>Goedkeuringsbericht</h4><a class="self-link" href="#goedkeuringsbericht" aria-label="Permalink for Section 4.1.3"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam bericht</th>
+<th>goedkeuringsbericht</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Afkorting bericht</td>
+<td>bevestigingDu01</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-Geo BAG</td>
+</tr>
+<tr>
+<td>Berichtcode</td>
+<td>Du01</td>
+</tr>
+<tr>
+<td>Omschrijving</td>
+<td>Een goedkeuringsbericht is een functioneel asynchroon responsbericht, welke de succesvolle verwerking van (een deel van de inhoud van) een geometrieLevering, of het succesvol intrekken van een geometrieVerzoek bevestigt. De goedgekeurde objecten worden aan de hand van de identificaties en typering van deze objecten teruggegeven; de afgekeurde objecten worden in een separaat afkeuringsbericht opgenomen. In de parameters van een goedkeuringsbericht wordt de identificatie van het geometrieVerzoek of de geometrieLevering opgenomen, waarop het respons wordt gegeven.</td>
+</tr>
+<tr>
+<td>Zender</td>
+<td>Geo, BAG</td>
+</tr>
+<tr>
+<td>Ontvanger</td>
+<td>BAG, Geo</td>
+</tr>
+<tr>
+<td>Stuurgegevens</td>
+<td>standaard StUF-stuurgegevens</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td><ul><li>identificatie [1-1]</li></ul></td>
+</tr>
+<tr>
+<td>Inhoud</td>
+<td>Keuze uit één of meer entiteiten (choice [1..n]):<ul><li>ligplaats [1-1]</li><li>overigGebouwdObject [1-1]</li><li>overigTerrein [1-1]</li><li>pand [1-1]</li><li>standplaats [1-1]</li><li>verblijfsobject [1-1]</li><li>woonplaats [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+</section><section id="afkeuringsbericht"><div class="header-wrapper"><h4 id="x4-1-4-afkeuringsbericht"><bdi class="secno">4.1.4 </bdi>Afkeuringsbericht</h4><a class="self-link" href="#afkeuringsbericht" aria-label="Permalink for Section 4.1.4"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam bericht</th>
+<th>afkeuringsbericht</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Afkorting bericht</td>
+<td>foutDu01</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-Geo BAG</td>
+</tr>
+<tr>
+<td>Berichtcode</td>
+<td>Du01</td>
+</tr>
+<tr>
+<td>Omschrijving</td>
+<td>Een afkeuringsbericht is een functioneel asynchroon responsbericht, welke de niet-succesvolle verwerking van (een deel van de inhoud van) een geometrieVerzoek of geometrieLevering terugmeldt. De afgekeurde objecten worden aan de hand van de identificaties en typering van deze objecten teruggegeven; de goedgekeurde objecten worden in een separaat goedkeuringsbericht opgenomen. Per soort reden van afkeuring (fout) wordt een afkeuringsbericht met één of meer identificatie van objecten verstuurd. In het afkeuringsbericht worden de code, omschrijving, plek en details van de fout opgenomen. In de parameters van een afkeuringsbericht wordt de identificatie van het geometrieVerzoek of de geometrieLevering opgenomen, waarop het respons wordt gegeven.</td>
+</tr>
+<tr>
+<td>Zender</td>
+<td>Geo, BAG</td>
+</tr>
+<tr>
+<td>Ontvanger</td>
+<td>BAG, Geo</td>
+</tr>
+<tr>
+<td>Stuurgegevens</td>
+<td>standaard StUF-stuurgegevens</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td><ul><li>identificatie [1-1]</li><li>foutcode [1-1]</li><li>foutomschrijving [0-1]</li><li>plek [1-1]</li><li>details [0-1]</li></ul></td>
+</tr>
+<tr>
+<td>Inhoud</td>
+<td>Keuze uit één of meer entiteiten (choice [1..n]):<ul><li>ligplaats [1-1]</li><li>overigGebouwdObject [1-1]</li><li>overigTerrein [1-1]</li><li>pand [1-1]</li><li>standplaats [1-1]</li><li>verblijfsobject [1-1]</li><li>woonplaats [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+<p>Naast de standaard StUF-foutcodes worden voor dit sectormodel de volgende foutcodes onderkend: </p>
+<table>
+<thead>
+<tr>
+<th>Foutsituatie (<a href="StUF:omschrijving">StUF:omschrijving</a>)</th>
+<th>Foutcode (<a href="StUF:code">StUF:code</a>)</th>
+<th>Plek  (<a href="StUF:plek">StUF:plek</a>)</th>
+<th>Details[^36] (<a href="StUF:details">StUF:details</a>)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>geometrieLevering is afgekeurd</td>
+<td>GB010</td>
+<td>Client</td>
+<td>«vrij tekst»</td>
+</tr>
+<tr>
+<td>geometrieLevering is afgekeurd; BAG-identificatie bestaat niet</td>
+<td>GB011</td>
+<td>Client</td>
+<td>«vrij tekst»</td>
+</tr>
+<tr>
+<td>geometrieLevering is afgekeurd; SleutelOntvanger niet bekend</td>
+<td>GB012</td>
+<td>Client</td>
+<td>«vrij tekst»</td>
+</tr>
+<tr>
+<td>geometrieLevering is afgekeurd; Object is geen BAG-object</td>
+<td>GB013</td>
+<td>Client</td>
+<td>«vrij tekst»</td>
+</tr>
+<tr>
+<td>geometrieLevering kan niet gecorrigeerd/ingetrokken worden, omdat reeds verwerkt is</td>
+<td>GB020</td>
+<td>Client</td>
+<td>«vrij tekst»</td>
+</tr>
+<tr>
+<td>geometrieVerzoek is afgekeurd;</td>
+<td>GB030</td>
+<td>Client</td>
+<td>«vrij tekst»</td>
+</tr>
+<tr>
+<td>geometrieVerzoek is afgekeurd; SleutelOntvanger niet bekend</td>
+<td>GB031</td>
+<td>Client</td>
+<td>«vrij tekst»</td>
+</tr>
+<tr>
+<td>geometrieVerzoek kan niet gecorrigeerd/ingetrokken worden, omdat reeds verwerkt is</td>
+<td>GB040</td>
+<td>Client</td>
+<td>«vrij tekst»</td>
+</tr>
+</tbody></table>
+<p>[^36] <a href="StUF:details">StUF:details</a> kunnen door zender worden toegevoegd, bijvoorbeeld met identificaties, of andere fout bevonden gegevens. </p>
+</section></section><section id="bag-kennisgevingen"><div class="header-wrapper"><h3 id="x4-2-bag-kennisgevingen"><bdi class="secno">4.2 </bdi>BAG-kennisgevingen</h3><a class="self-link" href="#bag-kennisgevingen" aria-label="Permalink for Section 4.2"></a></div>
+<p>De BAG-kennisgevingsberichten uit StUF-BG worden in dit koppelvlak toegepast om mutaties van BAG door te geven aan Geo. Voor nummeraanduidingen en openbare ruimtenamen geeft BAG elke mutatie door, en Geo neemt de gegevens uit deze kennisgevingsberichten over in de eigen applicatie. </p>
+<p>BAG stuurt na elke mutatie een kennisgevingsbericht aan Geo[^37]. In bijlage 1: Gebeurtenissen is een tabel opgenomen met daarin welke mutaties relevante informatie voor de BGT bevatten.</p>
+<p>[^37] En ook naar andere afnemers in de organisatie.</p>
+<p>[^38] De overige gebeurtenissen van de BAG Processen lijken vooralsnog niet relevant voor het koppelvlak Geo-BAG. BAG 
+stuurt een kennisgeving voor een bepaalde gebeurtenis aan Geo; het is aan Geo om te filteren of deze gebeurtenis relevant 
+is om de gegevens uit de kennisgeving te verwerken.</p>
+</section></section>
+   <section id="entiteiten"><div class="header-wrapper"><h2 id="x5-entiteiten"><bdi class="secno">5. </bdi>Entiteiten</h2><a class="self-link" href="#entiteiten" aria-label="Permalink for Section 5."></a></div>
+<p>Dit hoofdstuk beschrijft de attributen van de objectkennisgevingen in de StUF-Geo BAG 
+berichten. </p>
+<section id="entiteiten-met-objectgegevens"><div class="header-wrapper"><h3 id="x5-1-entiteiten-met-objectgegevens"><bdi class="secno">5.1 </bdi>Entiteiten met objectgegevens</h3><a class="self-link" href="#entiteiten-met-objectgegevens" aria-label="Permalink for Section 5.1"></a></div>
+<section id="ligplaats"><div class="header-wrapper"><h4 id="x5-1-1-ligplaats"><bdi class="secno">5.1.1 </bdi>ligplaats</h4><a class="self-link" href="#ligplaats" aria-label="Permalink for Section 5.1.1"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam entiteit</th>
+<th>ligplaats</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie entiteit</td>
+<td>Entiteit met de attribuutgegevens voor object Ligplaats</td>
+</tr>
+<tr>
+<td>Herkomst entiteit</td>
+<td>BAG</td>
+</tr>
+<tr>
+<td>Toelichting entiteit</td>
+<td>«leeg»</td>
+</tr>
+<tr>
+<td>Overzicht attributen</td>
+<td><ul><li>identificatie [1-1][^39]</li><li>typering [1-1]</li><li>adresAanduidingGrp [1-1]</li><li>vlakGeometrie [1-1]</li><li>aot.status [1-1]</li><li>aot.geconstateerd [1-1]</li><li>brondocument [1-1]</li><li>StUF:tijdvakGeldigheid [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+</section><section id="overiggebouwdobject"><div class="header-wrapper"><h4 id="x5-1-2-overiggebouwdobject"><bdi class="secno">5.1.2 </bdi>overigGebouwdObject</h4><a class="self-link" href="#overiggebouwdobject" aria-label="Permalink for Section 5.1.2"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam entiteit</th>
+<th>overigGebouwdObject</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie entiteit</td>
+<td>Entiteit met de attribuutgegevens voor het object overigGebouwdObject</td>
+</tr>
+<tr>
+<td>Herkomst entiteit</td>
+<td>RSGB</td>
+</tr>
+<tr>
+<td>Toelichting entiteit</td>
+<td>«leeg»</td>
+</tr>
+<tr>
+<td>Overzicht attributen</td>
+<td><ul><li>identificatie [1-1][^39]</li><li>typering [1-1]</li><li>adresAanduidingGrp [1-1]</li><li>gbo.puntGeometrie [1-1]</li><li>vlakgeometrie [0-1]</li><li>aot.status [1-1]</li><li>aot.geconstateerd [1-1]</li><li>brondocument [1-1]</li><li>StUF:tijdvakGeldigheid [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+</section><section id="overigterrein"><div class="header-wrapper"><h4 id="x5-1-3-overigterrein"><bdi class="secno">5.1.3 </bdi>overigTerrein</h4><a class="self-link" href="#overigterrein" aria-label="Permalink for Section 5.1.3"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam entiteit</th>
+<th>overigTerrein</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie entiteit</td>
+<td>Entiteit met de attribuutgegevens voor het object overigTerrein</td>
+</tr>
+<tr>
+<td>Herkomst entiteit</td>
+<td>RSGB</td>
+</tr>
+<tr>
+<td>Toelichting entiteit</td>
+<td>«leeg»</td>
+</tr>
+<tr>
+<td>Overzicht attributen</td>
+<td><ul><li>identificatie [1-1][^39]</li><li>typering [1-1]</li><li>adresAanduidingGrp [1-1]</li><li>vlakgeometrie [0-1]</li><li>aot.status [1-1]</li><li>aot.geconstateerd [1-1]</li><li>brondocument [1-1]</li><li>StUF:tijdvakGeldigheid [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+</section><section id="pand"><div class="header-wrapper"><h4 id="x5-1-4-pand"><bdi class="secno">5.1.4 </bdi>pand</h4><a class="self-link" href="#pand" aria-label="Permalink for Section 5.1.4"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam entiteit</th>
+<th>pand</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie entiteit</td>
+<td>Entiteit met de attribuutgegevens voor object Pand</td>
+</tr>
+<tr>
+<td>Herkomst entiteit</td>
+<td>BAG</td>
+</tr>
+<tr>
+<td>Toelichting entiteit</td>
+<td>«leeg»</td>
+</tr>
+<tr>
+<td>Overzicht attributen</td>
+<td><ul><li>identificatie [1-1][^39]</li><li>geometrie [1-1]</li><li>status [1-1]</li><li>geconstateerd [1-1]</li><li>brondocument [1-1]</li><li>StUF:tijdvakGeldigheid [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+</section><section id="standplaats"><div class="header-wrapper"><h4 id="x5-1-5-standplaats"><bdi class="secno">5.1.5 </bdi>standplaats</h4><a class="self-link" href="#standplaats" aria-label="Permalink for Section 5.1.5"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam entiteit</th>
+<th>standplaats</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie entiteit</td>
+<td>Entiteit met de attribuutgegevens voor object Standplaats</td>
+</tr>
+<tr>
+<td>Herkomst entiteit</td>
+<td>BAG</td>
+</tr>
+<tr>
+<td>Toelichting entiteit</td>
+<td>«leeg»</td>
+</tr>
+<tr>
+<td>Overzicht attributen</td>
+<td><ul><li>identificatie [1-1][^39]</li><li>typering [1-1]</li><li>adresAanduidingGrp [1-1]</li><li>vlakGeometrie [1-1]</li><li>aot.status [1-1]</li><li>aot.geconstateerd [1-1]</li><li>brondocument [1-1]</li><li>StUF:tijdvakGeldigheid [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+</section><section id="verblijfsobject"><div class="header-wrapper"><h4 id="x5-1-6-verblijfsobject"><bdi class="secno">5.1.6 </bdi>verblijfsobject</h4><a class="self-link" href="#verblijfsobject" aria-label="Permalink for Section 5.1.6"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam entiteit</th>
+<th>verblijfsobject</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie entiteit</td>
+<td>Entiteit met de attribuutgegevens voor object Verblijfsobject</td>
+</tr>
+<tr>
+<td>Herkomst entiteit</td>
+<td>BAG</td>
+</tr>
+<tr>
+<td>Toelichting entiteit</td>
+<td>«leeg»</td>
+</tr>
+<tr>
+<td>Overzicht attributen</td>
+<td><ul><li>identificatie [1-1][^39]</li><li>typering [1-1]</li><li>adresAanduidingGrp [1-1]</li><li>. gbo.puntGeometrie [1-1]</li><li>vlakGeometrie [0-1]</li><li>aot.status [1-1]</li><li>aot.geconstateerd [1-1]</li><li>brondocument [1-1]</li><li>StUF:tijdvakGeldigheid [1-1]</li><li>vbo.maaktDeelUitVan [1..n]</li></ul></td>
+</tr>
+</tbody></table>
+</section><section id="woonplaats"><div class="header-wrapper"><h4 id="x5-1-7-woonplaats"><bdi class="secno">5.1.7 </bdi>woonplaats</h4><a class="self-link" href="#woonplaats" aria-label="Permalink for Section 5.1.7"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam entiteit</th>
+<th>woonplaats</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Naam entiteit</td>
+<td>woonplaats</td>
+</tr>
+<tr>
+<td>Definitie entiteit</td>
+<td>Entiteit met attribuutgegevens voor object Woonplaats</td>
+</tr>
+<tr>
+<td>Herkomst entiteit</td>
+<td>BAG</td>
+</tr>
+<tr>
+<td>Toelichting entiteit</td>
+<td>«leeg»</td>
+</tr>
+<tr>
+<td>Overzicht attributen</td>
+<td><ul><li>identificatie [1-1][^39]</li><li>woonplaatsNaam [1-1]</li><li>geometrie [1-1]</li><li>status [1-1]</li><li>geconstateerd [1-1]</li><li>brondocument [1-1]</li><li>StUF:tijdvakGeldigheid [1-1]</li></ul></td>
+</tr>
+</tbody></table>
+<p>[^39] Een goedkeuringsbericht of afkeuringsbericht bevat in het respons alleen de identificatie van het object in de entiteit</p>
+</section></section></section>
+   <section id="attributen"><div class="header-wrapper"><h2 id="x6-attributen"><bdi class="secno">6. </bdi>Attributen</h2><a class="self-link" href="#attributen" aria-label="Permalink for Section 6."></a></div>
+<p>Dit hoofdstuk beschrijft de attributen van de StUF-Geo BAG berichten en
+objectkennisgevingen.</p>
+<section id="parameters"><div class="header-wrapper"><h3 id="x6-1-parameters"><bdi class="secno">6.1 </bdi>Parameters</h3><a class="self-link" href="#parameters" aria-label="Permalink for Section 6.1"></a></div>
+<section id="idverzoek"><div class="header-wrapper"><h4 id="x6-1-1-idverzoek"><bdi class="secno">6.1.1 </bdi>idVerzoek</h4><a class="self-link" href="#idverzoek" aria-label="Permalink for Section 6.1.1"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>idVerzoek</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Identificatie van het geometrieVerzoek</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-Geo BAG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String(40)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="idlevering"><div class="header-wrapper"><h4 id="x6-1-2-idlevering"><bdi class="secno">6.1.2 </bdi>idLevering</h4><a class="self-link" href="#idlevering" aria-label="Permalink for Section 6.1.2"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>idLevering</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Identificatie van de geometrieLevering.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-Geo BAG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String(40)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="gerelateerdverzoek"><div class="header-wrapper"><h4 id="x6-1-3-gerelateerdverzoek"><bdi class="secno">6.1.3 </bdi>gerelateerdVerzoek</h4><a class="self-link" href="#gerelateerdverzoek" aria-label="Permalink for Section 6.1.3"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>gerelateerdVerzoek</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Identificatie van het geometrieverzoek waarop een geometrielevering wordt gedaan.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-Geo BAG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String(40)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="gebeurteniscode"><div class="header-wrapper"><h4 id="x6-1-4-gebeurteniscode"><bdi class="secno">6.1.4 </bdi>gebeurtenisCode</h4><a class="self-link" href="#gebeurteniscode" aria-label="Permalink for Section 6.1.4"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>gebeurteniscode</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>BAG- of Geo gebeurtenis als aanleiding voor het verzoek/levering geometrie</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>string(var)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td>codeGebeurtenisList</td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td>Zie bijlage 1 voor de waardenlijst.</td>
+</tr>
+</tbody></table>
+</section><section id="documentverwijzing"><div class="header-wrapper"><h4 id="x6-1-5-documentverwijzing"><bdi class="secno">6.1.5 </bdi>documentverwijzing</h4><a class="self-link" href="#documentverwijzing" aria-label="Permalink for Section 6.1.5"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>documentverwijzing</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Verwijzing (URL) naar een achterliggend (bron)document.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-Geo BAG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String(200)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="toelichting"><div class="header-wrapper"><h4 id="x6-1-6-toelichting"><bdi class="secno">6.1.6 </bdi>toelichting</h4><a class="self-link" href="#toelichting" aria-label="Permalink for Section 6.1.6"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Toelichting op het verzoek in de vorm van tekst.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-Geo BAG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String(500)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="foutcode"><div class="header-wrapper"><h4 id="x6-1-7-foutcode"><bdi class="secno">6.1.7 </bdi>foutcode</h4><a class="self-link" href="#foutcode" aria-label="Permalink for Section 6.1.7"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>Foutcode</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Code van de fout cf. standaard StUF of foutlijst StUF-Geo BAG sectormodel</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String(7)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="foutomschrijving"><div class="header-wrapper"><h4 id="x6-1-8-foutomschrijving"><bdi class="secno">6.1.8 </bdi>foutomschrijving</h4><a class="self-link" href="#foutomschrijving" aria-label="Permalink for Section 6.1.8"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>foutomschrijving</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Toelichting op de fout als vrije tekst.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[0..-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String(200)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="plek"><div class="header-wrapper"><h4 id="x6-1-9-plek"><bdi class="secno">6.1.9 </bdi>plek</h4><a class="self-link" href="#plek" aria-label="Permalink for Section 6.1.9"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>plek</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Plek waar de fout is geconstateerd.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String()</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td>"client", "server"</td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="details"><div class="header-wrapper"><h4 id="x6-1-10-details"><bdi class="secno">6.1.10 </bdi>details</h4><a class="self-link" href="#details" aria-label="Permalink for Section 6.1.10"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>details</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Toelichting op de fout</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String(1000)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></section><section id="elementen-in-entiteiten"><div class="header-wrapper"><h3 id="x6-2-elementen-in-entiteiten"><bdi class="secno">6.2 </bdi>Elementen in entiteiten</h3><a class="self-link" href="#elementen-in-entiteiten" aria-label="Permalink for Section 6.2"></a></div>
+<section id="identificatie"><div class="header-wrapper"><h4 id="x6-2-1-identificatie"><bdi class="secno">6.2.1 </bdi>identificatie</h4><a class="self-link" href="#identificatie" aria-label="Permalink for Section 6.2.1"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>identificatie</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>BAG-identificatie van object</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String(16)</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="typering"><div class="header-wrapper"><h4 id="x6-2-2-typering"><bdi class="secno">6.2.2 </bdi>typering</h4><a class="self-link" href="#typering" aria-label="Permalink for Section 6.2.2"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>typering</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>typering van object</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>varchar</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td>Bijv. Nummeraanduiding, Verblijfobject etc.</td>
+</tr>
+</tbody></table>
+</section><section id="adresaanduiding"><div class="header-wrapper"><h4 id="x6-2-3-adresaanduiding"><bdi class="secno">6.2.3 </bdi>adresAanduiding</h4><a class="self-link" href="#adresaanduiding" aria-label="Permalink for Section 6.2.3"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>adresAanduidingGrp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Aanduiding van het adres van het object.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>&lt;adresAanduidingGrp&gt;</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="geometrie-0"><div class="header-wrapper"><h4 id="x6-2-4-geometrie"><bdi class="secno">6.2.4 </bdi>geometrie</h4><a class="self-link" href="#geometrie-0" aria-label="Permalink for Section 6.2.4"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>Geometrie</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>De geometrie van het object</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>GM_Surface</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td>De geometrie is de vlakgeometrie van een Pand of Woonplaats.</td>
+</tr>
+</tbody></table>
+</section><section id="puntgeometrie"><div class="header-wrapper"><h4 id="x6-2-5-puntgeometrie"><bdi class="secno">6.2.5 </bdi>puntGeometrie</h4><a class="self-link" href="#puntgeometrie" aria-label="Permalink for Section 6.2.5"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>puntGeometrie</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>De puntgeometrie van het object</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>GM_Point</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td>De geometrie is de puntgeometrie van een overigGebouwdObject of Verblijfsobject.</td>
+</tr>
+</tbody></table>
+</section><section id="vlakgeometrie"><div class="header-wrapper"><h4 id="x6-2-6-vlakgeometrie"><bdi class="secno">6.2.6 </bdi>vlakGeometrie</h4><a class="self-link" href="#vlakgeometrie" aria-label="Permalink for Section 6.2.6"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>vlakGeometrie</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>De vlakgeometrie van het object</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>GM_Surface</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td>De geometrie is de vlakgeometrie van een Stand/Ligplaats of overigTerrein, of optioneel van een overigGebouwdObject of Verblijfsobject.</td>
+</tr>
+</tbody></table>
+</section><section id="status"><div class="header-wrapper"><h4 id="x6-2-7-status"><bdi class="secno">6.2.7 </bdi>status</h4><a class="self-link" href="#status" aria-label="Permalink for Section 6.2.7"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>De status van het object</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="geconstateerd"><div class="header-wrapper"><h4 id="x6-2-8-geconstateerd"><bdi class="secno">6.2.8 </bdi>geconstateerd</h4><a class="self-link" href="#geconstateerd" aria-label="Permalink for Section 6.2.8"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>geconstateerd</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Indicatie of object geconstateerd is</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="brondocument"><div class="header-wrapper"><h4 id="x6-2-9-brondocument"><bdi class="secno">6.2.9 </bdi>brondocument</h4><a class="self-link" href="#brondocument" aria-label="Permalink for Section 6.2.9"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>Brondocument</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Het onderliggende brondocument van dit object</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td>Bevat de identificatie en datum van het brondocument.</td>
+</tr>
+</tbody></table>
+</section><section id="tijdvakgeldigheid"><div class="header-wrapper"><h4 id="x6-2-10-tijdvakgeldigheid"><bdi class="secno">6.2.10 </bdi>tijdvakGeldigheid</h4><a class="self-link" href="#tijdvakgeldigheid" aria-label="Permalink for Section 6.2.10"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>beginGeldigheid</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>De datums waarop de geldigheid van gegevens van dit object begint (beginGeldigheid) en eindigt (eindGeldigheid</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[1-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>date</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="maaktdeeluitvan"><div class="header-wrapper"><h4 id="x6-2-11-maaktdeeluitvan"><bdi class="secno">6.2.11 </bdi>maaktDeelUitVan</h4><a class="self-link" href="#maaktdeeluitvan" aria-label="Permalink for Section 6.2.11"></a></div>
+<table>
+<thead>
+<tr>
+<th>Naam attribuut</th>
+<th>maaktDeelUitVan</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Definitie attribuut</td>
+<td>Verwijzing naar een Pand waartoe Verblijfsobject behoort.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>StUF-BG</td>
+</tr>
+<tr>
+<td>Multipliciteit</td>
+<td>[0-1]</td>
+</tr>
+<tr>
+<td>Waardetype</td>
+<td>&lt;elementen&gt; van maaktDeelUitVan</td>
+</tr>
+<tr>
+<td>Waardenverzameling</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td>Alleen bij Verblijfsobject. In XSD is de multipliciteit [1-1] met toepassing van een StUF:noValue.</td>
+</tr>
+</tbody></table>
+</section></section></section>
+   <section id="bijlage-1-gebeurtenissen"><div class="header-wrapper"><h2 id="x7-bijlage-1-gebeurtenissen"><bdi class="secno">7. </bdi>Bijlage 1: Gebeurtenissen</h2><a class="self-link" href="#bijlage-1-gebeurtenissen" aria-label="Permalink for Section 7."></a></div>
+<p>De tabel in deze bijlage geeft een overzicht van de voor het Geo-BAG
+berichtenverkeer relevante[^40] BAG- en Geo-gebeurtenissen en tot welk bericht
+een bepaalde gebeurtenis leidt[^1]. De lijst van BAG gebeurteniscodes is
+overgenomen uit het landelijk vastgestelde BAG-processenhandboek. Voor Geo zijn
+voor-dit-koppelvlak relevante gebeurtenissen toegevoegd.</p>
+<p>[^1]: &nbsp;</p>
+<p>In de kolom ‘BGT-mutatie’ wordt aangegeven of een gebeurtenis aanleiding geeft
+tot een bepaalde mutatie in de BGT:</p>
+<ol>
+<li><p>Toevoegen BGT Pand als planinformatie</p>
+</li>
+<li><p>Beëindigen BGT Pand als planinformatie</p>
+</li>
+<li><p>Toevoegen BGT Pand</p>
+</li>
+<li><p>Wijzigen geometrie BGT Pand</p>
+</li>
+<li><p>Wijzigen nummeraanduidingreeks van BGT Pand</p>
+</li>
+<li><p>Beëindigen BGT Pand</p>
+</li>
+<li><p>Toevoegen OpenbareRuimte(Label)</p>
+</li>
+<li><p>Wijzigen naam OpenbareRuimte(Label)</p>
+</li>
+<li><p>Beëindigen OpenbareRuimte(Label)</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><strong>Code</strong></th>
+<th><strong>Gebeurtenis</strong></th>
+<th><strong>Ontstaat bij</strong></th>
+<th><strong>Aanleiding tot</strong></th>
+<th><strong>BGT-mutatie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BAG-BN</td>
+<td>Benoemen nevenadres</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BAG-AGO</td>
+<td>Archivering geconstateerd object</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>5,6</td>
+</tr>
+<tr>
+<td>BAG-AOC</td>
+<td>Archivering bestaand object na constatering</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>5,6</td>
+</tr>
+<tr>
+<td>BAG-COR</td>
+<td>Correctie naar aanleiding van een signalering</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>3,4,5,6</td>
+</tr>
+<tr>
+<td>BAG-FGO</td>
+<td>Formalisering geconstateerd object</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BAG-HLG</td>
+<td>Heropname legitiem gegeven</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>3,5</td>
+</tr>
+<tr>
+<td>BAG-IN</td>
+<td>Intrekken nevenadres</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BAG-IO</td>
+<td>In onderzoek plaatsen</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>2,4,5,6, 8,9</td>
+</tr>
+<tr>
+<td>BAG-OA</td>
+<td>Onderzoek afgerond</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>2,4,5,6, 8,9</td>
+</tr>
+<tr>
+<td>BAG-MUT</td>
+<td>Mutatie naar aanleiding van een signalering</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>3,4,5,6</td>
+</tr>
+<tr>
+<td>BAG-NEG</td>
+<td>Negeer eerder gestuurd GeometrieVerzoek</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td></td>
+</tr>
+<tr>
+<td>BAG-VG</td>
+<td>Verbouwing gereed</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>4</td>
+</tr>
+<tr>
+<td>BAG-VTP</td>
+<td>Verblijfsobject toevoegen aan pand</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BGR-BIG</td>
+<td>Beschikbaar gekomen ingemeten geometrie</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>4</td>
+</tr>
+<tr>
+<td>BGR-BSLLP</td>
+<td>Benoemen ligplaats</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td></td>
+</tr>
+<tr>
+<td>BGR-BSLSP</td>
+<td>Benoemen standplaats</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td></td>
+</tr>
+<tr>
+<td>BGR-COG</td>
+<td>Constatering nieuw object</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>3,5</td>
+</tr>
+<tr>
+<td>BGR-IBV</td>
+<td>Intrekken bouwvergunning</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>6</td>
+</tr>
+<tr>
+<td>BGR-ISLLP</td>
+<td>Intrekken ligplaats</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td></td>
+</tr>
+<tr>
+<td>BGR-ISLSP</td>
+<td>Intrekken standplaats</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td></td>
+</tr>
+<tr>
+<td>BGR-KVO</td>
+<td>Kleine verbouwing object</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>4</td>
+</tr>
+<tr>
+<td>BGR-MAB</td>
+<td>Afzien van bouw</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>6</td>
+</tr>
+<tr>
+<td>BGR-MGB</td>
+<td>Melding gebruiksgereed</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td></td>
+</tr>
+<tr>
+<td>BGR-MGS</td>
+<td>Melding sloop afgerond</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>5,6</td>
+</tr>
+<tr>
+<td>BGR-OBA</td>
+<td>Ontvangst bouwaanvraag</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td></td>
+</tr>
+<tr>
+<td>BGR-SSVSAMEN</td>
+<td>Samenvoegen verblijfsobjecten</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BGR-SSVSPLITS</td>
+<td>Splitsen verblijfsobjecten</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BGR-VBI</td>
+<td>Verlenen bouwvergunning ingrijpende verbouwing</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>4,5</td>
+</tr>
+<tr>
+<td>BGR-VBN</td>
+<td>Verlenen bouwvergunning</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td>1</td>
+</tr>
+<tr>
+<td>BGR-VOCDEEL</td>
+<td>Gedeeltelijk verdwijnen objecten door calamiteit</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>4</td>
+</tr>
+<tr>
+<td>BGR-VOCHEEL</td>
+<td>Geheel verdwijnen objecten door calamiteit</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>5,6</td>
+</tr>
+<tr>
+<td>BRA-BOR</td>
+<td>Benoemen openbare ruimte</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>7</td>
+</tr>
+<tr>
+<td>BRA-BWP</td>
+<td>Benoemen woonplaats</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td></td>
+</tr>
+<tr>
+<td>BRA-GHO</td>
+<td>Gedeeltelijk hernoemen openbare ruimte</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>8</td>
+</tr>
+<tr>
+<td>BRA-HNU</td>
+<td>Hernummeren adresseerbaar object</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BRA-HOR</td>
+<td>Hernoemen openbare ruimte</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>8</td>
+</tr>
+<tr>
+<td>BRA-IOR</td>
+<td>Intrekken openbare ruimte</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>9</td>
+</tr>
+<tr>
+<td>BRA-KWGW</td>
+<td>Kleine wijziging grens woonplaats</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td></td>
+</tr>
+<tr>
+<td>BRA-OHN</td>
+<td>Hoofdadres en nevenadres van een adresseerbaar object omdraaien</td>
+<td>BAG</td>
+<td>BAG-kennisgeving</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BRA-WGW</td>
+<td>Wijzigen grens woonplaats</td>
+<td>BAG</td>
+<td>geometrieVerzoek</td>
+<td></td>
+</tr>
+<tr>
+<td>GEO-AOC</td>
+<td>Constatering gesloopt object</td>
+<td>GEO</td>
+<td>geometrieLevering</td>
+<td>5,6</td>
+</tr>
+<tr>
+<td>GEO-COG</td>
+<td>Constatering nieuw object</td>
+<td>GEO</td>
+<td>geometrieLevering</td>
+<td>3,5</td>
+</tr>
+<tr>
+<td>GEO-MUT</td>
+<td>Constatering afwijkende geometrie</td>
+<td>GEO</td>
+<td>geometrieLevering</td>
+<td>4</td>
+</tr>
+<tr>
+<td>GEO-NEG</td>
+<td>Negeer eerder gestuurd geometrielevering</td>
+<td>GEO</td>
+<td>geometrielevering</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>[^40] In werksessies met betrokken Geo- en BAG-leveranciers is een lijst
+samengesteld met de voor dit koppelvlak relevant geachte gebeurtenissen op basis
+van de vigerende versie van het landelijk vastgestelde BAG-Processenhandboek.</p>
+</section>
+   <section id="bijlage-2-activiteitenstroom-koppelvlak-geo-bag"><div class="header-wrapper"><h2 id="x8-bijlage-2-activiteitenstroom-koppelvlak-geo-bag"><bdi class="secno">8. </bdi>Bijlage 2: Activiteitenstroom koppelvlak Geo-BAG</h2><a class="self-link" href="#bijlage-2-activiteitenstroom-koppelvlak-geo-bag" aria-label="Permalink for Section 8."></a></div>
+<p>Hieronder staat een overzicht van de verschillende activiteitenstromen inclusief aanleiding en gebeurteniscode voor het koppelvlak Geo-BAG. </p>
+<p>Aanleiding voor de start van activiteitenstroom kan zijn:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Scenario</strong></th>
+<th><strong>Omschrijving</strong></th>
+<th><strong>codeGebeurtenis</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A)</td>
+<td>BAG benodigt geometrie voor een bepaald object</td>
+<td>BAG-***</td>
+</tr>
+<tr>
+<td>B)</td>
+<td>BAG wil eerder verzonden geometrieverzoek intrekken</td>
+<td>BAG-NEG</td>
+</tr>
+<tr>
+<td>C)</td>
+<td>Geo heeft nieuwe / gewijzigde geometrie geconstateerd</td>
+<td>GEO-***</td>
+</tr>
+<tr>
+<td>D)</td>
+<td>Geo wil eerder verzonden geometrieLevering intrekken</td>
+<td>GEO-NEG</td>
+</tr>
+<tr>
+<td>E)</td>
+<td>BAG heeft wijziging doorgevoerd op een bepaald object</td>
+<td>BAG-***</td>
+</tr>
+</tbody></table>
+<p>Een aanleiding leidt tot de volgende activiteiten/stappen in een scenario.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Stap</strong></th>
+<th><strong>Omschrijving</strong></th>
+<th><strong>Scenario</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BF1.</td>
+<td>BAG stuurt geometrieVerzoek aan GEO</td>
+<td>A,B</td>
+</tr>
+<tr>
+<td>BF2.</td>
+<td>Geo start verwerking geometrieVerzoek</td>
+<td>A,B</td>
+</tr>
+<tr>
+<td>BF3.</td>
+<td>Geo stuurt geometrieLevering aan BAG</td>
+<td>A,C,D</td>
+</tr>
+<tr>
+<td>BF4.</td>
+<td>BAG beoordeelt geometrieLevering</td>
+<td>A,C,D</td>
+</tr>
+<tr>
+<td>BF5.</td>
+<td>BAG keurt geometrieLevering goed en stuurt bevestiging naar Geo</td>
+<td>A,C</td>
+</tr>
+<tr>
+<td>BF6.</td>
+<td>BAG verwerking geometrieLevering in eigen applicatie</td>
+<td>A,C</td>
+</tr>
+<tr>
+<td>BF7.</td>
+<td>BAG stuurt actuele stand van object in BAG-kennisgeving naar Geo</td>
+<td>A,C,E</td>
+</tr>
+<tr>
+<td>BF8.</td>
+<td>Geo verwerkt BAG-kennisgeving in eigen applicatie</td>
+<td>A,C,E</td>
+</tr>
+<tr>
+<td>AF1.1</td>
+<td>Geo negeert geometrieVerzoek</td>
+<td>B</td>
+</tr>
+<tr>
+<td>AF2.1</td>
+<td>BAG negeert geometrieLevering</td>
+<td>D</td>
+</tr>
+</tbody></table>
+<p>Indien een verzoek of levering tijdens een activiteitenstroom niet verwerkbaar[^41] blijkt voor ontvanger volgt een foutscenario.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Stap</strong></th>
+<th><strong>Omschrijving</strong></th>
+<th><strong>Scenario</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BF1.</td>
+<td>BAG stuurt geometrieVerzoek aan GEO</td>
+<td>A,B</td>
+</tr>
+<tr>
+<td>BF2.</td>
+<td>Geo start verwerking geometrieVerzoek</td>
+<td>A,B</td>
+</tr>
+<tr>
+<td>BF3.</td>
+<td>Geo stuurt geometrieLevering aan BAG</td>
+<td>A,B,C,D</td>
+</tr>
+<tr>
+<td>BF4.</td>
+<td>BAG beoordeelt geometrieLevering</td>
+<td>A,B,C,D</td>
+</tr>
+<tr>
+<td>EX1.1</td>
+<td>Geo keurt geometrieVerzoek af en stuurt functioneel foutbericht aan BAG</td>
+<td></td>
+</tr>
+<tr>
+<td>EX1.2</td>
+<td>BAG keurt geometrieLEvering af en stuurt functioneel foutbericht aan Geo</td>
+<td>C,D</td>
+</tr>
+</tbody></table>
+<p>[^41] Dit betreft functioneel niet verwerkbaar dus m.b.t. de inhoud van een bericht na beoordeling.</p>
+<p>De activiteitenstromen zijn gevisualiseerd in het activiteitendiagram Geo-BAG koppelvlak. </p>
+<p><img src="media/fig-activiteitenstroom-geo-bag-koppelvlak.png" alt="Activiteitenstroom Geo-BAG koppelvlak"></p>
+</section>
+   <section id="bijlage-3-gegevensmodel-koppelvlak-geo-bag"><div class="header-wrapper"><h2 id="x9-bijlage-3-gegevensmodel-koppelvlak-geo-bag"><bdi class="secno">9. </bdi>Bijlage 3: Gegevensmodel koppelvlak Geo-BAG</h2><a class="self-link" href="#bijlage-3-gegevensmodel-koppelvlak-geo-bag" aria-label="Permalink for Section 9."></a></div>
+<p><img src="media/fig-gegevensmodel-geo-bag.png" alt="Gegevensmodel koppelvlak Geo-BAG"></p>
+</section>
+   <section id="bijlage-4-ontwerpbeslissingen-en-keuzes-verstuffing"><div class="header-wrapper"><h2 id="x10-bijlage-4-ontwerpbeslissingen-en-keuzes-verstuffing"><bdi class="secno">10. </bdi>Bijlage 4: Ontwerpbeslissingen en keuzes verStUFfing</h2><a class="self-link" href="#bijlage-4-ontwerpbeslissingen-en-keuzes-verstuffing" aria-label="Permalink for Section 10."></a></div>
+<p>Het koppelvlak geoBAG is gedefinieerd met een eigen berichtenset en een eigen namespace. </p>
+<p>De entiteittypen LIG, STA en VBO zijn gedefinieerd als restrictions op het complexType TGOAOT-basis. Dit mag, omdat het supertype TGOAOT is gedefinieerd in bg0310. Binnen het sectormodel WOZ is dit ook zo gedaan. </p>
+<p>Binnen het element adresAanduidingGrp zijn uitsluitend de namen opgenomen van de woonplaats en de openbare ruimte en niet ook hun identificaties. Alle elementen zijn verplicht, ook aoa.woonplaatsWaarinGelegen/wpl.woonplaatsnaam. Indien het object ligt in de woonplaats aangeduid door wpl.woonplaatsnaam, dan dient in aoa.woonplaatsWaarinGelegen/wpl.woonplaatsnaam dezelfde waarde te worden opgenomen als in wpl.woonplaatsnaam, zo niet dan wordt woonplaats opgenomen waarin het adresseerbaar object feitelijk ligt. </p>
+<p>De objectkennisgevingen in hoofdstuk 5 van het functionele ontwerp zijn niet geïmplementeerd als kennisgevingen maar als elementen met StUF:functie=”entiteit” binnen de vrije berichten gmvDi01 en gmlDi01. Hiervoor is gekozen, omdat in het geometrieverzoek de semantiek is het identificeren van het object waarvoor de geometrie wordt gevraagd. In de geometrielevering worden alleen de nieuwe waarden geleverd en dat kan niet met de semantiek van een StUF-kennisgeving. Het element StUF:indicatorOvername is hierdoor vervallen, maar dit is niet erg, omdat het functioneel ontwerp specificeert hoe het bericht verwerkt moet worden. </p>
+<p>Er is gekozen voor een strakkere definitie van de functionaliteit in vrije berichten. Hierdoor zijn ook de bevestigings- en foutberichten goed te valideren. In de parameters van deze berichten is de functionele identificatie van het bericht waarop wordt gereageerd opgenomen. In geval van een fout zijn in de parameters ook de elementen met de omschrijving van de fout opgenomen. De sleutels van de objecten waarop de respons betrekking heeft, zijn opgenomen als de entiteiten LIG, PND, STA, VBO en WPL met als enig element identificatie en met de attributes sleutelVerzendend en sleutelOntvangend. Het is hiermee mogelijk om een deel van de objecten goed te keuren en een ander deel af te keuren met desgewenst verschillende redenen voor de afkeuring. </p>
+<section id="afhankelijkheden-schema-s-en-wsdl-s"><div class="header-wrapper"><h3 id="x10-1-afhankelijkheden-schema-s-en-wsdl-s"><bdi class="secno">10.1 </bdi>Afhankelijkheden schema's en wsdl's</h3><a class="self-link" href="#afhankelijkheden-schema-s-en-wsdl-s" aria-label="Permalink for Section 10.1"></a></div>
+<p><img src="media/fig-afhankelijkheden-schema-wsdl.png" alt="Afhankelijkheden schema's en wsdl's"></p>
+<p>De figuur hierboven geeft de afhankelijkheden voor de wsdl's van het StUF-geoBAG0100-koppelvlak van andere schema's in wsdl's. Bovenaan staan in de groene blokken voor de geoBAG0100 namespace de twee wsdl's voor het StUF-geoBAG0100-koppelvlak. </p>
+<p>Deze twee wsdl's hangen af van een schema met de berichten voor het koppelvlak en van de wsdl voor stuf0301 in het gele blok, die zelf weer afhankelijk is van het stuf0301 schema.  </p>
+<p>Het koppelvlak is gedefinieerd in een eigen namespace, maar deze namespace wordt alleen toegepast in de berichtelementen op het hoogste niveau. De verdere inhoud van de berichten is gedefinieerd in de bg0310 namespace (blauwe blokken). Het schema met berichtelementen in de geoBAG0100 namespace is daarom afhankelijk van een blauw schema met complexTypes voor de berichtelementen. </p>
+<p>Dit schema is op zijn beurt weer afhankelijk van: </p>
+<ul>
+<li>een schema met de specifiek in het StUF-geoBAG0100 koppelvlak gebruikte complexTypes voor de BAG-entiteittypen in bg0310 en de parameters-elementen in vrije berichten. </li>
+<li>een schema in de stuf0301 namespace met de definities van de stuurgegevens elementen.</li>
+</ul>
+<p>De rest van de pijlen laten de gebruikelijke afhankelijkheden van de schema's onderin de boom van afhankelijkheden zien.</p>
+</section></section>
+   <section id="bijlage-mapping-bag-2-0-stuf-bg-extraelementen-vs-stuf-geo-bag"><div class="header-wrapper"><h2 id="x11-bijlage-mapping-bag-2-0-stuf-bg-extraelementen-vs-stuf-geo-bag"><bdi class="secno">11. </bdi>Bijlage Mapping BAG 2.0: StUF BG ExtraElementen vs. StUF-Geo BAG</h2><a class="self-link" href="#bijlage-mapping-bag-2-0-stuf-bg-extraelementen-vs-stuf-geo-bag" aria-label="Permalink for Section 11."></a></div>
+<p>Hieronder staat een vertaling (mapping) tussen de BAG 2.0 elementen zoals
+uitgewisseld in de ExtraElementen van StUF BG, en in de elementen bij de
+entiteittypen in StUF-GeoBAG.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>StUF BG Extra Elementen BAG 2.0</th>
+<th></th>
+<th></th>
+<th>StUF-Geo BAG</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>BAG 2.0 attribuut</em></td>
+<td><em>Entiteittypen</em></td>
+<td>namespace</td>
+<td><em>naam extraElement</em></td>
+<td><em>Type</em></td>
+<td><em>namespace</em></td>
+<td><em>naam element</em></td>
+<td><em>Type</em></td>
+</tr>
+<tr>
+<td>documentnummer</td>
+<td>AOA, NUM, OPR, PND, TGO, VBO, WPL</td>
+<td>bg0310</td>
+<td>bag18_brondocument_identificatie</td>
+<td>AN40</td>
+<td>geobag0101</td>
+<td>brondocument</td>
+<td>AN40</td>
+</tr>
+<tr>
+<td>versie</td>
+<td>AOA, NUM, OPR, PND, TGO, VBO, WPL</td>
+<td>bg0310</td>
+<td>bag18_versienummer</td>
+<td>N</td>
+<td>geobag0101</td>
+<td>versie</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>status</td>
+<td>PND</td>
+<td>bg0310</td>
+<td>bag18_statusPand</td>
+<td>Enumeratie</td>
+<td>geobag0101</td>
+<td>status</td>
+<td>StatusPand</td>
+</tr>
+<tr>
+<td>status</td>
+<td>VBO</td>
+<td>bg0310</td>
+<td>bag18_statusVerblijfsobject</td>
+<td>Enumeratie</td>
+<td>geobag0101</td>
+<td>status</td>
+<td>StatusVerblijfsobject</td>
+</tr>
+</tbody></table>
+</section>
+  
+
+<p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Terug naar boven">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement | null} */
+  let panel = null;
+  /**
+   * @param {KeyboardEvent|MouseEvent} event
+   */
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (
+      type === "keydown" &&
+      /** @type {KeyboardEvent} */ (event).key !== "Enter"
+    )
+      return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement | null} */
+        const dfn = target.closest("dfn, .index-term");
+        if (!dfn?.id) break;
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        if (!panel) break;
+        const coords = deriveCoordinates(
+          /** @type {MouseEvent|KeyboardEvent} */ (event)
+        );
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        if (panel) {
+          panel.style.left = "";
+          panel.style.top = "";
+          panel.classList.add("docked");
+        }
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+
+    const panel = /** @type {HTMLElement} */ (target.closest(".dfn-panel"));
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement | null} */
+    const caret = panel.querySelector(".caret");
+    if (caret) caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  /**
+   * @param {KeyboardEvent} event
+   */
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement | null} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><div class="sidelabel">Geonovum Standaard - Vastgestelde versie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
